@@ -1116,7 +1116,8 @@
       "type": "basic",
       "front": "What consonant is **ㄱ**, and what is its usual sound guide?",
       "back": "ㄱ is *기역* (giyeok). It is roughly **g** at the beginning of a syllable and **k** at the end; exact pronunciation depends on position and surrounding sounds.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: giyeok (roughly g/k). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "giyeok (roughly g/k)",
       "tags": [
         "korean",
         "alphabet",
@@ -1145,7 +1146,8 @@
       "type": "basic",
       "front": "What consonant is **ㄴ**, and what sound does it represent?",
       "back": "ㄴ is *니은* (nieun) and represents an **n** sound.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: nieun (n). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "nieun (n)",
       "tags": [
         "korean",
         "alphabet",
@@ -1174,7 +1176,8 @@
       "type": "basic",
       "front": "What consonant is **ㄷ**, and what is its usual sound guide?",
       "back": "ㄷ is *디귿* (digeut). It is roughly **d** initially and **t** finally.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: digeut (roughly d/t). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "digeut (roughly d/t)",
       "tags": [
         "korean",
         "alphabet",
@@ -1203,7 +1206,8 @@
       "type": "basic",
       "front": "What consonant is **ㄹ**, and why is its romanization context-dependent?",
       "back": "ㄹ is *리을* (rieul). It is commonly realized between an **r-like** sound in some onset positions and an **l-like** sound in coda or doubled contexts; English romanization is only an approximation.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: rieul (r/l depending on position). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "rieul (r/l depending on position)",
       "tags": [
         "korean",
         "alphabet",
@@ -1232,7 +1236,8 @@
       "type": "basic",
       "front": "What consonant is **ㅁ**, and what sound does it represent?",
       "back": "ㅁ is *미음* (mieum) and represents **m**.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: mieum (m). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "mieum (m)",
       "tags": [
         "korean",
         "alphabet",
@@ -1261,7 +1266,8 @@
       "type": "basic",
       "front": "What consonant is **ㅂ**, and what is its usual sound guide?",
       "back": "ㅂ is *비읍* (bieup). It is roughly **b** initially and **p** finally.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: bieup (roughly b/p). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "bieup (roughly b/p)",
       "tags": [
         "korean",
         "alphabet",
@@ -1290,7 +1296,8 @@
       "type": "basic",
       "front": "What consonant is **ㅅ**, and what sound does it usually represent?",
       "back": "ㅅ is *시옷* (siot) and is usually **s**, with context-dependent pronunciation before certain vowels.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: siot (s; sometimes sh-like before i/y). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "siot (s; sometimes sh-like before i/y)",
       "tags": [
         "korean",
         "alphabet",
@@ -1319,7 +1326,8 @@
       "type": "basic",
       "front": "What are the two main roles of **ㅇ**?",
       "back": "At the beginning of a syllable block, ㅇ is silent; at the end, it represents **ng** as in English *sing*.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: ieung (silent initially; ng finally). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "ieung (silent initially; ng finally)",
       "tags": [
         "korean",
         "alphabet",
@@ -1348,7 +1356,8 @@
       "type": "basic",
       "front": "What consonant is **ㅈ**, and what is its sound guide?",
       "back": "ㅈ is *지읒* (jieut) and is roughly **j** or a soft affricate sound.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: jieut (j). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "jieut (j)",
       "tags": [
         "korean",
         "alphabet",
@@ -1377,7 +1386,8 @@
       "type": "basic",
       "front": "What consonant is **ㅊ**, and how does it differ from ㅈ?",
       "back": "ㅊ is *치읓* (chieut) and is an aspirated **ch** sound; ㅈ is the less-aspirated counterpart.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: chieut (ch). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "chieut (ch)",
       "tags": [
         "korean",
         "alphabet",
@@ -1406,7 +1416,8 @@
       "type": "basic",
       "front": "What consonant is **ㅋ**, and what sound does it represent?",
       "back": "ㅋ is *키읔* (kieuk) and is an aspirated **k** sound.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: kieuk (aspirated k). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "kieuk (aspirated k)",
       "tags": [
         "korean",
         "alphabet",
@@ -1435,7 +1446,8 @@
       "type": "basic",
       "front": "What consonant is **ㅌ**, and what sound does it represent?",
       "back": "ㅌ is *티읕* (tieut) and is an aspirated **t** sound.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: tieut (aspirated t). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "tieut (aspirated t)",
       "tags": [
         "korean",
         "alphabet",
@@ -1464,7 +1476,8 @@
       "type": "basic",
       "front": "What consonant is **ㅍ**, and what sound does it represent?",
       "back": "ㅍ is *피읖* (pieup) and is an aspirated **p** sound.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: pieup (aspirated p). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "pieup (aspirated p)",
       "tags": [
         "korean",
         "alphabet",
@@ -1493,7 +1506,8 @@
       "type": "basic",
       "front": "What consonant is **ㅎ**, and what sound does it represent?",
       "back": "ㅎ is *히읗* (hieut) and is an **h** sound, with predictable effects on neighboring consonants.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: hieut (h). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "hieut (h)",
       "tags": [
         "korean",
         "alphabet",
@@ -1522,7 +1536,8 @@
       "type": "basic",
       "front": "What vowel is **ㅏ**, and what sound guide is commonly used?",
       "back": "ㅏ is *아* and is commonly represented as **a**, similar to the vowel in *father* for many learners.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: a. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "a",
       "tags": [
         "korean",
         "alphabet",
@@ -1551,7 +1566,8 @@
       "type": "basic",
       "front": "What vowel is **ㅑ**, and what sound guide is commonly used?",
       "back": "ㅑ is *야* and is commonly represented as **ya**.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: ya. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "ya",
       "tags": [
         "korean",
         "alphabet",
@@ -1580,7 +1596,8 @@
       "type": "basic",
       "front": "What vowel is **ㅓ**, and why is **eo** only an approximation?",
       "back": "ㅓ is *어*. Revised Romanization writes it **eo**; English has no exact equivalent, so learners should use Korean audio rather than treating the spelling as two sounds.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: eo. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "eo",
       "tags": [
         "korean",
         "alphabet",
@@ -1609,7 +1626,8 @@
       "type": "basic",
       "front": "What vowel is **ㅕ**, and what sound guide is commonly used?",
       "back": "ㅕ is *여* and is commonly represented as **yeo**.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: yeo. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "yeo",
       "tags": [
         "korean",
         "alphabet",
@@ -1638,7 +1656,8 @@
       "type": "basic",
       "front": "What vowel is **ㅗ**, and what sound guide is commonly used?",
       "back": "ㅗ is *오* and is commonly represented as **o**.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: o. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "o",
       "tags": [
         "korean",
         "alphabet",
@@ -1667,7 +1686,8 @@
       "type": "basic",
       "front": "What vowel is **ㅛ**, and what sound guide is commonly used?",
       "back": "ㅛ is *요* and is commonly represented as **yo**.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: yo. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "yo",
       "tags": [
         "korean",
         "alphabet",
@@ -1696,7 +1716,8 @@
       "type": "basic",
       "front": "What vowel is **ㅜ**, and what sound guide is commonly used?",
       "back": "ㅜ is *우* and is commonly represented as **u**, roughly like the vowel in *boot* for many learners.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: u. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "u",
       "tags": [
         "korean",
         "alphabet",
@@ -1725,7 +1746,8 @@
       "type": "basic",
       "front": "What vowel is **ㅠ**, and what sound guide is commonly used?",
       "back": "ㅠ is *유* and is commonly represented as **yu**.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: yu. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "yu",
       "tags": [
         "korean",
         "alphabet",
@@ -1754,7 +1776,8 @@
       "type": "basic",
       "front": "What vowel is **ㅡ**, and why is **eu** only a learner guide?",
       "back": "ㅡ is *으*. Revised Romanization writes it **eu**; it is a Korean vowel without a direct English equivalent.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: eu. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "eu",
       "tags": [
         "korean",
         "alphabet",
@@ -1783,7 +1806,8 @@
       "type": "basic",
       "front": "What vowel is **ㅣ**, and what sound does it represent?",
       "back": "ㅣ is *이* and represents **i**, like the vowel in *machine* for many learners.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: i. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "i",
       "tags": [
         "korean",
         "alphabet",
@@ -1812,7 +1836,8 @@
       "type": "basic",
       "front": "What is the common sound guide for **ㅐ**?",
       "back": "ㅐ is *애* and is written **ae**; in modern Seoul Korean its pronunciation is often close to ㅔ for many speakers.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: ae. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "ae",
       "tags": [
         "korean",
         "alphabet",
@@ -1841,7 +1866,8 @@
       "type": "basic",
       "front": "What is the common sound guide for **ㅔ**?",
       "back": "ㅔ is *에* and is written **e**; it is distinct in spelling even though many speakers pronounce it similarly to ㅐ.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: e. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "e",
       "tags": [
         "korean",
         "alphabet",
@@ -1870,7 +1896,8 @@
       "type": "basic",
       "front": "How is **ㅘ** formed and pronounced?",
       "back": "ㅘ is a compound vowel written **wa**, formed from ㅗ plus ㅏ.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: wa. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "wa",
       "tags": [
         "korean",
         "alphabet",
@@ -1899,7 +1926,8 @@
       "type": "basic",
       "front": "How is **ㅝ** formed and pronounced?",
       "back": "ㅝ is a compound vowel written **wo**, formed from ㅜ plus ㅓ.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: wo. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "wo",
       "tags": [
         "korean",
         "alphabet",
@@ -1928,7 +1956,8 @@
       "type": "basic",
       "front": "How is **ㅚ** commonly romanized, and what pronunciation variation should learners know?",
       "back": "ㅚ is commonly romanized **oe**; modern pronunciation is often close to **we** in many contexts, so audio matters.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: oe (often close to we). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "oe (often close to we)",
       "tags": [
         "korean",
         "alphabet",
@@ -1957,7 +1986,8 @@
       "type": "basic",
       "front": "What is the usual sound guide for **ㅟ**?",
       "back": "ㅟ is *위* and is commonly represented as **wi**.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: wi. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "wi",
       "tags": [
         "korean",
         "alphabet",
@@ -1986,7 +2016,8 @@
       "type": "basic",
       "front": "How are Hangul syllable blocks constructed?",
       "back": "A syllable block combines an initial consonant, a vowel, and optionally a final consonant. The letters are arranged into one visual block, not written as a horizontal alphabetic string.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: syllable block (example 한 = han). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "syllable block (example 한 = han)",
       "tags": [
         "korean",
         "alphabet",
@@ -2015,7 +2046,8 @@
       "type": "basic",
       "front": "How can you decompose **한** into its jamo?",
       "back": "**한** is ㅎ + ㅏ + ㄴ: initial ㅎ, vowel ㅏ, and final consonant ㄴ.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: han. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "han",
       "tags": [
         "korean",
         "alphabet",
@@ -2044,7 +2076,8 @@
       "type": "basic",
       "front": "What does **받침** (batchim) mean in Hangul reading?",
       "back": "받침 is the final consonant position at the bottom of a syllable block. Its pronunciation follows Korean final-consonant rules and may change before the next syllable.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: batchim (roughly bat-chim). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "batchim (roughly bat-chim)",
       "tags": [
         "korean",
         "alphabet",
@@ -2073,7 +2106,8 @@
       "type": "basic",
       "front": "What sound family do final ㄱ, ㅋ, and ㄲ commonly represent?",
       "back": "In final position, ㄱ, ㅋ, and ㄲ are commonly realized as the unreleased **[k̚]**-type sound; they are not pronounced like a fully released English k.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: final [k̚] (unreleased k). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "final [k̚] (unreleased k)",
       "tags": [
         "korean",
         "alphabet",
@@ -2102,7 +2136,8 @@
       "type": "basic",
       "front": "What sound does final **ㅇ** commonly represent?",
       "back": "Final ㅇ represents **ng**, as in the ending of English *sing*.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: ng. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "ng",
       "tags": [
         "korean",
         "alphabet",
@@ -2131,7 +2166,8 @@
       "type": "basic",
       "front": "What does a double consonant such as **ㄲ** indicate?",
       "back": "A doubled jamo such as ㄲ is a tense consonant, not simply a longer version of ㄱ. Tense consonants have different articulation and are best learned with audio.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: kk (tense k). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "kk (tense k)",
       "tags": [
         "korean",
         "alphabet",
@@ -2160,7 +2196,8 @@
       "type": "basic",
       "front": "What does **안녕하세요** mean in common Korean?",
       "back": "hello",
-      "extra": "Usage note: Standard polite greeting; use with people when a neutral polite register is appropriate.",
+      "extra": "Pronunciation: annyeonghaseyo (an-nyeong-ha-se-yo). Usage note: Standard polite greeting; use with people when a neutral polite register is appropriate.",
+      "pronunciation": "annyeonghaseyo (an-nyeong-ha-se-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -2190,7 +2227,8 @@
       "type": "basic",
       "front": "What does **안녕** mean in common Korean?",
       "back": "hi / bye",
-      "extra": "Usage note: Informal greeting and farewell used with close friends or people of similar age when appropriate.",
+      "extra": "Pronunciation: annyeong (an-nyeong). Usage note: Informal greeting and farewell used with close friends or people of similar age when appropriate.",
+      "pronunciation": "annyeong (an-nyeong)",
       "tags": [
         "korean",
         "sight-words",
@@ -2220,7 +2258,8 @@
       "type": "basic",
       "front": "What does **감사합니다** mean in common Korean?",
       "back": "thank you",
-      "extra": "Usage note: Formal or highly polite expression of thanks.",
+      "extra": "Pronunciation: gamsahamnida (gam-sa-ham-ni-da). Usage note: Formal or highly polite expression of thanks.",
+      "pronunciation": "gamsahamnida (gam-sa-ham-ni-da)",
       "tags": [
         "korean",
         "sight-words",
@@ -2250,7 +2289,8 @@
       "type": "basic",
       "front": "What does **고마워요** mean in common Korean?",
       "back": "thank you",
-      "extra": "Usage note: Polite but less formal than 감사합니다; common in friendly polite speech.",
+      "extra": "Pronunciation: gomawoyo (go-ma-wo-yo). Usage note: Polite but less formal than 감사합니다; common in friendly polite speech.",
+      "pronunciation": "gomawoyo (go-ma-wo-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -2280,7 +2320,8 @@
       "type": "basic",
       "front": "What does **네** mean in common Korean?",
       "back": "yes / I understand",
-      "extra": "Usage note: Often used to agree or acknowledge; context can make it closer to “okay” or “I hear you.”",
+      "extra": "Pronunciation: ne (neh). Usage note: Often used to agree or acknowledge; context can make it closer to “okay” or “I hear you.”",
+      "pronunciation": "ne (neh)",
       "tags": [
         "korean",
         "sight-words",
@@ -2310,7 +2351,8 @@
       "type": "basic",
       "front": "What does **아니요** mean in common Korean?",
       "back": "no",
-      "extra": "Usage note: Polite negative response.",
+      "extra": "Pronunciation: aniyo (a-ni-yo). Usage note: Polite negative response.",
+      "pronunciation": "aniyo (a-ni-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -2340,7 +2382,8 @@
       "type": "basic",
       "front": "What does **죄송합니다** mean in common Korean?",
       "back": "I am sorry",
-      "extra": "Usage note: Formal/polite apology; stronger and more formal than 미안해요.",
+      "extra": "Pronunciation: joesonghamnida (joe-song-ham-ni-da). Usage note: Formal/polite apology; stronger and more formal than 미안해요.",
+      "pronunciation": "joesonghamnida (joe-song-ham-ni-da)",
       "tags": [
         "korean",
         "sight-words",
@@ -2370,7 +2413,8 @@
       "type": "basic",
       "front": "What does **미안해요** mean in common Korean?",
       "back": "I am sorry",
-      "extra": "Usage note: Polite apology in a friendlier register.",
+      "extra": "Pronunciation: mianhaeyo (mi-an-hae-yo). Usage note: Polite apology in a friendlier register.",
+      "pronunciation": "mianhaeyo (mi-an-hae-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -2400,7 +2444,8 @@
       "type": "basic",
       "front": "What does **괜찮아요** mean in common Korean?",
       "back": "it is okay / I am fine",
-      "extra": "Usage note: Can reassure someone, say that something is acceptable, or answer a “how are you?”-type question depending on context.",
+      "extra": "Pronunciation: gwaenchanayo (gwen-cha-na-yo). Usage note: Can reassure someone, say that something is acceptable, or answer a “how are you?”-type question depending on context.",
+      "pronunciation": "gwaenchanayo (gwen-cha-na-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -2430,7 +2475,8 @@
       "type": "basic",
       "front": "What does **주세요** mean in common Korean?",
       "back": "please give me / please",
-      "extra": "Usage note: Polite request form, often following a noun: 물 주세요 = Please give me water.",
+      "extra": "Pronunciation: juseyo (ju-se-yo). Usage note: Polite request form, often following a noun: 물 주세요 = Please give me water.",
+      "pronunciation": "juseyo (ju-se-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -2460,7 +2506,8 @@
       "type": "basic",
       "front": "What does **뭐** mean in common Korean?",
       "back": "what",
-      "extra": "Usage note: Conversational form of 무엇; used in questions such as 뭐예요? = What is it?",
+      "extra": "Pronunciation: mwo (mwuh). Usage note: Conversational form of 무엇; used in questions such as 뭐예요? = What is it?",
+      "pronunciation": "mwo (mwuh)",
       "tags": [
         "korean",
         "sight-words",
@@ -2490,7 +2537,8 @@
       "type": "basic",
       "front": "What does **어디** mean in common Korean?",
       "back": "where",
-      "extra": "Usage note: Question word for location.",
+      "extra": "Pronunciation: eodi (uh-di). Usage note: Question word for location.",
+      "pronunciation": "eodi (uh-di)",
       "tags": [
         "korean",
         "sight-words",
@@ -2520,7 +2568,8 @@
       "type": "basic",
       "front": "What does **누구** mean in common Korean?",
       "back": "who",
-      "extra": "Usage note: Question word for a person.",
+      "extra": "Pronunciation: nugu (nu-gu). Usage note: Question word for a person.",
+      "pronunciation": "nugu (nu-gu)",
       "tags": [
         "korean",
         "sight-words",
@@ -2550,7 +2599,8 @@
       "type": "basic",
       "front": "What does **왜** mean in common Korean?",
       "back": "why",
-      "extra": "Usage note: Question word for a reason.",
+      "extra": "Pronunciation: wae (weh). Usage note: Question word for a reason.",
+      "pronunciation": "wae (weh)",
       "tags": [
         "korean",
         "sight-words",
@@ -2580,7 +2630,8 @@
       "type": "basic",
       "front": "What does **언제** mean in common Korean?",
       "back": "when",
-      "extra": "Usage note: Question word for time.",
+      "extra": "Pronunciation: eonje (un-je). Usage note: Question word for time.",
+      "pronunciation": "eonje (un-je)",
       "tags": [
         "korean",
         "sight-words",
@@ -2610,7 +2661,8 @@
       "type": "basic",
       "front": "What does **어떻게** mean in common Korean?",
       "back": "how",
-      "extra": "Usage note: Question word for manner or method.",
+      "extra": "Pronunciation: eotteoke (uh-tuh-ke). Usage note: Question word for manner or method.",
+      "pronunciation": "eotteoke (uh-tuh-ke)",
       "tags": [
         "korean",
         "sight-words",
@@ -2640,7 +2692,8 @@
       "type": "basic",
       "front": "What does **이거** mean in common Korean?",
       "back": "this thing",
-      "extra": "Usage note: Demonstrative noun meaning “this” in a conversational form.",
+      "extra": "Pronunciation: igeo (ee-guh). Usage note: Demonstrative noun meaning “this” in a conversational form.",
+      "pronunciation": "igeo (ee-guh)",
       "tags": [
         "korean",
         "sight-words",
@@ -2670,7 +2723,8 @@
       "type": "basic",
       "front": "What does **그거** mean in common Korean?",
       "back": "that thing",
-      "extra": "Usage note: Demonstrative noun meaning “that” near the listener or previously mentioned.",
+      "extra": "Pronunciation: geugeo (guh-guh). Usage note: Demonstrative noun meaning “that” near the listener or previously mentioned.",
+      "pronunciation": "geugeo (guh-guh)",
       "tags": [
         "korean",
         "sight-words",
@@ -2700,7 +2754,8 @@
       "type": "basic",
       "front": "What does **저거** mean in common Korean?",
       "back": "that thing over there",
-      "extra": "Usage note: Demonstrative noun for something away from both speaker and listener.",
+      "extra": "Pronunciation: jeogeo (juh-guh). Usage note: Demonstrative noun for something away from both speaker and listener.",
+      "pronunciation": "jeogeo (juh-guh)",
       "tags": [
         "korean",
         "sight-words",
@@ -2730,7 +2785,8 @@
       "type": "basic",
       "front": "What does **여기** mean in common Korean?",
       "back": "here",
-      "extra": "Usage note: Location near the speaker.",
+      "extra": "Pronunciation: yeogi (yuh-gi). Usage note: Location near the speaker.",
+      "pronunciation": "yeogi (yuh-gi)",
       "tags": [
         "korean",
         "sight-words",
@@ -2760,7 +2816,8 @@
       "type": "basic",
       "front": "What does **거기** mean in common Korean?",
       "back": "there",
-      "extra": "Usage note: Location near the listener or a previously mentioned place.",
+      "extra": "Pronunciation: geogi (guh-gi). Usage note: Location near the listener or a previously mentioned place.",
+      "pronunciation": "geogi (guh-gi)",
       "tags": [
         "korean",
         "sight-words",
@@ -2790,7 +2847,8 @@
       "type": "basic",
       "front": "What does **저기** mean in common Korean?",
       "back": "over there",
-      "extra": "Usage note: A location away from both speaker and listener; also used to get attention politely.",
+      "extra": "Pronunciation: jeogi (juh-gi). Usage note: A location away from both speaker and listener; also used to get attention politely.",
+      "pronunciation": "jeogi (juh-gi)",
       "tags": [
         "korean",
         "sight-words",
@@ -2820,7 +2878,8 @@
       "type": "basic",
       "front": "What does **오늘** mean in common Korean?",
       "back": "today",
-      "extra": "Usage note: The current day.",
+      "extra": "Pronunciation: oneul (oh-neul). Usage note: The current day.",
+      "pronunciation": "oneul (oh-neul)",
       "tags": [
         "korean",
         "sight-words",
@@ -2850,7 +2909,8 @@
       "type": "basic",
       "front": "What does **내일** mean in common Korean?",
       "back": "tomorrow",
-      "extra": "Usage note: The day after today.",
+      "extra": "Pronunciation: naeil (neh-eel). Usage note: The day after today.",
+      "pronunciation": "naeil (neh-eel)",
       "tags": [
         "korean",
         "sight-words",
@@ -2880,7 +2940,8 @@
       "type": "basic",
       "front": "What does **어제** mean in common Korean?",
       "back": "yesterday",
-      "extra": "Usage note: The day before today.",
+      "extra": "Pronunciation: eoje (uh-je). Usage note: The day before today.",
+      "pronunciation": "eoje (uh-je)",
       "tags": [
         "korean",
         "sight-words",
@@ -2910,7 +2971,8 @@
       "type": "basic",
       "front": "What does **지금** mean in common Korean?",
       "back": "now",
-      "extra": "Usage note: The current time or moment.",
+      "extra": "Pronunciation: jigeum (ji-geum). Usage note: The current time or moment.",
+      "pronunciation": "jigeum (ji-geum)",
       "tags": [
         "korean",
         "sight-words",
@@ -2940,7 +3002,8 @@
       "type": "basic",
       "front": "What does **사람** mean in common Korean?",
       "back": "person / people",
-      "extra": "Usage note: A person; the plural meaning can be understood from context.",
+      "extra": "Pronunciation: saram (sa-ram). Usage note: A person; the plural meaning can be understood from context.",
+      "pronunciation": "saram (sa-ram)",
       "tags": [
         "korean",
         "sight-words",
@@ -2970,7 +3033,8 @@
       "type": "basic",
       "front": "What does **친구** mean in common Korean?",
       "back": "friend",
-      "extra": "Usage note: A friend; Korean does not require an article in the same way English does.",
+      "extra": "Pronunciation: chingu (chin-gu). Usage note: A friend; Korean does not require an article in the same way English does.",
+      "pronunciation": "chingu (chin-gu)",
       "tags": [
         "korean",
         "sight-words",
@@ -3000,7 +3064,8 @@
       "type": "basic",
       "front": "What does **집** mean in common Korean?",
       "back": "home / house",
-      "extra": "Usage note: Home or a house, depending on context.",
+      "extra": "Pronunciation: jip (jeep). Usage note: Home or a house, depending on context.",
+      "pronunciation": "jip (jeep)",
       "tags": [
         "korean",
         "sight-words",
@@ -3030,7 +3095,8 @@
       "type": "basic",
       "front": "What does **학교** mean in common Korean?",
       "back": "school",
-      "extra": "Usage note: School as a place or institution.",
+      "extra": "Pronunciation: hakgyo (hak-gyo). Usage note: School as a place or institution.",
+      "pronunciation": "hakgyo (hak-gyo)",
       "tags": [
         "korean",
         "sight-words",
@@ -3060,7 +3126,8 @@
       "type": "basic",
       "front": "What does **물** mean in common Korean?",
       "back": "water",
-      "extra": "Usage note: Water; often used in requests such as 물 주세요.",
+      "extra": "Pronunciation: mul (mool). Usage note: Water; often used in requests such as 물 주세요.",
+      "pronunciation": "mul (mool)",
       "tags": [
         "korean",
         "sight-words",
@@ -3090,7 +3157,8 @@
       "type": "basic",
       "front": "What does **밥** mean in common Korean?",
       "back": "rice / meal",
-      "extra": "Usage note: Cooked rice and, by extension, a meal; context determines the best English gloss.",
+      "extra": "Pronunciation: bap (bap). Usage note: Cooked rice and, by extension, a meal; context determines the best English gloss.",
+      "pronunciation": "bap (bap)",
       "tags": [
         "korean",
         "sight-words",
@@ -3120,7 +3188,8 @@
       "type": "basic",
       "front": "What does **화장실** mean in common Korean?",
       "back": "restroom / bathroom",
-      "extra": "Usage note: Common word for a restroom or bathroom.",
+      "extra": "Pronunciation: hwajangsil (hwa-jang-shil). Usage note: Common word for a restroom or bathroom.",
+      "pronunciation": "hwajangsil (hwa-jang-shil)",
       "tags": [
         "korean",
         "sight-words",
@@ -3150,7 +3219,8 @@
       "type": "basic",
       "front": "What does **이름** mean in common Korean?",
       "back": "name",
-      "extra": "Usage note: A name; 이름이 뭐예요? = What is your name?",
+      "extra": "Pronunciation: ireum (ee-reum). Usage note: A name; 이름이 뭐예요? = What is your name?",
+      "pronunciation": "ireum (ee-reum)",
       "tags": [
         "korean",
         "sight-words",
@@ -3180,7 +3250,8 @@
       "type": "basic",
       "front": "What does **한국** mean in common Korean?",
       "back": "Korea",
-      "extra": "Usage note: The Korean name for Korea; context may specify South Korea or the Korean peninsula.",
+      "extra": "Pronunciation: Hanguk (han-guk). Usage note: The Korean name for Korea; context may specify South Korea or the Korean peninsula.",
+      "pronunciation": "Hanguk (han-guk)",
       "tags": [
         "korean",
         "sight-words",
@@ -3210,7 +3281,8 @@
       "type": "basic",
       "front": "What does **영어** mean in common Korean?",
       "back": "English",
-      "extra": "Usage note: The English language.",
+      "extra": "Pronunciation: yeongeo (yung-uh). Usage note: The English language.",
+      "pronunciation": "yeongeo (yung-uh)",
       "tags": [
         "korean",
         "sight-words",
@@ -3240,7 +3312,8 @@
       "type": "basic",
       "front": "What does **좋아요** mean in common Korean?",
       "back": "it is good / I like it",
-      "extra": "Usage note: Polite present form of 좋다; common for approval or “I like it.”",
+      "extra": "Pronunciation: joayo (jo-a-yo). Usage note: Polite present form of 좋다; common for approval or “I like it.”",
+      "pronunciation": "joayo (jo-a-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -3270,7 +3343,8 @@
       "type": "basic",
       "front": "What does **싫어요** mean in common Korean?",
       "back": "I dislike it / I do not like it",
-      "extra": "Usage note: Polite present form used to express dislike.",
+      "extra": "Pronunciation: silheoyo (sil-huh-yo). Usage note: Polite present form used to express dislike.",
+      "pronunciation": "silheoyo (sil-huh-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -3300,7 +3374,8 @@
       "type": "basic",
       "front": "What does **있어요** mean in common Korean?",
       "back": "there is / I have / it exists",
-      "extra": "Usage note: Polite form of 있다; meaning depends on context and location/possession.",
+      "extra": "Pronunciation: isseoyo (iss-uh-yo). Usage note: Polite form of 있다; meaning depends on context and location/possession.",
+      "pronunciation": "isseoyo (iss-uh-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -3330,7 +3405,8 @@
       "type": "basic",
       "front": "What does **없어요** mean in common Korean?",
       "back": "there is not / I do not have",
-      "extra": "Usage note: Polite form of 없다; indicates absence or non-possession.",
+      "extra": "Pronunciation: eopseoyo (uhp-suh-yo). Usage note: Polite form of 없다; indicates absence or non-possession.",
+      "pronunciation": "eopseoyo (uhp-suh-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -3360,7 +3436,8 @@
       "type": "basic",
       "front": "What does **가요** mean in common Korean?",
       "back": "go / am going",
-      "extra": "Usage note: Polite present form of 가다.",
+      "extra": "Pronunciation: gayo (ga-yo). Usage note: Polite present form of 가다.",
+      "pronunciation": "gayo (ga-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -3390,7 +3467,8 @@
       "type": "basic",
       "front": "What does **와요** mean in common Korean?",
       "back": "come / am coming",
-      "extra": "Usage note: Polite present form of 오다.",
+      "extra": "Pronunciation: wayo (wa-yo). Usage note: Polite present form of 오다.",
+      "pronunciation": "wayo (wa-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -3420,7 +3498,8 @@
       "type": "basic",
       "front": "What does **먹어요** mean in common Korean?",
       "back": "eat / am eating",
-      "extra": "Usage note: Polite present form of 먹다.",
+      "extra": "Pronunciation: meogeoyo (muh-guh-yo). Usage note: Polite present form of 먹다.",
+      "pronunciation": "meogeoyo (muh-guh-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -3450,7 +3529,8 @@
       "type": "basic",
       "front": "What does **마셔요** mean in common Korean?",
       "back": "drink / am drinking",
-      "extra": "Usage note: Polite present form of 마시다.",
+      "extra": "Pronunciation: masyeoyo (ma-shuh-yo). Usage note: Polite present form of 마시다.",
+      "pronunciation": "masyeoyo (ma-shuh-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -3480,7 +3560,8 @@
       "type": "basic",
       "front": "What does **봐요** mean in common Korean?",
       "back": "see / watch / look",
-      "extra": "Usage note: Polite present form of 보다; translation depends on context.",
+      "extra": "Pronunciation: bwayo (bwa-yo). Usage note: Polite present form of 보다; translation depends on context.",
+      "pronunciation": "bwayo (bwa-yo)",
       "tags": [
         "korean",
         "sight-words",

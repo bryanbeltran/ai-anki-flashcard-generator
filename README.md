@@ -57,6 +57,7 @@ The provider is isolated behind `src/provider.js`. Provider errors are surfaced 
 - `data-structures-interview-prep.json` and `.tsv`
 - `korean-alphabet.json` / `.tsv` and `korean-sight-words.json` / `.tsv` are independently importable Korean subsets.
 - Each deck also has a directly importable `.apkg` package for Anki and AnkiMobile.
+- Korean cards include a written Revised-Romanization/learner pronunciation guide in `Extra`; these packages do not contain audio.
 - `manifest.json` with card counts, validation metrics, and source metadata
 
 The TSV uses an explicit six-column mapping:

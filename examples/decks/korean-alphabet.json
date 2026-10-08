@@ -1101,7 +1101,8 @@
       "type": "basic",
       "front": "What consonant is **ㄱ**, and what is its usual sound guide?",
       "back": "ㄱ is *기역* (giyeok). It is roughly **g** at the beginning of a syllable and **k** at the end; exact pronunciation depends on position and surrounding sounds.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: giyeok (roughly g/k). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "giyeok (roughly g/k)",
       "tags": [
         "korean",
         "alphabet",
@@ -1130,7 +1131,8 @@
       "type": "basic",
       "front": "What consonant is **ㄴ**, and what sound does it represent?",
       "back": "ㄴ is *니은* (nieun) and represents an **n** sound.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: nieun (n). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "nieun (n)",
       "tags": [
         "korean",
         "alphabet",
@@ -1159,7 +1161,8 @@
       "type": "basic",
       "front": "What consonant is **ㄷ**, and what is its usual sound guide?",
       "back": "ㄷ is *디귿* (digeut). It is roughly **d** initially and **t** finally.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: digeut (roughly d/t). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "digeut (roughly d/t)",
       "tags": [
         "korean",
         "alphabet",
@@ -1188,7 +1191,8 @@
       "type": "basic",
       "front": "What consonant is **ㄹ**, and why is its romanization context-dependent?",
       "back": "ㄹ is *리을* (rieul). It is commonly realized between an **r-like** sound in some onset positions and an **l-like** sound in coda or doubled contexts; English romanization is only an approximation.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: rieul (r/l depending on position). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "rieul (r/l depending on position)",
       "tags": [
         "korean",
         "alphabet",
@@ -1217,7 +1221,8 @@
       "type": "basic",
       "front": "What consonant is **ㅁ**, and what sound does it represent?",
       "back": "ㅁ is *미음* (mieum) and represents **m**.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: mieum (m). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "mieum (m)",
       "tags": [
         "korean",
         "alphabet",
@@ -1246,7 +1251,8 @@
       "type": "basic",
       "front": "What consonant is **ㅂ**, and what is its usual sound guide?",
       "back": "ㅂ is *비읍* (bieup). It is roughly **b** initially and **p** finally.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: bieup (roughly b/p). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "bieup (roughly b/p)",
       "tags": [
         "korean",
         "alphabet",
@@ -1275,7 +1281,8 @@
       "type": "basic",
       "front": "What consonant is **ㅅ**, and what sound does it usually represent?",
       "back": "ㅅ is *시옷* (siot) and is usually **s**, with context-dependent pronunciation before certain vowels.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: siot (s; sometimes sh-like before i/y). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "siot (s; sometimes sh-like before i/y)",
       "tags": [
         "korean",
         "alphabet",
@@ -1304,7 +1311,8 @@
       "type": "basic",
       "front": "What are the two main roles of **ㅇ**?",
       "back": "At the beginning of a syllable block, ㅇ is silent; at the end, it represents **ng** as in English *sing*.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: ieung (silent initially; ng finally). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "ieung (silent initially; ng finally)",
       "tags": [
         "korean",
         "alphabet",
@@ -1333,7 +1341,8 @@
       "type": "basic",
       "front": "What consonant is **ㅈ**, and what is its sound guide?",
       "back": "ㅈ is *지읒* (jieut) and is roughly **j** or a soft affricate sound.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: jieut (j). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "jieut (j)",
       "tags": [
         "korean",
         "alphabet",
@@ -1362,7 +1371,8 @@
       "type": "basic",
       "front": "What consonant is **ㅊ**, and how does it differ from ㅈ?",
       "back": "ㅊ is *치읓* (chieut) and is an aspirated **ch** sound; ㅈ is the less-aspirated counterpart.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: chieut (ch). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "chieut (ch)",
       "tags": [
         "korean",
         "alphabet",
@@ -1391,7 +1401,8 @@
       "type": "basic",
       "front": "What consonant is **ㅋ**, and what sound does it represent?",
       "back": "ㅋ is *키읔* (kieuk) and is an aspirated **k** sound.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: kieuk (aspirated k). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "kieuk (aspirated k)",
       "tags": [
         "korean",
         "alphabet",
@@ -1420,7 +1431,8 @@
       "type": "basic",
       "front": "What consonant is **ㅌ**, and what sound does it represent?",
       "back": "ㅌ is *티읕* (tieut) and is an aspirated **t** sound.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: tieut (aspirated t). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "tieut (aspirated t)",
       "tags": [
         "korean",
         "alphabet",
@@ -1449,7 +1461,8 @@
       "type": "basic",
       "front": "What consonant is **ㅍ**, and what sound does it represent?",
       "back": "ㅍ is *피읖* (pieup) and is an aspirated **p** sound.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: pieup (aspirated p). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "pieup (aspirated p)",
       "tags": [
         "korean",
         "alphabet",
@@ -1478,7 +1491,8 @@
       "type": "basic",
       "front": "What consonant is **ㅎ**, and what sound does it represent?",
       "back": "ㅎ is *히읗* (hieut) and is an **h** sound, with predictable effects on neighboring consonants.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: hieut (h). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "hieut (h)",
       "tags": [
         "korean",
         "alphabet",
@@ -1507,7 +1521,8 @@
       "type": "basic",
       "front": "What vowel is **ㅏ**, and what sound guide is commonly used?",
       "back": "ㅏ is *아* and is commonly represented as **a**, similar to the vowel in *father* for many learners.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: a. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "a",
       "tags": [
         "korean",
         "alphabet",
@@ -1536,7 +1551,8 @@
       "type": "basic",
       "front": "What vowel is **ㅑ**, and what sound guide is commonly used?",
       "back": "ㅑ is *야* and is commonly represented as **ya**.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: ya. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "ya",
       "tags": [
         "korean",
         "alphabet",
@@ -1565,7 +1581,8 @@
       "type": "basic",
       "front": "What vowel is **ㅓ**, and why is **eo** only an approximation?",
       "back": "ㅓ is *어*. Revised Romanization writes it **eo**; English has no exact equivalent, so learners should use Korean audio rather than treating the spelling as two sounds.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: eo. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "eo",
       "tags": [
         "korean",
         "alphabet",
@@ -1594,7 +1611,8 @@
       "type": "basic",
       "front": "What vowel is **ㅕ**, and what sound guide is commonly used?",
       "back": "ㅕ is *여* and is commonly represented as **yeo**.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: yeo. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "yeo",
       "tags": [
         "korean",
         "alphabet",
@@ -1623,7 +1641,8 @@
       "type": "basic",
       "front": "What vowel is **ㅗ**, and what sound guide is commonly used?",
       "back": "ㅗ is *오* and is commonly represented as **o**.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: o. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "o",
       "tags": [
         "korean",
         "alphabet",
@@ -1652,7 +1671,8 @@
       "type": "basic",
       "front": "What vowel is **ㅛ**, and what sound guide is commonly used?",
       "back": "ㅛ is *요* and is commonly represented as **yo**.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: yo. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "yo",
       "tags": [
         "korean",
         "alphabet",
@@ -1681,7 +1701,8 @@
       "type": "basic",
       "front": "What vowel is **ㅜ**, and what sound guide is commonly used?",
       "back": "ㅜ is *우* and is commonly represented as **u**, roughly like the vowel in *boot* for many learners.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: u. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "u",
       "tags": [
         "korean",
         "alphabet",
@@ -1710,7 +1731,8 @@
       "type": "basic",
       "front": "What vowel is **ㅠ**, and what sound guide is commonly used?",
       "back": "ㅠ is *유* and is commonly represented as **yu**.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: yu. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "yu",
       "tags": [
         "korean",
         "alphabet",
@@ -1739,7 +1761,8 @@
       "type": "basic",
       "front": "What vowel is **ㅡ**, and why is **eu** only a learner guide?",
       "back": "ㅡ is *으*. Revised Romanization writes it **eu**; it is a Korean vowel without a direct English equivalent.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: eu. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "eu",
       "tags": [
         "korean",
         "alphabet",
@@ -1768,7 +1791,8 @@
       "type": "basic",
       "front": "What vowel is **ㅣ**, and what sound does it represent?",
       "back": "ㅣ is *이* and represents **i**, like the vowel in *machine* for many learners.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: i. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "i",
       "tags": [
         "korean",
         "alphabet",
@@ -1797,7 +1821,8 @@
       "type": "basic",
       "front": "What is the common sound guide for **ㅐ**?",
       "back": "ㅐ is *애* and is written **ae**; in modern Seoul Korean its pronunciation is often close to ㅔ for many speakers.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: ae. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "ae",
       "tags": [
         "korean",
         "alphabet",
@@ -1826,7 +1851,8 @@
       "type": "basic",
       "front": "What is the common sound guide for **ㅔ**?",
       "back": "ㅔ is *에* and is written **e**; it is distinct in spelling even though many speakers pronounce it similarly to ㅐ.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: e. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "e",
       "tags": [
         "korean",
         "alphabet",
@@ -1855,7 +1881,8 @@
       "type": "basic",
       "front": "How is **ㅘ** formed and pronounced?",
       "back": "ㅘ is a compound vowel written **wa**, formed from ㅗ plus ㅏ.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: wa. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "wa",
       "tags": [
         "korean",
         "alphabet",
@@ -1884,7 +1911,8 @@
       "type": "basic",
       "front": "How is **ㅝ** formed and pronounced?",
       "back": "ㅝ is a compound vowel written **wo**, formed from ㅜ plus ㅓ.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: wo. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "wo",
       "tags": [
         "korean",
         "alphabet",
@@ -1913,7 +1941,8 @@
       "type": "basic",
       "front": "How is **ㅚ** commonly romanized, and what pronunciation variation should learners know?",
       "back": "ㅚ is commonly romanized **oe**; modern pronunciation is often close to **we** in many contexts, so audio matters.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: oe (often close to we). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "oe (often close to we)",
       "tags": [
         "korean",
         "alphabet",
@@ -1942,7 +1971,8 @@
       "type": "basic",
       "front": "What is the usual sound guide for **ㅟ**?",
       "back": "ㅟ is *위* and is commonly represented as **wi**.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: wi. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "wi",
       "tags": [
         "korean",
         "alphabet",
@@ -1971,7 +2001,8 @@
       "type": "basic",
       "front": "How are Hangul syllable blocks constructed?",
       "back": "A syllable block combines an initial consonant, a vowel, and optionally a final consonant. The letters are arranged into one visual block, not written as a horizontal alphabetic string.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: syllable block (example 한 = han). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "syllable block (example 한 = han)",
       "tags": [
         "korean",
         "alphabet",
@@ -2000,7 +2031,8 @@
       "type": "basic",
       "front": "How can you decompose **한** into its jamo?",
       "back": "**한** is ㅎ + ㅏ + ㄴ: initial ㅎ, vowel ㅏ, and final consonant ㄴ.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: han. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "han",
       "tags": [
         "korean",
         "alphabet",
@@ -2029,7 +2061,8 @@
       "type": "basic",
       "front": "What does **받침** (batchim) mean in Hangul reading?",
       "back": "받침 is the final consonant position at the bottom of a syllable block. Its pronunciation follows Korean final-consonant rules and may change before the next syllable.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: batchim (roughly bat-chim). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "batchim (roughly bat-chim)",
       "tags": [
         "korean",
         "alphabet",
@@ -2058,7 +2091,8 @@
       "type": "basic",
       "front": "What sound family do final ㄱ, ㅋ, and ㄲ commonly represent?",
       "back": "In final position, ㄱ, ㅋ, and ㄲ are commonly realized as the unreleased **[k̚]**-type sound; they are not pronounced like a fully released English k.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: final [k̚] (unreleased k). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "final [k̚] (unreleased k)",
       "tags": [
         "korean",
         "alphabet",
@@ -2087,7 +2121,8 @@
       "type": "basic",
       "front": "What sound does final **ㅇ** commonly represent?",
       "back": "Final ㅇ represents **ng**, as in the ending of English *sing*.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: ng. For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "ng",
       "tags": [
         "korean",
         "alphabet",
@@ -2116,7 +2151,8 @@
       "type": "basic",
       "front": "What does a double consonant such as **ㄲ** indicate?",
       "back": "A doubled jamo such as ㄲ is a tense consonant, not simply a longer version of ㄱ. Tense consonants have different articulation and are best learned with audio.",
-      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "extra": "Pronunciation: kk (tense k). For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "pronunciation": "kk (tense k)",
       "tags": [
         "korean",
         "alphabet",

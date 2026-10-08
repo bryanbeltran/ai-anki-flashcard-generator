@@ -1071,7 +1071,8 @@
       "type": "basic",
       "front": "What does **안녕하세요** mean in common Korean?",
       "back": "hello",
-      "extra": "Usage note: Standard polite greeting; use with people when a neutral polite register is appropriate.",
+      "extra": "Pronunciation: annyeonghaseyo (an-nyeong-ha-se-yo). Usage note: Standard polite greeting; use with people when a neutral polite register is appropriate.",
+      "pronunciation": "annyeonghaseyo (an-nyeong-ha-se-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -1101,7 +1102,8 @@
       "type": "basic",
       "front": "What does **안녕** mean in common Korean?",
       "back": "hi / bye",
-      "extra": "Usage note: Informal greeting and farewell used with close friends or people of similar age when appropriate.",
+      "extra": "Pronunciation: annyeong (an-nyeong). Usage note: Informal greeting and farewell used with close friends or people of similar age when appropriate.",
+      "pronunciation": "annyeong (an-nyeong)",
       "tags": [
         "korean",
         "sight-words",
@@ -1131,7 +1133,8 @@
       "type": "basic",
       "front": "What does **감사합니다** mean in common Korean?",
       "back": "thank you",
-      "extra": "Usage note: Formal or highly polite expression of thanks.",
+      "extra": "Pronunciation: gamsahamnida (gam-sa-ham-ni-da). Usage note: Formal or highly polite expression of thanks.",
+      "pronunciation": "gamsahamnida (gam-sa-ham-ni-da)",
       "tags": [
         "korean",
         "sight-words",
@@ -1161,7 +1164,8 @@
       "type": "basic",
       "front": "What does **고마워요** mean in common Korean?",
       "back": "thank you",
-      "extra": "Usage note: Polite but less formal than 감사합니다; common in friendly polite speech.",
+      "extra": "Pronunciation: gomawoyo (go-ma-wo-yo). Usage note: Polite but less formal than 감사합니다; common in friendly polite speech.",
+      "pronunciation": "gomawoyo (go-ma-wo-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -1191,7 +1195,8 @@
       "type": "basic",
       "front": "What does **네** mean in common Korean?",
       "back": "yes / I understand",
-      "extra": "Usage note: Often used to agree or acknowledge; context can make it closer to “okay” or “I hear you.”",
+      "extra": "Pronunciation: ne (neh). Usage note: Often used to agree or acknowledge; context can make it closer to “okay” or “I hear you.”",
+      "pronunciation": "ne (neh)",
       "tags": [
         "korean",
         "sight-words",
@@ -1221,7 +1226,8 @@
       "type": "basic",
       "front": "What does **아니요** mean in common Korean?",
       "back": "no",
-      "extra": "Usage note: Polite negative response.",
+      "extra": "Pronunciation: aniyo (a-ni-yo). Usage note: Polite negative response.",
+      "pronunciation": "aniyo (a-ni-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -1251,7 +1257,8 @@
       "type": "basic",
       "front": "What does **죄송합니다** mean in common Korean?",
       "back": "I am sorry",
-      "extra": "Usage note: Formal/polite apology; stronger and more formal than 미안해요.",
+      "extra": "Pronunciation: joesonghamnida (joe-song-ham-ni-da). Usage note: Formal/polite apology; stronger and more formal than 미안해요.",
+      "pronunciation": "joesonghamnida (joe-song-ham-ni-da)",
       "tags": [
         "korean",
         "sight-words",
@@ -1281,7 +1288,8 @@
       "type": "basic",
       "front": "What does **미안해요** mean in common Korean?",
       "back": "I am sorry",
-      "extra": "Usage note: Polite apology in a friendlier register.",
+      "extra": "Pronunciation: mianhaeyo (mi-an-hae-yo). Usage note: Polite apology in a friendlier register.",
+      "pronunciation": "mianhaeyo (mi-an-hae-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -1311,7 +1319,8 @@
       "type": "basic",
       "front": "What does **괜찮아요** mean in common Korean?",
       "back": "it is okay / I am fine",
-      "extra": "Usage note: Can reassure someone, say that something is acceptable, or answer a “how are you?”-type question depending on context.",
+      "extra": "Pronunciation: gwaenchanayo (gwen-cha-na-yo). Usage note: Can reassure someone, say that something is acceptable, or answer a “how are you?”-type question depending on context.",
+      "pronunciation": "gwaenchanayo (gwen-cha-na-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -1341,7 +1350,8 @@
       "type": "basic",
       "front": "What does **주세요** mean in common Korean?",
       "back": "please give me / please",
-      "extra": "Usage note: Polite request form, often following a noun: 물 주세요 = Please give me water.",
+      "extra": "Pronunciation: juseyo (ju-se-yo). Usage note: Polite request form, often following a noun: 물 주세요 = Please give me water.",
+      "pronunciation": "juseyo (ju-se-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -1371,7 +1381,8 @@
       "type": "basic",
       "front": "What does **뭐** mean in common Korean?",
       "back": "what",
-      "extra": "Usage note: Conversational form of 무엇; used in questions such as 뭐예요? = What is it?",
+      "extra": "Pronunciation: mwo (mwuh). Usage note: Conversational form of 무엇; used in questions such as 뭐예요? = What is it?",
+      "pronunciation": "mwo (mwuh)",
       "tags": [
         "korean",
         "sight-words",
@@ -1401,7 +1412,8 @@
       "type": "basic",
       "front": "What does **어디** mean in common Korean?",
       "back": "where",
-      "extra": "Usage note: Question word for location.",
+      "extra": "Pronunciation: eodi (uh-di). Usage note: Question word for location.",
+      "pronunciation": "eodi (uh-di)",
       "tags": [
         "korean",
         "sight-words",
@@ -1431,7 +1443,8 @@
       "type": "basic",
       "front": "What does **누구** mean in common Korean?",
       "back": "who",
-      "extra": "Usage note: Question word for a person.",
+      "extra": "Pronunciation: nugu (nu-gu). Usage note: Question word for a person.",
+      "pronunciation": "nugu (nu-gu)",
       "tags": [
         "korean",
         "sight-words",
@@ -1461,7 +1474,8 @@
       "type": "basic",
       "front": "What does **왜** mean in common Korean?",
       "back": "why",
-      "extra": "Usage note: Question word for a reason.",
+      "extra": "Pronunciation: wae (weh). Usage note: Question word for a reason.",
+      "pronunciation": "wae (weh)",
       "tags": [
         "korean",
         "sight-words",
@@ -1491,7 +1505,8 @@
       "type": "basic",
       "front": "What does **언제** mean in common Korean?",
       "back": "when",
-      "extra": "Usage note: Question word for time.",
+      "extra": "Pronunciation: eonje (un-je). Usage note: Question word for time.",
+      "pronunciation": "eonje (un-je)",
       "tags": [
         "korean",
         "sight-words",
@@ -1521,7 +1536,8 @@
       "type": "basic",
       "front": "What does **어떻게** mean in common Korean?",
       "back": "how",
-      "extra": "Usage note: Question word for manner or method.",
+      "extra": "Pronunciation: eotteoke (uh-tuh-ke). Usage note: Question word for manner or method.",
+      "pronunciation": "eotteoke (uh-tuh-ke)",
       "tags": [
         "korean",
         "sight-words",
@@ -1551,7 +1567,8 @@
       "type": "basic",
       "front": "What does **이거** mean in common Korean?",
       "back": "this thing",
-      "extra": "Usage note: Demonstrative noun meaning “this” in a conversational form.",
+      "extra": "Pronunciation: igeo (ee-guh). Usage note: Demonstrative noun meaning “this” in a conversational form.",
+      "pronunciation": "igeo (ee-guh)",
       "tags": [
         "korean",
         "sight-words",
@@ -1581,7 +1598,8 @@
       "type": "basic",
       "front": "What does **그거** mean in common Korean?",
       "back": "that thing",
-      "extra": "Usage note: Demonstrative noun meaning “that” near the listener or previously mentioned.",
+      "extra": "Pronunciation: geugeo (guh-guh). Usage note: Demonstrative noun meaning “that” near the listener or previously mentioned.",
+      "pronunciation": "geugeo (guh-guh)",
       "tags": [
         "korean",
         "sight-words",
@@ -1611,7 +1629,8 @@
       "type": "basic",
       "front": "What does **저거** mean in common Korean?",
       "back": "that thing over there",
-      "extra": "Usage note: Demonstrative noun for something away from both speaker and listener.",
+      "extra": "Pronunciation: jeogeo (juh-guh). Usage note: Demonstrative noun for something away from both speaker and listener.",
+      "pronunciation": "jeogeo (juh-guh)",
       "tags": [
         "korean",
         "sight-words",
@@ -1641,7 +1660,8 @@
       "type": "basic",
       "front": "What does **여기** mean in common Korean?",
       "back": "here",
-      "extra": "Usage note: Location near the speaker.",
+      "extra": "Pronunciation: yeogi (yuh-gi). Usage note: Location near the speaker.",
+      "pronunciation": "yeogi (yuh-gi)",
       "tags": [
         "korean",
         "sight-words",
@@ -1671,7 +1691,8 @@
       "type": "basic",
       "front": "What does **거기** mean in common Korean?",
       "back": "there",
-      "extra": "Usage note: Location near the listener or a previously mentioned place.",
+      "extra": "Pronunciation: geogi (guh-gi). Usage note: Location near the listener or a previously mentioned place.",
+      "pronunciation": "geogi (guh-gi)",
       "tags": [
         "korean",
         "sight-words",
@@ -1701,7 +1722,8 @@
       "type": "basic",
       "front": "What does **저기** mean in common Korean?",
       "back": "over there",
-      "extra": "Usage note: A location away from both speaker and listener; also used to get attention politely.",
+      "extra": "Pronunciation: jeogi (juh-gi). Usage note: A location away from both speaker and listener; also used to get attention politely.",
+      "pronunciation": "jeogi (juh-gi)",
       "tags": [
         "korean",
         "sight-words",
@@ -1731,7 +1753,8 @@
       "type": "basic",
       "front": "What does **오늘** mean in common Korean?",
       "back": "today",
-      "extra": "Usage note: The current day.",
+      "extra": "Pronunciation: oneul (oh-neul). Usage note: The current day.",
+      "pronunciation": "oneul (oh-neul)",
       "tags": [
         "korean",
         "sight-words",
@@ -1761,7 +1784,8 @@
       "type": "basic",
       "front": "What does **내일** mean in common Korean?",
       "back": "tomorrow",
-      "extra": "Usage note: The day after today.",
+      "extra": "Pronunciation: naeil (neh-eel). Usage note: The day after today.",
+      "pronunciation": "naeil (neh-eel)",
       "tags": [
         "korean",
         "sight-words",
@@ -1791,7 +1815,8 @@
       "type": "basic",
       "front": "What does **어제** mean in common Korean?",
       "back": "yesterday",
-      "extra": "Usage note: The day before today.",
+      "extra": "Pronunciation: eoje (uh-je). Usage note: The day before today.",
+      "pronunciation": "eoje (uh-je)",
       "tags": [
         "korean",
         "sight-words",
@@ -1821,7 +1846,8 @@
       "type": "basic",
       "front": "What does **지금** mean in common Korean?",
       "back": "now",
-      "extra": "Usage note: The current time or moment.",
+      "extra": "Pronunciation: jigeum (ji-geum). Usage note: The current time or moment.",
+      "pronunciation": "jigeum (ji-geum)",
       "tags": [
         "korean",
         "sight-words",
@@ -1851,7 +1877,8 @@
       "type": "basic",
       "front": "What does **사람** mean in common Korean?",
       "back": "person / people",
-      "extra": "Usage note: A person; the plural meaning can be understood from context.",
+      "extra": "Pronunciation: saram (sa-ram). Usage note: A person; the plural meaning can be understood from context.",
+      "pronunciation": "saram (sa-ram)",
       "tags": [
         "korean",
         "sight-words",
@@ -1881,7 +1908,8 @@
       "type": "basic",
       "front": "What does **친구** mean in common Korean?",
       "back": "friend",
-      "extra": "Usage note: A friend; Korean does not require an article in the same way English does.",
+      "extra": "Pronunciation: chingu (chin-gu). Usage note: A friend; Korean does not require an article in the same way English does.",
+      "pronunciation": "chingu (chin-gu)",
       "tags": [
         "korean",
         "sight-words",
@@ -1911,7 +1939,8 @@
       "type": "basic",
       "front": "What does **집** mean in common Korean?",
       "back": "home / house",
-      "extra": "Usage note: Home or a house, depending on context.",
+      "extra": "Pronunciation: jip (jeep). Usage note: Home or a house, depending on context.",
+      "pronunciation": "jip (jeep)",
       "tags": [
         "korean",
         "sight-words",
@@ -1941,7 +1970,8 @@
       "type": "basic",
       "front": "What does **학교** mean in common Korean?",
       "back": "school",
-      "extra": "Usage note: School as a place or institution.",
+      "extra": "Pronunciation: hakgyo (hak-gyo). Usage note: School as a place or institution.",
+      "pronunciation": "hakgyo (hak-gyo)",
       "tags": [
         "korean",
         "sight-words",
@@ -1971,7 +2001,8 @@
       "type": "basic",
       "front": "What does **물** mean in common Korean?",
       "back": "water",
-      "extra": "Usage note: Water; often used in requests such as 물 주세요.",
+      "extra": "Pronunciation: mul (mool). Usage note: Water; often used in requests such as 물 주세요.",
+      "pronunciation": "mul (mool)",
       "tags": [
         "korean",
         "sight-words",
@@ -2001,7 +2032,8 @@
       "type": "basic",
       "front": "What does **밥** mean in common Korean?",
       "back": "rice / meal",
-      "extra": "Usage note: Cooked rice and, by extension, a meal; context determines the best English gloss.",
+      "extra": "Pronunciation: bap (bap). Usage note: Cooked rice and, by extension, a meal; context determines the best English gloss.",
+      "pronunciation": "bap (bap)",
       "tags": [
         "korean",
         "sight-words",
@@ -2031,7 +2063,8 @@
       "type": "basic",
       "front": "What does **화장실** mean in common Korean?",
       "back": "restroom / bathroom",
-      "extra": "Usage note: Common word for a restroom or bathroom.",
+      "extra": "Pronunciation: hwajangsil (hwa-jang-shil). Usage note: Common word for a restroom or bathroom.",
+      "pronunciation": "hwajangsil (hwa-jang-shil)",
       "tags": [
         "korean",
         "sight-words",
@@ -2061,7 +2094,8 @@
       "type": "basic",
       "front": "What does **이름** mean in common Korean?",
       "back": "name",
-      "extra": "Usage note: A name; 이름이 뭐예요? = What is your name?",
+      "extra": "Pronunciation: ireum (ee-reum). Usage note: A name; 이름이 뭐예요? = What is your name?",
+      "pronunciation": "ireum (ee-reum)",
       "tags": [
         "korean",
         "sight-words",
@@ -2091,7 +2125,8 @@
       "type": "basic",
       "front": "What does **한국** mean in common Korean?",
       "back": "Korea",
-      "extra": "Usage note: The Korean name for Korea; context may specify South Korea or the Korean peninsula.",
+      "extra": "Pronunciation: Hanguk (han-guk). Usage note: The Korean name for Korea; context may specify South Korea or the Korean peninsula.",
+      "pronunciation": "Hanguk (han-guk)",
       "tags": [
         "korean",
         "sight-words",
@@ -2121,7 +2156,8 @@
       "type": "basic",
       "front": "What does **영어** mean in common Korean?",
       "back": "English",
-      "extra": "Usage note: The English language.",
+      "extra": "Pronunciation: yeongeo (yung-uh). Usage note: The English language.",
+      "pronunciation": "yeongeo (yung-uh)",
       "tags": [
         "korean",
         "sight-words",
@@ -2151,7 +2187,8 @@
       "type": "basic",
       "front": "What does **좋아요** mean in common Korean?",
       "back": "it is good / I like it",
-      "extra": "Usage note: Polite present form of 좋다; common for approval or “I like it.”",
+      "extra": "Pronunciation: joayo (jo-a-yo). Usage note: Polite present form of 좋다; common for approval or “I like it.”",
+      "pronunciation": "joayo (jo-a-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -2181,7 +2218,8 @@
       "type": "basic",
       "front": "What does **싫어요** mean in common Korean?",
       "back": "I dislike it / I do not like it",
-      "extra": "Usage note: Polite present form used to express dislike.",
+      "extra": "Pronunciation: silheoyo (sil-huh-yo). Usage note: Polite present form used to express dislike.",
+      "pronunciation": "silheoyo (sil-huh-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -2211,7 +2249,8 @@
       "type": "basic",
       "front": "What does **있어요** mean in common Korean?",
       "back": "there is / I have / it exists",
-      "extra": "Usage note: Polite form of 있다; meaning depends on context and location/possession.",
+      "extra": "Pronunciation: isseoyo (iss-uh-yo). Usage note: Polite form of 있다; meaning depends on context and location/possession.",
+      "pronunciation": "isseoyo (iss-uh-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -2241,7 +2280,8 @@
       "type": "basic",
       "front": "What does **없어요** mean in common Korean?",
       "back": "there is not / I do not have",
-      "extra": "Usage note: Polite form of 없다; indicates absence or non-possession.",
+      "extra": "Pronunciation: eopseoyo (uhp-suh-yo). Usage note: Polite form of 없다; indicates absence or non-possession.",
+      "pronunciation": "eopseoyo (uhp-suh-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -2271,7 +2311,8 @@
       "type": "basic",
       "front": "What does **가요** mean in common Korean?",
       "back": "go / am going",
-      "extra": "Usage note: Polite present form of 가다.",
+      "extra": "Pronunciation: gayo (ga-yo). Usage note: Polite present form of 가다.",
+      "pronunciation": "gayo (ga-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -2301,7 +2342,8 @@
       "type": "basic",
       "front": "What does **와요** mean in common Korean?",
       "back": "come / am coming",
-      "extra": "Usage note: Polite present form of 오다.",
+      "extra": "Pronunciation: wayo (wa-yo). Usage note: Polite present form of 오다.",
+      "pronunciation": "wayo (wa-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -2331,7 +2373,8 @@
       "type": "basic",
       "front": "What does **먹어요** mean in common Korean?",
       "back": "eat / am eating",
-      "extra": "Usage note: Polite present form of 먹다.",
+      "extra": "Pronunciation: meogeoyo (muh-guh-yo). Usage note: Polite present form of 먹다.",
+      "pronunciation": "meogeoyo (muh-guh-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -2361,7 +2404,8 @@
       "type": "basic",
       "front": "What does **마셔요** mean in common Korean?",
       "back": "drink / am drinking",
-      "extra": "Usage note: Polite present form of 마시다.",
+      "extra": "Pronunciation: masyeoyo (ma-shuh-yo). Usage note: Polite present form of 마시다.",
+      "pronunciation": "masyeoyo (ma-shuh-yo)",
       "tags": [
         "korean",
         "sight-words",
@@ -2391,7 +2435,8 @@
       "type": "basic",
       "front": "What does **봐요** mean in common Korean?",
       "back": "see / watch / look",
-      "extra": "Usage note: Polite present form of 보다; translation depends on context.",
+      "extra": "Pronunciation: bwayo (bwa-yo). Usage note: Polite present form of 보다; translation depends on context.",
+      "pronunciation": "bwayo (bwa-yo)",
       "tags": [
         "korean",
         "sight-words",

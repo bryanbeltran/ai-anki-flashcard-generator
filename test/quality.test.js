@@ -21,6 +21,15 @@ test("curated practice decks satisfy evidence, coverage, count, and export gates
   }
 });
 
+test("all Korean practice cards include a written pronunciation guide", () => {
+  const korean = buildPracticeDecks()[0];
+  const koreanCards = korean.cards.filter((card) => card.tags.includes("korean"));
+  assert.equal(koreanCards.length, 81);
+  assert.equal(koreanCards.filter((card) => card.pronunciation).length, 81);
+  assert.equal(koreanCards.filter((card) => card.extra.startsWith("Pronunciation:")).length, 81);
+  assert.match(koreanCards.find((card) => card.front.includes("안녕하세요")).extra, /annyeonghaseyo/);
+});
+
 test("validator blocks exact-count drift and duplicate fronts", () => {
   const project = createProject({ title: "Quality", brief: normalizeBrief({ topic: "Test", cardCount: 2 }) });
   project.plan = { requestedCardCount: 2, scope: [{ id: "scope_1", label: "Core", required: true }, { id: "scope_2", label: "Missing", required: true }] };

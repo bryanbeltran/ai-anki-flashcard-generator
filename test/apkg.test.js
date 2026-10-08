@@ -28,6 +28,8 @@ database.close()
 connection = sqlite3.connect(database.name)
 assert connection.execute("select count(*) from notes").fetchone()[0] == 81
 assert connection.execute("select count(*) from cards").fetchone()[0] == 81
+extra = connection.execute("select flds from notes limit 1").fetchone()[0].split("\\x1f")[2]
+assert "Pronunciation:" in extra
 models = json.loads(connection.execute("select models from col").fetchone()[0])
 decks = json.loads(connection.execute("select decks from col").fetchone()[0])
 assert len(models) == 1

@@ -11,11 +11,12 @@ if (command === "seed-artifacts") {
   const outputDir = resolve("examples/decks");
   mkdirSync(outputDir, { recursive: true });
   const decks = buildPracticeDecks();
+  const artifactTimestamp = Date.parse(PRACTICE_SNAPSHOT);
   const manifest = { generatedAt: PRACTICE_SNAPSHOT, decks: [] };
   for (const deck of decks) {
     const slug = sanitizeFileName(deck.title);
     const artifact = buildExport(deck, { format: "tsv", cardType: "all" });
-    const apkg = buildExport(deck, { format: "apkg", cardType: "all" });
+    const apkg = buildExport(deck, { format: "apkg", cardType: "all", timestamp: artifactTimestamp });
     writeFileSync(resolve(outputDir, `${slug}.json`), `${JSON.stringify(deck, null, 2)}\n`, "utf8");
     writeFileSync(resolve(outputDir, `${slug}.tsv`), artifact.text, "utf8");
     writeFileSync(resolve(outputDir, `${slug}.apkg`), apkg.body);
@@ -40,7 +41,7 @@ if (command === "seed-artifacts") {
         };
         applyValidation(subdeck, { timestamp: PRACTICE_SNAPSHOT });
         const subArtifact = buildExport(subdeck, { format: "tsv", cardType: "all" });
-        const subApkg = buildExport(subdeck, { format: "apkg", cardType: "all" });
+        const subApkg = buildExport(subdeck, { format: "apkg", cardType: "all", timestamp: artifactTimestamp });
         writeFileSync(resolve(outputDir, `${subset.slug}.json`), `${JSON.stringify(subdeck, null, 2)}\n`, "utf8");
         writeFileSync(resolve(outputDir, `${subset.slug}.tsv`), subArtifact.text, "utf8");
         writeFileSync(resolve(outputDir, `${subset.slug}.apkg`), subApkg.body);
