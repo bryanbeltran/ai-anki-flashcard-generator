@@ -66,6 +66,30 @@ export function buildExport(project, { format = "tsv", cardType = "all", include
   };
 }
 
+export function previewExport(project, { format = "tsv", cardType = "all", includeUnverified = false } = {}) {
+  const validation = validateProject(project);
+  let rows = [];
+  let blocked = validation.metrics.hardGateCount > 0;
+  try {
+    rows = exportRows(project, { cardType, includeUnverified });
+  } catch {
+    blocked = true;
+    rows = project.cards
+      .filter((card) => cardType === "all" || card.type === cardType)
+      .slice(0, 5)
+      .map((card) => ({ Front: card.front, Back: card.back, Extra: card.extra, Tags: (card.tags || []).join(" "), CardType: card.type, Source: sourceText(card, project) }));
+  }
+  return {
+    format,
+    cardType,
+    columns: ["Front", "Back", "Extra", "Tags", "CardType", "Source"],
+    mapping: { Front: "prompt", Back: "answer", Extra: "explanation/notes", Tags: "space-delimited tags", CardType: "Anki note template selector", Source: "provenance URL/title" },
+    sampleRows: rows.slice(0, 5),
+    validation: { metrics: validation.metrics, findings: validation.findings },
+    blocked,
+  };
+}
+
 export function recordExport(project, artifact) {
   project.exports = project.exports || [];
   project.exports.push({

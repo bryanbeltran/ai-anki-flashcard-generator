@@ -4,7 +4,7 @@ import { extname, join, normalize, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createDefaultStore } from "./store.js";
 import { createProvider } from "./provider.js";
-import { buildExport, recordExport } from "./exporter.js";
+import { buildExport, previewExport, recordExport } from "./exporter.js";
 import {
   addSource,
   bulkCards,
@@ -124,6 +124,11 @@ export function createApp({ store = createDefaultStore(), provider = createProvi
           if (req.method === "GET" && parts[3] === "export") {
             const project = store.getProject(projectId);
             if (!project) return sendJson(res, 404, { error: "Project not found" });
+            if (parts[4] === "preview") return sendJson(res, 200, previewExport(project, {
+              format: url.searchParams.get("format") || project.brief.exportFormat || "tsv",
+              cardType: url.searchParams.get("cardType") || "all",
+              includeUnverified: boolQuery(url.searchParams.get("includeUnverified")),
+            }));
             const artifact = buildExport(project, {
               format: url.searchParams.get("format") || project.brief.exportFormat || "tsv",
               cardType: url.searchParams.get("cardType") || "all",

@@ -71,6 +71,7 @@ The `CardType` column lets a user route Basic, Reversed Basic, Cloze, or Type-in
 - `POST /api/projects/:id/duplicate`
 - `POST /api/projects/:id/runs/:runId/cancel`
 - `GET /api/projects/:id/export?format=tsv&cardType=all`
+- `GET /api/projects/:id/export/preview?format=tsv&cardType=all`
 - `GET /api/practice`
 - `POST /api/practice/:slug`
 

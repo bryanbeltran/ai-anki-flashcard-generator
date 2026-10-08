@@ -333,6 +333,16 @@ $("#export-button").addEventListener("click", async () => {
     showMessage(message, `Downloaded ${response.headers.get("x-anki-notes")} notes / ${response.headers.get("x-anki-cards")} cards.`, "success");
   } catch (error) { showMessage(message, error.message, "error"); }
 });
+$("#preview-export").addEventListener("click", async () => {
+  try {
+    const params = new URLSearchParams({ format: $("#export-format").value, cardType: $("#export-type").value });
+    if ($("#include-unverified").checked) params.set("includeUnverified", "true");
+    const preview = await api(`/api/projects/${state.project.id}/export/preview?${params}`);
+    $("#export-preview").hidden = false;
+    $("#export-preview").textContent = JSON.stringify(preview, null, 2);
+    showMessage("#export-message", preview.blocked ? "Preview generated; resolve validation blockers before downloading." : "Preview is ready.", preview.blocked ? "error" : "success");
+  } catch (error) { showMessage("#export-message", error.message, "error"); }
+});
 
 await Promise.all([loadProjects(), loadPractice()]);
 renderAll();

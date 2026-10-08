@@ -188,9 +188,11 @@
                 <select id="export-type"><option value="all">All types</option><option value="basic">Basic</option><option value="reversed-basic">Reversed basic</option><option value="cloze">Cloze</option><option value="type-in">Type-in</option></select>
               </label>
               <label class="check export-warning"><input type="checkbox" id="include-unverified" /> Include unverified warnings</label>
+              <button class="button secondary" id="preview-export">Preview mapping</button>
               <button class="button primary" id="export-button">Download export</button>
             </div>
             <p class="form-message" id="export-message" role="status"></p>
+            <pre class="export-preview" id="export-preview" hidden></pre>
           </section>
         </div>
       </main>

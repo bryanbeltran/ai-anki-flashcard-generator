@@ -36,6 +36,9 @@ test("API supports brief -> plan -> generate -> review -> export", async () => {
     assert.equal(approved.metrics.approvedCards, 4);
     const validated = await json(base, `/api/projects/${created.id}/validate`, { method: "POST", body: "{}" });
     assert.equal(validated.metrics.hardGateCount, 0);
+    const preview = await json(base, `/api/projects/${created.id}/export/preview?format=tsv`);
+    assert.equal(preview.mapping.CardType, "Anki note template selector");
+    assert.equal(preview.sampleRows.length, 4);
     const exportResponse = await fetch(`${base}/api/projects/${created.id}/export?format=tsv&includeUnverified=true`);
     assert.equal(exportResponse.ok, true);
     assert.match(await exportResponse.text(), /#columns:Front\tBack\tExtra\tTags\tCardType\tSource/);

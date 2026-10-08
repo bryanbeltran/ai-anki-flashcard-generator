@@ -109,6 +109,7 @@ fieldset input, .check input { width: auto; margin: 0; }
 .export-controls { margin-top: 17px; align-items: flex-end; }
 .export-controls label { min-width: 150px; }
 .export-controls .export-warning { min-width: auto; padding-bottom: 11px; }
+.export-preview { overflow: auto; max-height: 280px; padding: 12px; margin: 15px 0 0; border-radius: 8px; background: #15211b; color: #cde6d5; font-size: .75rem; white-space: pre-wrap; }
 .muted { color: var(--muted); }
 .small { font-size: .78rem; }
 .form-message { color: var(--muted); font-size: .82rem; }
