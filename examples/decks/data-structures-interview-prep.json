@@ -1,0 +1,2156 @@
+{
+  "id": "practice_data_structures_interview",
+  "title": "Data Structures Interview Prep",
+  "createdAt": "2026-10-08T00:00:00.000Z",
+  "updatedAt": "2026-10-08T02:45:19.503Z",
+  "status": "Export ready",
+  "brief": {
+    "topic": "Data structures and algorithms for technical interviews",
+    "outcome": "An interview candidate can explain core data structures, invariants, tradeoffs, and complexity with implementation-aware reasoning.",
+    "audience": "Software engineer preparing for entry-level to mid-level technical interviews",
+    "prerequisites": "",
+    "cardCount": 47,
+    "difficulty": "adaptive",
+    "allowedTypes": [
+      "basic"
+    ],
+    "direction": "English to Korean where requested; otherwise prompt-to-answer recall.",
+    "sourcePolicy": "trusted-external",
+    "language": "English explanations with Korean examples where relevant",
+    "deckName": "Data Structures Interview Prep",
+    "exportFormat": "tsv",
+    "includedScope": "arrays, hash tables, linked lists, stacks queues, trees, heaps, sorting, graphs, union find, patterns, complexity",
+    "excludedScope": "",
+    "sources": [
+      "https://opendatastructures.org/",
+      "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/"
+    ],
+    "sensitiveContent": "",
+    "confirmed": true,
+    "assumptions": [
+      "Cards are study prompts, not professional advice.",
+      "Romanization is a pronunciation aid, not a replacement for Hangul."
+    ],
+    "updatedAt": "2026-10-08T00:00:00.000Z"
+  },
+  "plan": {
+    "id": "plan_practice_data_structures_interview",
+    "version": 1,
+    "createdAt": "2026-10-08T00:00:00.000Z",
+    "scope": [
+      {
+        "id": "arrays",
+        "label": "arrays",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 5,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "hash-tables",
+        "label": "hash tables",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 4,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "linked-lists",
+        "label": "linked lists",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 4,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "stacks-queues",
+        "label": "stacks queues",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 4,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "trees",
+        "label": "trees",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 4,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "heaps",
+        "label": "heaps",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 4,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "sorting",
+        "label": "sorting",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 4,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "graphs",
+        "label": "graphs",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 7,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "union-find",
+        "label": "union find",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 2,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "patterns",
+        "label": "patterns",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 5,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "complexity",
+        "label": "complexity",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 4,
+        "coverageStatus": "covered"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "objective_arrays_recall",
+        "scopeId": "arrays",
+        "type": "recall",
+        "statement": "Recall arrays.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_hash-tables_recall",
+        "scopeId": "hash-tables",
+        "type": "recall",
+        "statement": "Recall hash tables.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_linked-lists_recall",
+        "scopeId": "linked-lists",
+        "type": "recall",
+        "statement": "Recall linked lists.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_stacks-queues_recall",
+        "scopeId": "stacks-queues",
+        "type": "recall",
+        "statement": "Recall stacks queues.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_trees_recall",
+        "scopeId": "trees",
+        "type": "recall",
+        "statement": "Recall trees.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_heaps_recall",
+        "scopeId": "heaps",
+        "type": "recall",
+        "statement": "Recall heaps.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_sorting_recall",
+        "scopeId": "sorting",
+        "type": "recall",
+        "statement": "Recall sorting.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_graphs_recall",
+        "scopeId": "graphs",
+        "type": "recall",
+        "statement": "Recall graphs.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_union-find_recall",
+        "scopeId": "union-find",
+        "type": "recall",
+        "statement": "Recall union find.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_patterns_recall",
+        "scopeId": "patterns",
+        "type": "recall",
+        "statement": "Recall patterns.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_complexity_recall",
+        "scopeId": "complexity",
+        "type": "recall",
+        "statement": "Recall complexity.",
+        "priority": "required"
+      }
+    ],
+    "requestedCardCount": 47,
+    "difficulty": "adaptive",
+    "typeDistribution": {
+      "basic": 47
+    },
+    "sourcePolicy": "trusted-external",
+    "exclusions": [],
+    "risks": [],
+    "approvedAt": "2026-10-08T00:00:00.000Z"
+  },
+  "sources": [
+    {
+      "id": "source-open-data-structures",
+      "title": "Open Data Structures",
+      "url": "https://opendatastructures.org/",
+      "type": "reference",
+      "quality": "authoritative",
+      "retrievedAt": "2026-10-08T00:00:00.000Z",
+      "snapshotId": "source-open-data-structures-snapshot",
+      "accessStatus": "available",
+      "notes": "Pat Morin's open textbook used for data-structure invariants, operations, and asymptotic bounds."
+    },
+    {
+      "id": "source-clrs",
+      "title": "Introduction to Algorithms, 4th edition",
+      "url": "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/",
+      "type": "reference",
+      "quality": "authoritative",
+      "retrievedAt": "2026-10-08T00:00:00.000Z",
+      "snapshotId": "source-clrs-snapshot",
+      "accessStatus": "available",
+      "notes": "Cormen, Leiserson, Rivest, and Stein used for canonical algorithm and complexity claims."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_data-structures-1",
+      "text": "What is the random-access time for an array element when the index is known? — O(1), because the address is computed from the base address and element offset.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-2",
+      "text": "Why can inserting at the front of an array be O(n)? — Existing elements may need to shift one position to make room, touching a linear number of elements.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-3",
+      "text": "What is the amortized append time for a dynamically resized array? — O(1) amortized. Most appends are constant time; an occasional resize copies O(n) elements, but the cost is spread across many appends.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-4",
+      "text": "What invariant must a binary search input satisfy? — The search range must be ordered according to the comparison predicate; otherwise discarding half the range is not justified.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-5",
+      "text": "What is the time complexity of binary search? — O(log n) comparisons on a sorted random-access sequence, assuming the midpoint and access to each tested element are O(1).",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-6",
+      "text": "What is the expected lookup time in a well-sized hash table? — O(1) expected or average time under a suitable hash function and bounded load factor; worst-case lookup can be O(n).",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-7",
+      "text": "What is a hash collision? — Two distinct keys map to the same table index. The table must resolve collisions, commonly by chaining or open addressing.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-8",
+      "text": "Why does a hash table resize? — To keep the load factor within a target range so collisions remain manageable and expected operations stay near O(1).",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-9",
+      "text": "Compare separate chaining with open addressing. — Chaining stores collision groups in buckets or linked structures; open addressing stores entries in the table and probes for another slot. Open addressing needs a deletion strategy such as tombstones.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-10",
+      "text": "When is inserting after a known linked-list node O(1)? — When the node reference is already available: update a constant number of pointers. Finding the node first may still cost O(n).",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-11",
+      "text": "Why is random access slow in a linked list? — Nodes are not contiguous and do not provide an index-to-address calculation, so reaching position i generally requires walking from an endpoint: O(n).",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-12",
+      "text": "How can you reverse a singly linked list in O(n) time and O(1) extra space? — Walk through the list while maintaining previous, current, and next pointers; reverse current.next to previous, then advance all pointers.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-13",
+      "text": "What does Floyd's tortoise-and-hare algorithm detect? — A cycle in a linked structure. A slow pointer advances one step and a fast pointer two; if they meet, a cycle exists.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-14",
+      "text": "What is the defining access rule of a stack? — LIFO: last in, first out. Push and pop happen at the same end, usually in O(1).",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-15",
+      "text": "What is the defining access rule of a queue? — FIFO: first in, first out. Enqueue at one end and dequeue at the other, usually in O(1) with a proper implementation.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-16",
+      "text": "Why is a queue implemented with a two-ended linked list or ring buffer instead of removing index 0 from an array? — Removing index 0 from a plain array shifts remaining elements and costs O(n); a deque or ring buffer can maintain both ends in O(1).",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-17",
+      "text": "What is a monotonic stack useful for? — It solves next-greater/next-smaller and related range queries in O(n) by maintaining elements in monotonic order and popping each item at most once.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-18",
+      "text": "What is the invariant of a binary search tree? — For each node, keys in the left subtree compare smaller and keys in the right subtree compare larger, according to the tree's duplicate policy.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-19",
+      "text": "What is the search complexity in a BST of height h? — O(h). It is O(log n) when the tree is balanced and can degrade to O(n) when it becomes a chain.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-20",
+      "text": "What property makes a tree height-balanced? — Its height is kept logarithmic in the number of nodes, typically by enforcing a balance invariant such as AVL height differences or red-black coloring rules.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-21",
+      "text": "What does an inorder traversal of a BST produce? — Keys in sorted order, assuming the traversal visits left subtree, node, then right subtree and the BST invariant holds.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-22",
+      "text": "What is the max-heap invariant? — Every parent key is greater than or equal to its children, so the maximum element is at the root.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-23",
+      "text": "What are the typical complexities of binary-heap insert and extract-min/max? — Both are O(log n), because an element may move along the heap height. Reading the root is O(1).",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-24",
+      "text": "Why is a binary heap a natural implementation for a priority queue? — It provides constant-time access to the highest- or lowest-priority item and logarithmic insertion/removal while using a compact array representation.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-25",
+      "text": "What is the time complexity of bottom-up heap construction? — O(n), not O(n log n), because most nodes are near the leaves and require little sift-down work.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-26",
+      "text": "What is merge sort's time and extra-space complexity? — O(n log n) time in best, average, and worst cases; the usual array implementation uses O(n) auxiliary space.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-27",
+      "text": "What is quicksort's average and worst-case complexity? — Average O(n log n); worst-case O(n) when partitions are repeatedly very unbalanced. Randomized or careful pivots reduce the likelihood of the worst case.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-28",
+      "text": "What does it mean for a sorting algorithm to be stable? — Equal-key records preserve their original relative order. Stability matters when sorting by multiple keys in successive passes.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-29",
+      "text": "When is counting sort appropriate? — When keys are integers in a manageable bounded range. It can run in O(n + k), but space and time depend on the key range k, not only the number of items.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-30",
+      "text": "What is the time complexity of BFS or DFS using adjacency lists? — O(V + E), because each reachable vertex and edge is processed a constant number of times.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-31",
+      "text": "When should you use BFS for shortest paths? — For an unweighted graph, or when every edge has equal cost. BFS explores by distance layers and returns minimum edge-count distance.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-32",
+      "text": "What restriction does Dijkstra's algorithm require? — Edge weights must be nonnegative. A negative edge can invalidate the assumption that a finalized distance is optimal.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-33",
+      "text": "When is Bellman-Ford preferred over Dijkstra? — When negative edge weights may exist or when detecting a reachable negative cycle is required; its standard complexity is O(VE).",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-34",
+      "text": "What is a topological ordering? — A linear ordering of a directed acyclic graph in which every directed edge u→v places u before v. It exists only for DAGs.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-35",
+      "text": "How does Kahn's topological-sort algorithm detect a cycle? — It repeatedly removes zero-indegree vertices. If fewer than V vertices are removed, the remaining graph contains a directed cycle.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-36",
+      "text": "Compare an adjacency list with an adjacency matrix. — Lists use O(V + E) space and are efficient for sparse graphs; matrices use O(V²) space but provide O(1) edge-existence lookup.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-37",
+      "text": "What operations does disjoint-set union support? — Find identifies a set representative; union merges two sets. With path compression and union by rank/size, sequences run in near-constant amortized time O(α(n)).",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-38",
+      "text": "How does Kruskal's algorithm use union-find? — It processes edges in increasing weight order and adds an edge when its endpoints are in different components, using find/union to avoid cycles.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-39",
+      "text": "What data structures make an LRU cache O(1) for get and put? — A hash map from key to node plus a doubly linked list ordered by recency. The map finds nodes and the list moves/removes them in O(1).",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-40",
+      "text": "What is a trie good for? — Prefix queries over strings. Insert, lookup, and prefix traversal take O(L) time in the key length L, with space depending on stored nodes and alphabet representation.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-41",
+      "text": "What is the sliding-window pattern? — Maintain a contiguous interval and move its left/right boundaries while preserving a condition, often reducing a nested scan to O(n).",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-42",
+      "text": "When is a prefix-sum array useful? — For repeated range-sum queries: after O(n) preprocessing, a range sum can be answered in O(1) with two prefix values, subject to the chosen endpoint convention.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-43",
+      "text": "What invariant should a two-pointer solution state? — It should state what the current window or pair represents and why moving a pointer cannot discard a valid solution under the problem's ordering/monotonicity assumptions.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-44",
+      "text": "What is the difference between worst-case and amortized complexity? — Worst-case bounds one operation; amortized analysis bounds the average cost over a sequence, without assuming random input.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-45",
+      "text": "Why must recursive space include the call stack? — Each active call stores parameters, locals, and return state. A recursion depth of h contributes O(h) stack space even if the algorithm allocates no explicit collection.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-46",
+      "text": "What is the purpose of stating an invariant in an interview solution? — An invariant is a condition preserved after each iteration or operation; it makes correctness reasoning and boundary-case debugging explicit.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_data-structures-47",
+      "text": "What should you clarify before giving a complexity claim? — Input size and representation, operation semantics, expected versus worst-case assumptions, recursion/auxiliary space, and whether preprocessing is included.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    }
+  ],
+  "cards": [
+    {
+      "id": "card_data-structures-1",
+      "stableId": "data-structures-1",
+      "type": "basic",
+      "front": "What is the random-access time for an array element when the index is known?",
+      "back": "O(1), because the address is computed from the base address and element offset.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "arrays",
+        "foundational"
+      ],
+      "scopeId": "arrays",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-1"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-2",
+      "stableId": "data-structures-2",
+      "type": "basic",
+      "front": "Why can inserting at the front of an array be O(n)?",
+      "back": "Existing elements may need to shift one position to make room, touching a linear number of elements.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "arrays",
+        "foundational"
+      ],
+      "scopeId": "arrays",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-2"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-3",
+      "stableId": "data-structures-3",
+      "type": "basic",
+      "front": "What is the amortized append time for a dynamically resized array?",
+      "back": "O(1) amortized. Most appends are constant time; an occasional resize copies O(n) elements, but the cost is spread across many appends.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "arrays",
+        "intermediate"
+      ],
+      "scopeId": "arrays",
+      "objective": "explain",
+      "difficulty": "intermediate",
+      "claimIds": [
+        "claim_data-structures-3"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-4",
+      "stableId": "data-structures-4",
+      "type": "basic",
+      "front": "What invariant must a binary search input satisfy?",
+      "back": "The search range must be ordered according to the comparison predicate; otherwise discarding half the range is not justified.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "arrays",
+        "foundational"
+      ],
+      "scopeId": "arrays",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-4"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-5",
+      "stableId": "data-structures-5",
+      "type": "basic",
+      "front": "What is the time complexity of binary search?",
+      "back": "O(log n) comparisons on a sorted random-access sequence, assuming the midpoint and access to each tested element are O(1).",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "arrays",
+        "foundational"
+      ],
+      "scopeId": "arrays",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-5"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-6",
+      "stableId": "data-structures-6",
+      "type": "basic",
+      "front": "What is the expected lookup time in a well-sized hash table?",
+      "back": "O(1) expected or average time under a suitable hash function and bounded load factor; worst-case lookup can be O(n).",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "hash-tables",
+        "foundational"
+      ],
+      "scopeId": "hash-tables",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-6"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-7",
+      "stableId": "data-structures-7",
+      "type": "basic",
+      "front": "What is a hash collision?",
+      "back": "Two distinct keys map to the same table index. The table must resolve collisions, commonly by chaining or open addressing.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "hash-tables",
+        "foundational"
+      ],
+      "scopeId": "hash-tables",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-7"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-8",
+      "stableId": "data-structures-8",
+      "type": "basic",
+      "front": "Why does a hash table resize?",
+      "back": "To keep the load factor within a target range so collisions remain manageable and expected operations stay near O(1).",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "hash-tables",
+        "intermediate"
+      ],
+      "scopeId": "hash-tables",
+      "objective": "explain",
+      "difficulty": "intermediate",
+      "claimIds": [
+        "claim_data-structures-8"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-9",
+      "stableId": "data-structures-9",
+      "type": "basic",
+      "front": "Compare separate chaining with open addressing.",
+      "back": "Chaining stores collision groups in buckets or linked structures; open addressing stores entries in the table and probes for another slot. Open addressing needs a deletion strategy such as tombstones.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "hash-tables",
+        "intermediate"
+      ],
+      "scopeId": "hash-tables",
+      "objective": "explain",
+      "difficulty": "intermediate",
+      "claimIds": [
+        "claim_data-structures-9"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-10",
+      "stableId": "data-structures-10",
+      "type": "basic",
+      "front": "When is inserting after a known linked-list node O(1)?",
+      "back": "When the node reference is already available: update a constant number of pointers. Finding the node first may still cost O(n).",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "linked-lists",
+        "foundational"
+      ],
+      "scopeId": "linked-lists",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-10"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-11",
+      "stableId": "data-structures-11",
+      "type": "basic",
+      "front": "Why is random access slow in a linked list?",
+      "back": "Nodes are not contiguous and do not provide an index-to-address calculation, so reaching position i generally requires walking from an endpoint: O(n).",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "linked-lists",
+        "foundational"
+      ],
+      "scopeId": "linked-lists",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-11"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-12",
+      "stableId": "data-structures-12",
+      "type": "basic",
+      "front": "How can you reverse a singly linked list in O(n) time and O(1) extra space?",
+      "back": "Walk through the list while maintaining previous, current, and next pointers; reverse current.next to previous, then advance all pointers.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "linked-lists",
+        "intermediate"
+      ],
+      "scopeId": "linked-lists",
+      "objective": "explain",
+      "difficulty": "intermediate",
+      "claimIds": [
+        "claim_data-structures-12"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-13",
+      "stableId": "data-structures-13",
+      "type": "basic",
+      "front": "What does Floyd's tortoise-and-hare algorithm detect?",
+      "back": "A cycle in a linked structure. A slow pointer advances one step and a fast pointer two; if they meet, a cycle exists.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "linked-lists",
+        "intermediate"
+      ],
+      "scopeId": "linked-lists",
+      "objective": "explain",
+      "difficulty": "intermediate",
+      "claimIds": [
+        "claim_data-structures-13"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-14",
+      "stableId": "data-structures-14",
+      "type": "basic",
+      "front": "What is the defining access rule of a stack?",
+      "back": "LIFO: last in, first out. Push and pop happen at the same end, usually in O(1).",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "stacks-queues",
+        "beginner"
+      ],
+      "scopeId": "stacks-queues",
+      "objective": "explain",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_data-structures-14"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-15",
+      "stableId": "data-structures-15",
+      "type": "basic",
+      "front": "What is the defining access rule of a queue?",
+      "back": "FIFO: first in, first out. Enqueue at one end and dequeue at the other, usually in O(1) with a proper implementation.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "stacks-queues",
+        "beginner"
+      ],
+      "scopeId": "stacks-queues",
+      "objective": "explain",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_data-structures-15"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-16",
+      "stableId": "data-structures-16",
+      "type": "basic",
+      "front": "Why is a queue implemented with a two-ended linked list or ring buffer instead of removing index 0 from an array?",
+      "back": "Removing index 0 from a plain array shifts remaining elements and costs O(n); a deque or ring buffer can maintain both ends in O(1).",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "stacks-queues",
+        "intermediate"
+      ],
+      "scopeId": "stacks-queues",
+      "objective": "explain",
+      "difficulty": "intermediate",
+      "claimIds": [
+        "claim_data-structures-16"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-17",
+      "stableId": "data-structures-17",
+      "type": "basic",
+      "front": "What is a monotonic stack useful for?",
+      "back": "It solves next-greater/next-smaller and related range queries in O(n) by maintaining elements in monotonic order and popping each item at most once.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "stacks-queues",
+        "advanced"
+      ],
+      "scopeId": "stacks-queues",
+      "objective": "explain",
+      "difficulty": "advanced",
+      "claimIds": [
+        "claim_data-structures-17"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-18",
+      "stableId": "data-structures-18",
+      "type": "basic",
+      "front": "What is the invariant of a binary search tree?",
+      "back": "For each node, keys in the left subtree compare smaller and keys in the right subtree compare larger, according to the tree's duplicate policy.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "trees",
+        "foundational"
+      ],
+      "scopeId": "trees",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-18"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-19",
+      "stableId": "data-structures-19",
+      "type": "basic",
+      "front": "What is the search complexity in a BST of height h?",
+      "back": "O(h). It is O(log n) when the tree is balanced and can degrade to O(n) when it becomes a chain.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "trees",
+        "foundational"
+      ],
+      "scopeId": "trees",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-19"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-20",
+      "stableId": "data-structures-20",
+      "type": "basic",
+      "front": "What property makes a tree height-balanced?",
+      "back": "Its height is kept logarithmic in the number of nodes, typically by enforcing a balance invariant such as AVL height differences or red-black coloring rules.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "trees",
+        "intermediate"
+      ],
+      "scopeId": "trees",
+      "objective": "explain",
+      "difficulty": "intermediate",
+      "claimIds": [
+        "claim_data-structures-20"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-21",
+      "stableId": "data-structures-21",
+      "type": "basic",
+      "front": "What does an inorder traversal of a BST produce?",
+      "back": "Keys in sorted order, assuming the traversal visits left subtree, node, then right subtree and the BST invariant holds.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "trees",
+        "foundational"
+      ],
+      "scopeId": "trees",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-21"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-22",
+      "stableId": "data-structures-22",
+      "type": "basic",
+      "front": "What is the max-heap invariant?",
+      "back": "Every parent key is greater than or equal to its children, so the maximum element is at the root.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "heaps",
+        "foundational"
+      ],
+      "scopeId": "heaps",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-22"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-23",
+      "stableId": "data-structures-23",
+      "type": "basic",
+      "front": "What are the typical complexities of binary-heap insert and extract-min/max?",
+      "back": "Both are O(log n), because an element may move along the heap height. Reading the root is O(1).",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "heaps",
+        "foundational"
+      ],
+      "scopeId": "heaps",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-23"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-24",
+      "stableId": "data-structures-24",
+      "type": "basic",
+      "front": "Why is a binary heap a natural implementation for a priority queue?",
+      "back": "It provides constant-time access to the highest- or lowest-priority item and logarithmic insertion/removal while using a compact array representation.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "heaps",
+        "foundational"
+      ],
+      "scopeId": "heaps",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-24"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-25",
+      "stableId": "data-structures-25",
+      "type": "basic",
+      "front": "What is the time complexity of bottom-up heap construction?",
+      "back": "O(n), not O(n log n), because most nodes are near the leaves and require little sift-down work.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "heaps",
+        "advanced"
+      ],
+      "scopeId": "heaps",
+      "objective": "explain",
+      "difficulty": "advanced",
+      "claimIds": [
+        "claim_data-structures-25"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-26",
+      "stableId": "data-structures-26",
+      "type": "basic",
+      "front": "What is merge sort's time and extra-space complexity?",
+      "back": "O(n log n) time in best, average, and worst cases; the usual array implementation uses O(n) auxiliary space.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "sorting",
+        "foundational"
+      ],
+      "scopeId": "sorting",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-26"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-27",
+      "stableId": "data-structures-27",
+      "type": "basic",
+      "front": "What is quicksort's average and worst-case complexity?",
+      "back": "Average O(n log n); worst-case O(n) when partitions are repeatedly very unbalanced. Randomized or careful pivots reduce the likelihood of the worst case.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "sorting",
+        "foundational"
+      ],
+      "scopeId": "sorting",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-27"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-28",
+      "stableId": "data-structures-28",
+      "type": "basic",
+      "front": "What does it mean for a sorting algorithm to be stable?",
+      "back": "Equal-key records preserve their original relative order. Stability matters when sorting by multiple keys in successive passes.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "sorting",
+        "intermediate"
+      ],
+      "scopeId": "sorting",
+      "objective": "explain",
+      "difficulty": "intermediate",
+      "claimIds": [
+        "claim_data-structures-28"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-29",
+      "stableId": "data-structures-29",
+      "type": "basic",
+      "front": "When is counting sort appropriate?",
+      "back": "When keys are integers in a manageable bounded range. It can run in O(n + k), but space and time depend on the key range k, not only the number of items.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "sorting",
+        "advanced"
+      ],
+      "scopeId": "sorting",
+      "objective": "explain",
+      "difficulty": "advanced",
+      "claimIds": [
+        "claim_data-structures-29"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-30",
+      "stableId": "data-structures-30",
+      "type": "basic",
+      "front": "What is the time complexity of BFS or DFS using adjacency lists?",
+      "back": "O(V + E), because each reachable vertex and edge is processed a constant number of times.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "graphs",
+        "foundational"
+      ],
+      "scopeId": "graphs",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-30"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-31",
+      "stableId": "data-structures-31",
+      "type": "basic",
+      "front": "When should you use BFS for shortest paths?",
+      "back": "For an unweighted graph, or when every edge has equal cost. BFS explores by distance layers and returns minimum edge-count distance.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "graphs",
+        "foundational"
+      ],
+      "scopeId": "graphs",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-31"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-32",
+      "stableId": "data-structures-32",
+      "type": "basic",
+      "front": "What restriction does Dijkstra's algorithm require?",
+      "back": "Edge weights must be nonnegative. A negative edge can invalidate the assumption that a finalized distance is optimal.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "graphs",
+        "foundational"
+      ],
+      "scopeId": "graphs",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-32"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-33",
+      "stableId": "data-structures-33",
+      "type": "basic",
+      "front": "When is Bellman-Ford preferred over Dijkstra?",
+      "back": "When negative edge weights may exist or when detecting a reachable negative cycle is required; its standard complexity is O(VE).",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "graphs",
+        "advanced"
+      ],
+      "scopeId": "graphs",
+      "objective": "explain",
+      "difficulty": "advanced",
+      "claimIds": [
+        "claim_data-structures-33"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-34",
+      "stableId": "data-structures-34",
+      "type": "basic",
+      "front": "What is a topological ordering?",
+      "back": "A linear ordering of a directed acyclic graph in which every directed edge u→v places u before v. It exists only for DAGs.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "graphs",
+        "foundational"
+      ],
+      "scopeId": "graphs",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-34"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-35",
+      "stableId": "data-structures-35",
+      "type": "basic",
+      "front": "How does Kahn's topological-sort algorithm detect a cycle?",
+      "back": "It repeatedly removes zero-indegree vertices. If fewer than V vertices are removed, the remaining graph contains a directed cycle.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "graphs",
+        "intermediate"
+      ],
+      "scopeId": "graphs",
+      "objective": "explain",
+      "difficulty": "intermediate",
+      "claimIds": [
+        "claim_data-structures-35"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-36",
+      "stableId": "data-structures-36",
+      "type": "basic",
+      "front": "Compare an adjacency list with an adjacency matrix.",
+      "back": "Lists use O(V + E) space and are efficient for sparse graphs; matrices use O(V²) space but provide O(1) edge-existence lookup.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "graphs",
+        "foundational"
+      ],
+      "scopeId": "graphs",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-36"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-37",
+      "stableId": "data-structures-37",
+      "type": "basic",
+      "front": "What operations does disjoint-set union support?",
+      "back": "Find identifies a set representative; union merges two sets. With path compression and union by rank/size, sequences run in near-constant amortized time O(α(n)).",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "union-find",
+        "advanced"
+      ],
+      "scopeId": "union-find",
+      "objective": "explain",
+      "difficulty": "advanced",
+      "claimIds": [
+        "claim_data-structures-37"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-38",
+      "stableId": "data-structures-38",
+      "type": "basic",
+      "front": "How does Kruskal's algorithm use union-find?",
+      "back": "It processes edges in increasing weight order and adds an edge when its endpoints are in different components, using find/union to avoid cycles.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "union-find",
+        "advanced"
+      ],
+      "scopeId": "union-find",
+      "objective": "explain",
+      "difficulty": "advanced",
+      "claimIds": [
+        "claim_data-structures-38"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-39",
+      "stableId": "data-structures-39",
+      "type": "basic",
+      "front": "What data structures make an LRU cache O(1) for get and put?",
+      "back": "A hash map from key to node plus a doubly linked list ordered by recency. The map finds nodes and the list moves/removes them in O(1).",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "patterns",
+        "intermediate"
+      ],
+      "scopeId": "patterns",
+      "objective": "explain",
+      "difficulty": "intermediate",
+      "claimIds": [
+        "claim_data-structures-39"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-40",
+      "stableId": "data-structures-40",
+      "type": "basic",
+      "front": "What is a trie good for?",
+      "back": "Prefix queries over strings. Insert, lookup, and prefix traversal take O(L) time in the key length L, with space depending on stored nodes and alphabet representation.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "patterns",
+        "intermediate"
+      ],
+      "scopeId": "patterns",
+      "objective": "explain",
+      "difficulty": "intermediate",
+      "claimIds": [
+        "claim_data-structures-40"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-41",
+      "stableId": "data-structures-41",
+      "type": "basic",
+      "front": "What is the sliding-window pattern?",
+      "back": "Maintain a contiguous interval and move its left/right boundaries while preserving a condition, often reducing a nested scan to O(n).",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "patterns",
+        "intermediate"
+      ],
+      "scopeId": "patterns",
+      "objective": "explain",
+      "difficulty": "intermediate",
+      "claimIds": [
+        "claim_data-structures-41"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-42",
+      "stableId": "data-structures-42",
+      "type": "basic",
+      "front": "When is a prefix-sum array useful?",
+      "back": "For repeated range-sum queries: after O(n) preprocessing, a range sum can be answered in O(1) with two prefix values, subject to the chosen endpoint convention.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "patterns",
+        "foundational"
+      ],
+      "scopeId": "patterns",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-42"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-43",
+      "stableId": "data-structures-43",
+      "type": "basic",
+      "front": "What invariant should a two-pointer solution state?",
+      "back": "It should state what the current window or pair represents and why moving a pointer cannot discard a valid solution under the problem's ordering/monotonicity assumptions.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "patterns",
+        "advanced"
+      ],
+      "scopeId": "patterns",
+      "objective": "explain",
+      "difficulty": "advanced",
+      "claimIds": [
+        "claim_data-structures-43"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-44",
+      "stableId": "data-structures-44",
+      "type": "basic",
+      "front": "What is the difference between worst-case and amortized complexity?",
+      "back": "Worst-case bounds one operation; amortized analysis bounds the average cost over a sequence, without assuming random input.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "complexity",
+        "intermediate"
+      ],
+      "scopeId": "complexity",
+      "objective": "explain",
+      "difficulty": "intermediate",
+      "claimIds": [
+        "claim_data-structures-44"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-45",
+      "stableId": "data-structures-45",
+      "type": "basic",
+      "front": "Why must recursive space include the call stack?",
+      "back": "Each active call stores parameters, locals, and return state. A recursion depth of h contributes O(h) stack space even if the algorithm allocates no explicit collection.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "complexity",
+        "foundational"
+      ],
+      "scopeId": "complexity",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-45"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-46",
+      "stableId": "data-structures-46",
+      "type": "basic",
+      "front": "What is the purpose of stating an invariant in an interview solution?",
+      "back": "An invariant is a condition preserved after each iteration or operation; it makes correctness reasoning and boundary-case debugging explicit.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "complexity",
+        "foundational"
+      ],
+      "scopeId": "complexity",
+      "objective": "explain",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_data-structures-46"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_data-structures-47",
+      "stableId": "data-structures-47",
+      "type": "basic",
+      "front": "What should you clarify before giving a complexity claim?",
+      "back": "Input size and representation, operation semantics, expected versus worst-case assumptions, recursion/auxiliary space, and whether preprocessing is included.",
+      "extra": "Interview note: state the invariant, boundary assumptions, and why the complexity follows; do not give only the Big-O label.",
+      "tags": [
+        "data-structures",
+        "interview-prep",
+        "complexity",
+        "intermediate"
+      ],
+      "scopeId": "complexity",
+      "objective": "explain",
+      "difficulty": "intermediate",
+      "claimIds": [
+        "claim_data-structures-47"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    }
+  ],
+  "validations": [],
+  "runs": [
+    {
+      "id": "run_practice_data_structures_interview",
+      "kind": "curated-practice",
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "status": "succeeded",
+      "provider": "curated-source-grounded",
+      "completedAt": "2026-10-08T00:00:00.000Z"
+    }
+  ],
+  "exports": [],
+  "metrics": {
+    "requestedCards": 47,
+    "generatedCandidates": 47,
+    "approvedCards": 47,
+    "exportableCards": 47,
+    "verifiedCards": 47,
+    "unverifiedCards": 0,
+    "conflictingCards": 0,
+    "requiredScopeItems": 11,
+    "coveredRequiredScopeItems": 11,
+    "coveragePercent": 100,
+    "duplicateCount": 0,
+    "hardGateCount": 0,
+    "warningCount": 0,
+    "notes": 0,
+    "updatedAt": "2026-10-08T02:45:19.503Z"
+  }
+}

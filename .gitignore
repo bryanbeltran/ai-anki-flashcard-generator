@@ -1,0 +1,6 @@
+data/store.json
+data/*.tmp
+.DS_Store
+node_modules/
+coverage/
+.env

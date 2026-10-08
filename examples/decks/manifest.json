@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2026-10-08T02:45:19.503Z",
+  "decks": [
+    {
+      "slug": "korean-foundations-alphabet-sight-words",
+      "title": "Korean Foundations — Alphabet + Sight Words",
+      "cardCount": 81,
+      "notes": 81,
+      "cards": 81,
+      "metrics": {
+        "requestedCards": 81,
+        "generatedCandidates": 81,
+        "approvedCards": 81,
+        "exportableCards": 81,
+        "verifiedCards": 81,
+        "unverifiedCards": 0,
+        "conflictingCards": 0,
+        "requiredScopeItems": 4,
+        "coveredRequiredScopeItems": 4,
+        "coveragePercent": 100,
+        "duplicateCount": 0,
+        "hardGateCount": 0,
+        "warningCount": 0,
+        "notes": 0,
+        "updatedAt": "2026-10-08T02:45:19.501Z"
+      },
+      "sources": [
+        {
+          "id": "source-korean-hangul",
+          "title": "National Institute of Korean Language — Korean language resources",
+          "url": "https://www.korean.go.kr/",
+          "type": "reference",
+          "quality": "authoritative",
+          "retrievedAt": "2026-10-08T00:00:00.000Z",
+          "snapshotId": "source-korean-hangul-snapshot",
+          "accessStatus": "available",
+          "notes": "Official Korean language institution used for Hangul terminology and orthographic conventions."
+        },
+        {
+          "id": "source-korean-dictionary",
+          "title": "Korean-English Learners' Dictionary",
+          "url": "https://krdict.korean.go.kr/eng",
+          "type": "reference",
+          "quality": "authoritative",
+          "retrievedAt": "2026-10-08T00:00:00.000Z",
+          "snapshotId": "source-korean-dictionary-snapshot",
+          "accessStatus": "available",
+          "notes": "National Institute of Korean Language learner dictionary used for English glosses and usage notes."
+        }
+      ]
+    },
+    {
+      "slug": "data-structures-interview-prep",
+      "title": "Data Structures Interview Prep",
+      "cardCount": 47,
+      "notes": 47,
+      "cards": 47,
+      "metrics": {
+        "requestedCards": 47,
+        "generatedCandidates": 47,
+        "approvedCards": 47,
+        "exportableCards": 47,
+        "verifiedCards": 47,
+        "unverifiedCards": 0,
+        "conflictingCards": 0,
+        "requiredScopeItems": 11,
+        "coveredRequiredScopeItems": 11,
+        "coveragePercent": 100,
+        "duplicateCount": 0,
+        "hardGateCount": 0,
+        "warningCount": 0,
+        "notes": 0,
+        "updatedAt": "2026-10-08T02:45:19.503Z"
+      },
+      "sources": [
+        {
+          "id": "source-open-data-structures",
+          "title": "Open Data Structures",
+          "url": "https://opendatastructures.org/",
+          "type": "reference",
+          "quality": "authoritative",
+          "retrievedAt": "2026-10-08T00:00:00.000Z",
+          "snapshotId": "source-open-data-structures-snapshot",
+          "accessStatus": "available",
+          "notes": "Pat Morin's open textbook used for data-structure invariants, operations, and asymptotic bounds."
+        },
+        {
+          "id": "source-clrs",
+          "title": "Introduction to Algorithms, 4th edition",
+          "url": "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/",
+          "type": "reference",
+          "quality": "authoritative",
+          "retrievedAt": "2026-10-08T00:00:00.000Z",
+          "snapshotId": "source-clrs-snapshot",
+          "accessStatus": "available",
+          "notes": "Cormen, Leiserson, Rivest, and Stein used for canonical algorithm and complexity claims."
+        }
+      ]
+    }
+  ]
+}

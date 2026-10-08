@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Anki Flashcard Generator</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Codex-powered study authoring</p>
+        <h1>AI Anki Flashcard Generator</h1>
+        <p class="lede">Clarify the goal. Plan the scope. Verify every card. Export with confidence.</p>
+      </div>
+      <button class="button primary" id="new-project">New project</button>
+    </header>
+
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Projects and practice decks">
+        <div class="sidebar-heading">
+          <h2>Projects</h2>
+          <button class="icon-button" id="refresh-projects" title="Refresh projects" aria-label="Refresh projects">↻</button>
+        </div>
+        <ul class="project-list" id="project-list"></ul>
+        <div class="sidebar-divider"></div>
+        <h2>Practice decks</h2>
+        <p class="muted small">Curated, source-linked examples that exercise the review and export pipeline.</p>
+        <div id="practice-decks" class="practice-list"></div>
+      </aside>
+
+      <main class="workspace" id="workspace">
+        <section class="empty-state" id="empty-state">
+          <div class="empty-icon">✦</div>
+          <h2>Start with what you want to learn</h2>
+          <p>Describe the learner, outcome, scope, card count, difficulty, and export preference. The planner will surface the decisions that matter before generation.</p>
+          <button class="button primary" id="empty-new-project">Create a project</button>
+        </section>
+
+        <div id="project-view" hidden>
+          <section class="project-hero">
+            <div>
+              <p class="eyebrow" id="project-status">Draft</p>
+              <h2 id="project-title">Project</h2>
+              <p class="muted" id="project-subtitle"></p>
+            </div>
+            <div class="hero-actions">
+              <button class="button secondary" id="validate-project">Validate</button>
+              <button class="button primary" id="generate-project">Generate cards</button>
+            </div>
+          </section>
+
+          <section class="metrics-grid" id="metrics"></section>
+
+          <section class="panel" id="brief-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Step 1</p>
+                <h3>Learning brief</h3>
+              </div>
+              <span class="pill" id="brief-pill">Needs clarification</span>
+            </div>
+            <form id="brief-form" class="form-grid">
+              <label class="wide">What do you want to learn?
+                <textarea name="topic" rows="2" placeholder="e.g. Korean Hangul and beginner sight words"></textarea>
+              </label>
+              <label class="wide">Learning outcome
+                <textarea name="outcome" rows="2" placeholder="What should the learner be able to do after studying?"></textarea>
+              </label>
+              <label>Learner and prerequisites
+                <input name="audience" placeholder="e.g. English-speaking beginner" />
+              </label>
+              <label>Card count
+                <input name="cardCount" type="number" min="1" max="500" placeholder="40" />
+              </label>
+              <label>Difficulty
+                <select name="difficulty">
+                  <option value="adaptive">Adaptive mix</option>
+                  <option value="beginner">Beginner</option>
+                  <option value="foundational">Foundational</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="advanced">Advanced</option>
+                </select>
+              </label>
+              <label>Source policy
+                <select name="sourcePolicy">
+                  <option value="mixed">Supplied + trusted external</option>
+                  <option value="source-only">Supplied sources only</option>
+                  <option value="trusted-external">Trusted external sources</option>
+                </select>
+              </label>
+              <label>Export format
+                <select name="exportFormat">
+                  <option value="tsv">UTF-8 TSV</option>
+                  <option value="csv">UTF-8 CSV</option>
+                </select>
+              </label>
+              <label>Deck name
+                <input name="deckName" placeholder="My Anki deck" />
+              </label>
+              <label class="wide">Included scope
+                <textarea name="includedScope" rows="2" placeholder="Separate areas with commas or new lines"></textarea>
+              </label>
+              <label class="wide">Excluded scope
+                <textarea name="excludedScope" rows="2" placeholder="What should not be included?"></textarea>
+              </label>
+              <fieldset class="wide">
+                <legend>Allowed card types</legend>
+                <label class="check"><input type="checkbox" name="allowedTypes" value="basic" checked /> Basic</label>
+                <label class="check"><input type="checkbox" name="allowedTypes" value="reversed-basic" checked /> Reversed basic</label>
+                <label class="check"><input type="checkbox" name="allowedTypes" value="cloze" checked /> Cloze</label>
+                <label class="check"><input type="checkbox" name="allowedTypes" value="type-in" /> Type-in</label>
+              </fieldset>
+              <div class="form-actions wide">
+                <button class="button secondary" type="submit">Save brief</button>
+                <span class="form-message" id="brief-message" role="status"></span>
+              </div>
+            </form>
+            <div class="questions" id="questions"></div>
+          </section>
+
+          <section class="panel" id="source-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Evidence</p>
+                <h3>Sources and snapshots</h3>
+              </div>
+              <span class="pill" id="source-count">0 sources</span>
+            </div>
+            <p class="muted">Add a public URL or paste a source excerpt. The server stores a bounded snapshot hash; source text is never shown in the project list.</p>
+            <form id="source-form" class="form-grid">
+              <label>Title<input name="title" placeholder="Official reference or notes" /></label>
+              <label>URL<input name="url" type="url" placeholder="https://..." /></label>
+              <label class="wide">Pasted source text<textarea name="content" rows="3" placeholder="Optional excerpt or notes"></textarea></label>
+              <label>Quality
+                <select name="quality"><option value="user-provided">User-provided</option><option value="authoritative">Authoritative</option><option value="reference">Reference</option></select>
+              </label>
+              <div class="form-actions"><button class="button secondary" type="submit">Add source</button><span class="form-message" id="source-message" role="status"></span></div>
+            </form>
+            <div id="sources" class="source-list"></div>
+          </section>
+
+          <section class="panel" id="plan-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Step 2</p>
+                <h3>Plan and coverage contract</h3>
+              </div>
+              <button class="button secondary" id="build-plan">Build plan</button>
+            </div>
+            <div id="plan-content" class="plan-content"></div>
+          </section>
+
+          <section class="panel" id="review-panel">
+            <div class="panel-heading review-heading">
+              <div>
+                <p class="eyebrow">Step 3</p>
+                <h3>Review cards</h3>
+              </div>
+              <div class="review-controls">
+                <select id="card-filter" aria-label="Filter cards">
+                  <option value="all">All cards</option>
+                  <option value="needs-review">Needs review</option>
+                  <option value="approved">Approved</option>
+                  <option value="rejected">Rejected</option>
+                </select>
+                <button class="button secondary" id="approve-visible">Approve visible</button>
+              </div>
+            </div>
+            <div id="coverage" class="coverage-list"></div>
+            <div id="cards" class="card-list"></div>
+          </section>
+
+          <section class="panel export-panel" id="export-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Step 4</p>
+                <h3>Export to Anki</h3>
+              </div>
+              <span class="pill" id="export-pill">Review required</span>
+            </div>
+            <p class="muted">The export includes an explicit mapping: Front, Back, Extra, Tags, CardType, Source. Approve every card and resolve hard gates before exporting.</p>
+            <div class="export-controls">
+              <label>Format
+                <select id="export-format"><option value="tsv">TSV</option><option value="csv">CSV</option></select>
+              </label>
+              <label>Card type
+                <select id="export-type"><option value="all">All types</option><option value="basic">Basic</option><option value="reversed-basic">Reversed basic</option><option value="cloze">Cloze</option><option value="type-in">Type-in</option></select>
+              </label>
+              <label class="check export-warning"><input type="checkbox" id="include-unverified" /> Include unverified warnings</label>
+              <button class="button primary" id="export-button">Download export</button>
+            </div>
+            <p class="form-message" id="export-message" role="status"></p>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
