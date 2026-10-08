@@ -1,8 +1,8 @@
-# AI Anki Flashcard Generator
+# Recall — Evidence-aware Anki authoring
 
-An executable MVP for the [AI Anki Flashcard Generator — Product Requirements](https://app.notion.com/p/3f3e75bc1fac81bdbcc7f308194f3381?pvs=204).
+Recall is a local-first study authoring workspace for the [AI Anki Flashcard Generator — Product Requirements](https://app.notion.com/p/3f3e75bc1fac81bdbcc7f308194f3381?pvs=204).
 
-The app turns a learner's goal into a scoped, reviewable, evidence-aware Anki deck. It supports adaptive clarification, a visible learning plan, structured generation, claim/evidence metadata, deterministic validation, coverage and duplicate checks, review/edit/lock controls, and UTF-8 TSV export.
+It turns a learner's goal into a scoped, reviewable, evidence-aware Anki deck. The browser workspace makes the full path visible: write the brief, ground the evidence, shape the plan, review the cards, and export only when the quality gates are clear.
 
 The repository also ships two practice decks:
 
@@ -11,7 +11,7 @@ The repository also ships two practice decks:
 
 ## Run locally
 
-Requires Node.js 20 or newer. The MVP has no runtime dependencies.
+Requires Node.js 20 or newer. The app has no runtime dependencies.
 
 ```bash
 npm test
@@ -22,6 +22,19 @@ npm start
 Open <http://localhost:3000>.
 
 The JSON store is created at `data/store.json` on first run. Set `ANKI_DATA_DIR` to use another data directory.
+
+## Product surface
+
+The Recall workspace is intentionally designed for a portfolio-sized end-to-end story rather than a single generation endpoint:
+
+- **Brief first:** capture learner, outcome, scope, count, difficulty, source policy, and export intent; required decisions are surfaced before generation.
+- **Evidence-aware:** add pasted notes or public URLs, preserve bounded snapshots and hashes, and attach claim/source records to cards.
+- **Reviewable by design:** edit, verify, approve, reject, lock, regenerate, search, and filter cards without losing revision context.
+- **Quality gates:** inspect coverage, duplicate detection, evidence state, confidence, media references, stale sources, card types, and export readiness.
+- **Anki-friendly handoff:** preview and download explicit UTF-8 TSV/CSV columns (`Front`, `Back`, `Extra`, `Tags`, `CardType`, `Source`).
+- **Runnable demo data:** open the curated Korean or data-structures decks to see the full workflow with source-linked cards.
+
+The interface is responsive, keyboard-friendly, reduced-motion aware, and dependency-free. It uses the same HTTP API that powers the tests, so the UI and integration story remain easy to inspect.
 
 ## Optional Codex/OpenAI generation
 

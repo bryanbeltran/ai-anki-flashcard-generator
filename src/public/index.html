@@ -3,38 +3,66 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI Anki Flashcard Generator</title>
+    <meta name="description" content="Build evidence-aware Anki decks from a focused learning goal." />
+    <meta name="theme-color" content="#10251d" />
+    <title>Recall — Evidence-aware Anki authoring</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#workspace">Skip to workspace</a>
     <header class="site-header">
-      <div>
-        <p class="eyebrow">Codex-powered study authoring</p>
-        <h1>AI Anki Flashcard Generator</h1>
-        <p class="lede">Clarify the goal. Plan the scope. Verify every card. Export with confidence.</p>
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true"><span>↗</span></div>
+        <div>
+          <p class="eyebrow">Evidence-aware study authoring</p>
+          <div class="brand-line"><h1>Recall</h1><span class="brand-tag">ANKI STUDIO</span></div>
+          <p class="lede">Turn a learning goal into a deck you can trust.</p>
+        </div>
       </div>
-      <button class="button primary" id="new-project">New project</button>
+      <button class="button primary header-action" id="new-project" type="button"><span aria-hidden="true">＋</span> New project</button>
     </header>
 
     <div class="app-shell">
       <aside class="sidebar" aria-label="Projects and practice decks">
+        <div class="sidebar-intro">
+          <p class="sidebar-kicker">Workspace</p>
+          <p class="muted small">Your decks, sources, and review queue in one place.</p>
+        </div>
         <div class="sidebar-heading">
-          <h2>Projects</h2>
-          <button class="icon-button" id="refresh-projects" title="Refresh projects" aria-label="Refresh projects">↻</button>
+          <div class="section-label"><h2>Projects</h2><span class="count-badge" id="project-count">0</span></div>
+          <button class="icon-button" id="refresh-projects" title="Refresh projects" aria-label="Refresh projects" type="button">↻</button>
         </div>
         <ul class="project-list" id="project-list"></ul>
         <div class="sidebar-divider"></div>
-        <h2>Practice decks</h2>
+        <div class="section-label"><h2>Practice decks</h2><span class="section-mark" aria-hidden="true">✦</span></div>
         <p class="muted small">Curated, source-linked examples that exercise the review and export pipeline.</p>
         <div id="practice-decks" class="practice-list"></div>
+        <p class="sidebar-note"><strong>Designed for deliberate study.</strong><br />Every card carries its scope, evidence, and review state.</p>
       </aside>
 
       <main class="workspace" id="workspace">
         <section class="empty-state" id="empty-state">
-          <div class="empty-icon">✦</div>
-          <h2>Start with what you want to learn</h2>
-          <p>Describe the learner, outcome, scope, card count, difficulty, and export preference. The planner will surface the decisions that matter before generation.</p>
-          <button class="button primary" id="empty-new-project">Create a project</button>
+          <div class="empty-hero">
+            <div class="empty-copy">
+              <p class="hero-kicker"><span class="sparkle" aria-hidden="true">✦</span> Build decks you can trust</p>
+              <h2>From vague goal<br /><em>to focused recall.</em></h2>
+              <p>Recall turns a learning brief into a scoped, source-aware study workflow. Clarify the outcome, review every card, then export a clean Anki file.</p>
+              <div class="empty-actions">
+                <button class="button primary" id="empty-new-project" type="button">Create a project <span aria-hidden="true">→</span></button>
+                <span class="muted small">No account required · Runs locally</span>
+              </div>
+            </div>
+            <div class="empty-visual" aria-hidden="true">
+              <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+              <div class="visual-card visual-card-back"><span>01</span><strong>Verify</strong><small>Source-linked</small></div>
+              <div class="visual-card visual-card-front"><span class="visual-check">✓</span><strong>Study with intent</strong><small>Scope · evidence · recall</small></div>
+            </div>
+          </div>
+          <div class="empty-proof-grid">
+            <div><span class="proof-icon" aria-hidden="true">◎</span><strong>Adaptive planning</strong><p>Make the learning contract visible before generation.</p></div>
+            <div><span class="proof-icon" aria-hidden="true">⌁</span><strong>Evidence by default</strong><p>Keep claims, sources, and snapshots attached to cards.</p></div>
+            <div><span class="proof-icon" aria-hidden="true">↗</span><strong>Export-ready</strong><p>Resolve blockers and ship a mapped TSV or CSV.</p></div>
+          </div>
         </section>
 
         <div id="project-view" hidden>
@@ -42,13 +70,21 @@
             <div>
               <p class="eyebrow" id="project-status">Draft</p>
               <h2 id="project-title">Project</h2>
-              <p class="muted" id="project-subtitle"></p>
+              <p class="muted project-subtitle" id="project-subtitle"></p>
             </div>
             <div class="hero-actions">
-              <button class="button secondary" id="validate-project">Validate</button>
-              <button class="button primary" id="generate-project">Generate cards</button>
+              <button class="button secondary" id="validate-project" type="button">Check quality</button>
+              <button class="button primary" id="generate-project" type="button">Generate cards <span aria-hidden="true">→</span></button>
             </div>
           </section>
+
+          <nav class="workflow-nav" aria-label="Deck workflow">
+            <a class="workflow-step active" href="#brief-panel"><span>01</span><strong>Brief</strong><small>Define the goal</small></a>
+            <a class="workflow-step" href="#source-panel"><span>02</span><strong>Evidence</strong><small>Ground the facts</small></a>
+            <a class="workflow-step" href="#plan-panel"><span>03</span><strong>Plan</strong><small>Shape the scope</small></a>
+            <a class="workflow-step" href="#review-panel"><span>04</span><strong>Review</strong><small>Approve the cards</small></a>
+            <a class="workflow-step" href="#export-panel"><span>05</span><strong>Export</strong><small>Take it to Anki</small></a>
+          </nav>
 
           <section class="metrics-grid" id="metrics"></section>
 
@@ -62,19 +98,19 @@
             </div>
             <form id="brief-form" class="form-grid">
               <label class="wide">What do you want to learn?
-                <textarea name="topic" rows="2" placeholder="e.g. Korean Hangul and beginner sight words"></textarea>
+                <textarea name="topic" autocomplete="off" rows="2" placeholder="e.g. Korean Hangul and beginner sight words"></textarea>
               </label>
               <label class="wide">Learning outcome
-                <textarea name="outcome" rows="2" placeholder="What should the learner be able to do after studying?"></textarea>
+                <textarea name="outcome" autocomplete="off" rows="2" placeholder="What should the learner be able to do after studying?"></textarea>
               </label>
               <label>Learner level
-                <input name="audience" placeholder="e.g. English-speaking beginner" />
+                <input name="audience" autocomplete="off" placeholder="e.g. English-speaking beginner" />
               </label>
               <label>Prerequisites
-                <input name="prerequisites" placeholder="e.g. knows the Latin alphabet" />
+                <input name="prerequisites" autocomplete="off" placeholder="e.g. knows the Latin alphabet" />
               </label>
               <label>Card count
-                <input name="cardCount" type="number" min="1" max="500" placeholder="40" />
+                <input name="cardCount" type="number" inputmode="numeric" min="1" max="500" autocomplete="off" placeholder="40" />
               </label>
               <label>Difficulty
                 <select name="difficulty">
@@ -99,16 +135,16 @@
                 </select>
               </label>
               <label>Deck name
-                <input name="deckName" placeholder="My Anki deck" />
+                <input name="deckName" autocomplete="off" placeholder="My Anki deck" />
               </label>
               <label class="wide">Included scope
-                <textarea name="includedScope" rows="2" placeholder="Separate areas with commas or new lines"></textarea>
+                <textarea name="includedScope" autocomplete="off" rows="2" placeholder="Separate areas with commas or new lines"></textarea>
               </label>
               <label class="wide">Excluded scope
-                <textarea name="excludedScope" rows="2" placeholder="What should not be included?"></textarea>
+                <textarea name="excludedScope" autocomplete="off" rows="2" placeholder="What should not be included?"></textarea>
               </label>
               <label class="wide">Sensitive or regulated content constraints
-                <textarea name="sensitiveContent" rows="2" placeholder="Exclude personal data, graphic examples, or regulated advice unless explicitly requested"></textarea>
+                <textarea name="sensitiveContent" autocomplete="off" rows="2" placeholder="Exclude personal data, graphic examples, or regulated advice unless explicitly requested"></textarea>
               </label>
               <fieldset class="wide">
                 <legend>Allowed card types</legend>
@@ -133,11 +169,11 @@
               </div>
               <span class="pill" id="source-count">0 sources</span>
             </div>
-            <p class="muted">Add a public URL or paste a source excerpt. The server stores a bounded snapshot hash; source text is never shown in the project list.</p>
+            <p class="muted panel-intro">Add a public URL or paste a source excerpt. Recall stores a bounded snapshot hash; source text is never shown in the project list.</p>
             <form id="source-form" class="form-grid">
-              <label>Title<input name="title" placeholder="Official reference or notes" /></label>
-              <label>URL<input name="url" type="url" placeholder="https://..." /></label>
-              <label class="wide">Pasted source text<textarea name="content" rows="3" placeholder="Optional excerpt or notes"></textarea></label>
+              <label>Title<input name="title" autocomplete="off" placeholder="Official reference or notes" /></label>
+              <label>URL<input name="url" type="url" inputmode="url" autocomplete="url" placeholder="https://…" /></label>
+              <label class="wide">Pasted source text<textarea name="content" rows="3" placeholder="Optional excerpt or notes…"></textarea></label>
               <label>Quality
                 <select name="quality"><option value="user-provided">User-provided</option><option value="authoritative">Authoritative</option><option value="reference">Reference</option></select>
               </label>
@@ -152,7 +188,7 @@
                 <p class="eyebrow">Step 2</p>
                 <h3>Plan and coverage contract</h3>
               </div>
-              <button class="button secondary" id="build-plan">Build plan</button>
+              <button class="button secondary" id="build-plan" type="button">Build plan</button>
             </div>
             <div id="plan-content" class="plan-content"></div>
           </section>
@@ -164,17 +200,21 @@
                 <h3>Review cards</h3>
               </div>
               <div class="review-controls">
+                <label class="search-field"><span class="sr-only">Search cards</span><span class="search-icon" aria-hidden="true">⌕</span><input id="card-search" type="search" placeholder="Search cards…" autocomplete="off" /></label>
                 <select id="card-filter" aria-label="Filter cards">
                   <option value="all">All cards</option>
                   <option value="needs-review">Needs review</option>
                   <option value="approved">Approved</option>
                   <option value="rejected">Rejected</option>
+                  <option value="draft">Draft</option>
                 </select>
-                <button class="button secondary" id="approve-visible">Approve visible</button>
+                <button class="button secondary" id="approve-visible" type="button">Approve visible</button>
               </div>
             </div>
+            <div class="review-meta"><span id="review-count" class="muted small" role="status" aria-live="polite">0 cards</span><span class="muted small">Open a card to inspect, edit, or verify it.</span></div>
             <div id="coverage" class="coverage-list"></div>
             <div id="cards" class="card-list"></div>
+            <div id="card-pagination" class="pagination"></div>
           </section>
 
           <section class="panel export-panel" id="export-panel">
@@ -185,7 +225,7 @@
               </div>
               <span class="pill" id="export-pill">Review required</span>
             </div>
-            <p class="muted">The export includes an explicit mapping: Front, Back, Extra, Tags, CardType, Source. Approve every card and resolve hard gates before exporting.</p>
+            <p class="muted panel-intro">The export includes an explicit mapping: Front, Back, Extra, Tags, CardType, Source. Approve every card and resolve hard gates before exporting.</p>
             <div class="export-controls">
               <label>Format
                 <select id="export-format"><option value="tsv">TSV</option><option value="csv">CSV</option></select>
@@ -194,8 +234,8 @@
                 <select id="export-type"><option value="all">All types</option><option value="basic">Basic</option><option value="reversed-basic">Reversed basic</option><option value="cloze">Cloze</option><option value="type-in">Type-in</option></select>
               </label>
               <label class="check export-warning"><input type="checkbox" id="include-unverified" /> Include unverified warnings</label>
-              <button class="button secondary" id="preview-export">Preview mapping</button>
-              <button class="button primary" id="export-button">Download export</button>
+              <button class="button secondary" id="preview-export" type="button">Preview mapping</button>
+              <button class="button primary" id="export-button" type="button">Download export <span aria-hidden="true">↓</span></button>
             </div>
             <p class="form-message" id="export-message" role="status"></p>
             <pre class="export-preview" id="export-preview" hidden></pre>
@@ -203,6 +243,37 @@
         </div>
       </main>
     </div>
+    <footer class="site-footer"><span>Recall / An evidence-aware Anki authoring workspace</span><span>Local-first · Open format · Human review</span></footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+    <dialog id="project-dialog" class="modal" aria-labelledby="project-dialog-title">
+      <form id="new-project-form" class="modal-card" autocomplete="off">
+        <button class="modal-close" id="close-project-dialog" type="button" aria-label="Close new project dialog">×</button>
+        <p class="eyebrow">Start a new workspace</p>
+        <h2 id="project-dialog-title">What are you learning?</h2>
+        <p class="muted">Give the deck a working name. You’ll shape the learning brief in the next step.</p>
+        <label for="project-name">Project name</label>
+        <input id="project-name" name="title" required maxlength="100" placeholder="e.g. Korean conversation basics" />
+        <div class="modal-actions">
+          <button class="button secondary" id="cancel-project-dialog" type="button">Cancel</button>
+          <button class="button primary" type="submit">Create workspace <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+    </dialog>
+    <dialog id="regenerate-dialog" class="modal" aria-labelledby="regenerate-dialog-title">
+      <form id="regenerate-form" class="modal-card" autocomplete="off">
+        <button class="modal-close" id="close-regenerate-dialog" type="button" aria-label="Close regeneration dialog">×</button>
+        <p class="eyebrow">Improve a card</p>
+        <h2 id="regenerate-dialog-title">What should change?</h2>
+        <p class="muted">Keep the learning objective and evidence intact. The card will return to review after regeneration.</p>
+        <label for="regenerate-instruction">Instruction</label>
+        <textarea id="regenerate-instruction" name="instruction" rows="4" required>Improve clarity while preserving the learning objective and evidence.</textarea>
+        <div class="modal-actions">
+          <button class="button secondary" id="cancel-regenerate-dialog" type="button">Cancel</button>
+          <button class="button primary" type="submit">Regenerate card <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+    </dialog>
     <script type="module" src="/app.js"></script>
   </body>
 </html>

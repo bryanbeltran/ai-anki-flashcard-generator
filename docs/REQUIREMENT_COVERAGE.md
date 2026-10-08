@@ -12,6 +12,7 @@ The Notion requirements define a broad product and an explicit MVP boundary. Thi
 | Fact/evidence controls | Claim records, source IDs, excerpts, confidence, stale/conflicting/media findings, explicit verify action | `src/validator.js`, `src/service.js`, curated deck JSON |
 | Completeness | Required-scope coverage matrix, exact/ranged count gates, distribution metrics, duplicate detection and gap findings | `src/validator.js`, `test/quality.test.js` |
 | Review lifecycle | Draft/needs-review/approved/rejected/locked states, field edits, revision history, regeneration, bulk actions | `src/service.js`, `src/public/app.js`, API tests |
+| Portfolio-ready workspace | Responsive Recall shell, skip navigation, keyboard-visible focus, reduced-motion support, workflow navigation, first-class project dialog, review search/filter, incremental card rendering, busy states, and live feedback | `src/public/index.html`, `src/public/app.js`, `src/public/styles.css` |
 | Export | UTF-8 TSV/CSV, escaping, explicit six-column mapping, preview endpoint, hard-gate blocking, export history | `src/exporter.js`, `src/server.js`, API tests |
 | Persistence and recovery | Local JSON persistence, memory-store test seam, runs, idempotency key handling, duplication, cancellation-ready endpoint | `src/store.js`, `src/service.js` |
 | Practice content | Source-linked Korean Foundations deck, independent Korean alphabet and sight-word subsets, data-structures interview deck | `examples/decks/`, `src/practice-data.js`, `npm run seed-artifacts` |

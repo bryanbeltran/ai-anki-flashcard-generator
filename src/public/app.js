@@ -1,4 +1,4 @@
-const state = { project: null, projects: [], practice: [], filter: "all" };
+const state = { project: null, projects: [], practice: [], filter: "all", search: "", cardLimit: 20, toastTimer: null, pendingRegeneration: null };
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -28,10 +28,52 @@ async function api(path, options = {}) {
   return payload;
 }
 
+function showToast(message, kind = "") {
+  const toast = $("#toast");
+  if (!toast) return;
+  clearTimeout(state.toastTimer);
+  toast.textContent = message;
+  toast.className = `toast ${kind}`.trim();
+  toast.hidden = false;
+  state.toastTimer = setTimeout(() => { toast.hidden = true; }, 4200);
+}
+
 function showMessage(selector, message, kind = "") {
   const element = $(selector);
-  element.textContent = message;
-  element.className = `form-message ${kind}`.trim();
+  if (element) {
+    element.textContent = message;
+    element.className = `form-message ${kind}`.trim();
+  }
+  if (message) showToast(message, kind);
+}
+
+function setBusy(element, busy) {
+  if (!element) return;
+  element.disabled = busy;
+  element.setAttribute("aria-busy", String(busy));
+  element.classList.toggle("is-busy", busy);
+}
+
+function statusTone(status) {
+  const value = String(status || "").toLowerCase();
+  if (value.includes("ready") || value === "approved" || value === "export ready") return "good";
+  if (value.includes("failed") || value.includes("blocked") || value === "rejected") return "bad";
+  return "";
+}
+
+function formatCount(value, noun = "card") {
+  const count = Number(value) || 0;
+  return `${count} ${noun}${count === 1 ? "" : "s"}`;
+}
+
+function resetCardView() {
+  state.filter = "all";
+  state.search = "";
+  state.cardLimit = 20;
+  const search = $("#card-search");
+  const filter = $("#card-filter");
+  if (search) search.value = "";
+  if (filter) filter.value = "all";
 }
 
 async function loadProjects() {
@@ -50,6 +92,7 @@ async function loadPractice() {
 async function loadProject(id) {
   try {
     state.project = await api(`/api/projects/${encodeURIComponent(id)}`);
+    resetCardView();
     renderAll();
   } catch (error) {
     showMessage("#brief-message", error.message, "error");
@@ -58,8 +101,9 @@ async function loadProject(id) {
 
 function renderProjectList() {
   const list = $("#project-list");
+  $("#project-count").textContent = state.projects.length;
   if (!state.projects.length) {
-    list.innerHTML = '<li class="muted small">No projects yet.</li>';
+    list.innerHTML = '<li class="sidebar-empty"><span aria-hidden="true">＋</span><span>No projects yet.<br /><small>Create one to start a deck.</small></span></li>';
     return;
   }
   list.innerHTML = state.projects.map((project) => `
@@ -71,9 +115,9 @@ function renderProjectList() {
 function renderPractice() {
   $("#practice-decks").innerHTML = state.practice.map((deck) => `
     <article class="practice-card">
-      <strong>${escapeHtml(deck.title)}</strong>
-      <span class="muted small">${deck.cardCount} verified cards</span>
-      <button class="button secondary" data-practice-slug="${escapeHtml(deck.slug)}">Open practice deck</button>
+      <div class="practice-card-title"><span class="practice-dot" aria-hidden="true">✦</span><strong>${escapeHtml(deck.title)}</strong></div>
+      <span class="muted small">${formatCount(deck.cardCount)} · ${deck.metrics?.coveragePercent ?? 0}% covered</span>
+      <button class="button secondary" data-practice-slug="${escapeHtml(deck.slug)}" type="button">Open deck <span aria-hidden="true">→</span></button>
     </article>`).join("");
 }
 
@@ -95,14 +139,14 @@ function fillBrief() {
 function renderMetrics() {
   const metrics = state.project?.computedMetrics || state.project?.metrics || {};
   const values = [
-    [metrics.generatedCandidates ?? 0, "Candidates"],
-    [metrics.approvedCards ?? 0, "Approved"],
-    [metrics.verifiedCards ?? 0, "Verified"],
-    [`${metrics.coveragePercent ?? 0}%`, "Required coverage"],
-    [metrics.hardGateCount ?? 0, "Hard gates"],
-    [metrics.warningCount ?? 0, "Warnings"],
+    { value: metrics.generatedCandidates ?? 0, label: "Candidates" },
+    { value: metrics.approvedCards ?? 0, label: "Approved" },
+    { value: metrics.verifiedCards ?? 0, label: "Verified", tone: metrics.verifiedCards ? "good" : "" },
+    { value: `${metrics.coveragePercent ?? 0}%`, label: "Required coverage", tone: metrics.coveragePercent === 100 ? "good" : "warning" },
+    { value: metrics.hardGateCount ?? 0, label: "Hard gates", tone: metrics.hardGateCount ? "bad" : "good" },
+    { value: metrics.warningCount ?? 0, label: "Warnings", tone: metrics.warningCount ? "warning" : "good" },
   ];
-  $("#metrics").innerHTML = values.map(([value, label]) => `<div class="metric"><strong>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></div>`).join("");
+  $("#metrics").innerHTML = values.map(({ value, label, tone = "" }) => `<div class="metric ${tone}" aria-label="${escapeHtml(`${value} ${label}`)}"><strong>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></div>`).join("");
 }
 
 function renderQuestions() {
@@ -111,7 +155,7 @@ function renderQuestions() {
   $("#brief-pill").className = `pill ${questions.some((question) => question.required) ? "" : "good"}`.trim();
   $("#questions").innerHTML = questions.length
     ? `<p class="muted small">Resolve these decisions before generation:</p>${questions.map((question) => `<div class="question"><strong>${escapeHtml(question.label)}${question.required ? " · required" : ""}</strong>${escapeHtml(question.question)}</div>`).join("")}`
-    : '<div class="question" style="background: var(--accent-soft); border-color: var(--accent)"><strong>Brief ready.</strong>The planner has enough information to build a scoped generation plan.</div>';
+    : '<div class="question ready"><strong>Brief ready.</strong>The planner has enough information to build a scoped generation plan.</div>';
 }
 
 function renderPlan() {
@@ -121,19 +165,19 @@ function renderPlan() {
     return;
   }
   $("#plan-content").innerHTML = `
-    <p class="muted small">${plan.requestedCardCount} planned cards · ${escapeHtml(plan.difficulty)} difficulty · ${Object.entries(plan.typeDistribution || {}).map(([type, count]) => `${escapeHtml(type)} ${count}`).join(" · ")}</p>
-    <div class="plan-grid">${(plan.scope || []).map((scope) => `<div class="scope-item"><strong>${escapeHtml(scope.label)}</strong><span>${scope.allocatedCards} cards</span></div>`).join("")}</div>`;
+    <div class="plan-summary"><strong>${formatCount(plan.requestedCardCount)}</strong><span>planned · ${escapeHtml(plan.difficulty)} difficulty</span><span class="plan-types">${Object.entries(plan.typeDistribution || {}).map(([type, count]) => `${escapeHtml(type)} ${count}`).join(" · ")}</span></div>
+    <div class="plan-grid">${(plan.scope || []).map((scope) => `<div class="scope-item"><span class="scope-index" aria-hidden="true">${String(scope.allocatedCards).padStart(2, "0")}</span><span><strong>${escapeHtml(scope.label)}</strong><small>${scope.allocatedCards} allocated · ${escapeHtml(scope.coverageStatus || "planned")}</small></span></div>`).join("")}</div>`;
 }
 
 function renderSources() {
   const sources = state.project?.sources || [];
   $("#source-count").textContent = `${sources.length} source${sources.length === 1 ? "" : "s"}`;
-  $("#sources").innerHTML = sources.length ? sources.map((source) => `<div class="source-row"><div><strong>${escapeHtml(source.title)}</strong><small>${escapeHtml(source.url || source.contentPreview || "Pasted source")}</small></div><div>${source.url ? `<button class="button secondary" data-source-action="fetch" data-source-id="${escapeHtml(source.id)}">Refresh snapshot</button>` : ""}<span class="pill ${source.accessStatus === "available" ? "good" : ""}">${escapeHtml(source.accessStatus || "available")}</span></div></div>`).join("") : '<p class="muted small">No sources yet. Mixed-source drafts can generate, but verified export requires evidence.</p>';
+  $("#sources").innerHTML = sources.length ? sources.map((source) => `<div class="source-row"><div class="source-info"><span class="source-icon" aria-hidden="true">⌁</span><span><strong>${escapeHtml(source.title)}</strong><small>${escapeHtml(source.url || source.contentPreview || "Pasted source")}</small></span></div><div class="source-actions">${source.url ? `<button class="button secondary" data-source-action="fetch" data-source-id="${escapeHtml(source.id)}" type="button">Refresh snapshot</button>` : ""}<span class="pill ${source.accessStatus === "available" ? "good" : ""}">${escapeHtml(source.accessStatus || "available")}</span></div></div>`).join("") : '<div class="empty-list"><span aria-hidden="true">⌁</span><span><strong>No sources yet</strong><small>Mixed-source drafts can generate, but verified export requires evidence.</small></span></div>';
 }
 
 function renderCoverage() {
   const coverage = state.project?.coverage || [];
-  $("#coverage").innerHTML = coverage.length ? coverage.map((item) => `<span class="coverage-item ${item.covered ? "good" : "bad"}">${item.covered ? "✓" : "!"} ${escapeHtml(item.label)} · ${item.cardCount}</span>`).join("") : "";
+  $("#coverage").innerHTML = coverage.length ? coverage.map((item) => `<span class="coverage-item ${item.covered ? "good" : "bad"}" aria-label="${escapeHtml(`${item.label}: ${item.covered ? "covered" : "missing"}`)}"><span aria-hidden="true">${item.covered ? "✓" : "!"}</span> ${escapeHtml(item.label)} <small>${item.cardCount} ${item.cardCount === 1 ? "card" : "cards"}</small></span>`).join("") : "";
 }
 
 function statusLabel(card) {
@@ -148,40 +192,52 @@ function option(value, label, current) {
 }
 
 function renderCards() {
-  const cards = (state.project?.cards || []).filter((card) => state.filter === "all" || card.status === state.filter);
+  const allCards = state.project?.cards || [];
+  const query = state.search.trim().toLowerCase();
+  const cards = allCards.filter((card) => {
+    const matchesFilter = state.filter === "all" || card.status === state.filter;
+    const haystack = [card.front, card.back, card.extra, ...(card.tags || [])].join(" ").toLowerCase();
+    return matchesFilter && (!query || haystack.includes(query));
+  });
   const findings = state.project?.validations || [];
+  $("#review-count").textContent = query || state.filter !== "all" ? `${cards.length} of ${formatCount(allCards.length)}` : formatCount(cards.length);
   if (!cards.length) {
-    $("#cards").innerHTML = '<p class="muted">No cards match this filter yet.</p>';
+    $("#cards").innerHTML = `<div class="empty-list card-empty"><span aria-hidden="true">⌕</span><span><strong>${allCards.length ? "No cards match this view" : "No cards yet"}</strong><small>${allCards.length ? "Try a different filter or search term." : "Build a plan, then generate your first candidates."}</small></span></div>`;
+    $("#card-pagination").innerHTML = "";
     return;
   }
-  $("#cards").innerHTML = cards.map((card, index) => {
+  const visibleCards = cards.slice(0, state.cardLimit);
+  $("#cards").innerHTML = visibleCards.map((card, index) => {
+    const cardNumber = allCards.indexOf(card) + 1 || index + 1;
     const cardFindings = findings.filter((finding) => finding.cardId === card.id);
     const disabled = card.locked ? "disabled" : "";
     const sourceOptions = (state.project?.sources || []).map((source) => `<option value="${escapeHtml(source.id)}" ${(card.sourceIds || []).includes(source.id) ? "selected" : ""}>${escapeHtml(source.title)}</option>`).join("");
     return `<details class="card-item" data-card-id="${escapeHtml(card.id)}">
-      <summary class="card-summary"><span class="card-number">${index + 1}</span><span class="card-front"><strong>${rich(card.front)}</strong><small>${escapeHtml(card.type)} · ${escapeHtml(card.difficulty)} · ${escapeHtml(card.tags?.join(" · ") || "untagged")}</small></span><span class="card-status ${card.evidenceStatus === "verified" && card.status === "approved" ? "good" : "warn"}">${escapeHtml(statusLabel(card))}</span></summary>
+      <summary class="card-summary"><span class="card-number">${String(cardNumber).padStart(2, "0")}</span><span class="card-front"><strong>${rich(card.front)}</strong><small>${escapeHtml(card.type)} · ${escapeHtml(card.difficulty)} · ${escapeHtml(card.tags?.join(" · ") || "untagged")}</small></span><span class="card-status ${card.evidenceStatus === "verified" && card.status === "approved" ? "good" : "warn"}">${escapeHtml(statusLabel(card))}</span></summary>
       <div class="card-editor">
         <div class="editor-grid">
-          <label>Front / prompt<textarea data-field="front" rows="3" ${disabled}>${escapeHtml(card.front)}</textarea></label>
-          <label>Back / answer<textarea data-field="back" rows="3" ${disabled}>${escapeHtml(card.back)}</textarea></label>
-          <label>Extra / explanation<textarea data-field="extra" rows="3" ${disabled}>${escapeHtml(card.extra)}</textarea></label>
-          <label>Tags<input data-field="tags" value="${escapeHtml((card.tags || []).join(", "))}" ${disabled} /></label>
-          <label>Card type<select data-field="type" ${disabled}>${option("basic", "Basic", card.type)}${option("reversed-basic", "Reversed basic", card.type)}${option("cloze", "Cloze", card.type)}${option("type-in", "Type-in", card.type)}</select></label>
-          <label>Difficulty<select data-field="difficulty" ${disabled}>${option("beginner", "Beginner", card.difficulty)}${option("foundational", "Foundational", card.difficulty)}${option("intermediate", "Intermediate", card.difficulty)}${option("advanced", "Advanced", card.difficulty)}</select></label>
-          <label>Evidence source<select data-field="sourceId" ${disabled}><option value="">Choose a source</option>${sourceOptions}</select></label>
+          <label>Front / prompt<textarea name="front" autocomplete="off" data-field="front" rows="3" ${disabled}>${escapeHtml(card.front)}</textarea></label>
+          <label>Back / answer<textarea name="back" autocomplete="off" data-field="back" rows="3" ${disabled}>${escapeHtml(card.back)}</textarea></label>
+          <label>Extra / explanation<textarea name="extra" autocomplete="off" data-field="extra" rows="3" ${disabled}>${escapeHtml(card.extra)}</textarea></label>
+          <label>Tags<input name="tags" autocomplete="off" data-field="tags" value="${escapeHtml((card.tags || []).join(", "))}" ${disabled} /></label>
+          <label>Card type<select name="type" data-field="type" ${disabled}>${option("basic", "Basic", card.type)}${option("reversed-basic", "Reversed basic", card.type)}${option("cloze", "Cloze", card.type)}${option("type-in", "Type-in", card.type)}</select></label>
+          <label>Difficulty<select name="difficulty" data-field="difficulty" ${disabled}>${option("beginner", "Beginner", card.difficulty)}${option("foundational", "Foundational", card.difficulty)}${option("intermediate", "Intermediate", card.difficulty)}${option("advanced", "Advanced", card.difficulty)}</select></label>
+          <label>Evidence source<select name="sourceId" data-field="sourceId" ${disabled}><option value="">Choose a source</option>${sourceOptions}</select></label>
         </div>
         ${cardFindings.length ? `<ul class="finding-list">${cardFindings.map((finding) => `<li class="${finding.severity === "error" ? "error" : ""}">${escapeHtml(finding.severity)}: ${escapeHtml(finding.message)}</li>`).join("")}</ul>` : ""}
         <div class="editor-actions">
-          <button class="button secondary" data-card-action="save" ${disabled}>Save edits</button>
-          <button class="button secondary" data-card-action="toggle-lock">${card.locked ? "Unlock" : "Lock"}</button>
-          <button class="button secondary" data-card-action="regenerate" ${disabled}>Regenerate</button>
-          <button class="button secondary" data-card-action="verify" ${disabled}>Verify with source</button>
-          <button class="button ${card.status === "approved" ? "secondary" : "primary"}" data-card-action="approve" ${disabled}>${card.status === "approved" ? "Approved" : "Approve"}</button>
-          <button class="button secondary" data-card-action="reject" ${disabled}>Reject</button>
+          <button class="button secondary" data-card-action="save" type="button" ${disabled}>Save edits</button>
+          <button class="button secondary" data-card-action="toggle-lock" type="button">${card.locked ? "Unlock" : "Lock"}</button>
+          <button class="button secondary" data-card-action="regenerate" type="button" ${disabled}>Regenerate</button>
+          <button class="button secondary" data-card-action="verify" type="button" ${disabled}>Verify with source</button>
+          <button class="button ${card.status === "approved" ? "secondary" : "primary"}" data-card-action="approve" type="button" ${disabled}>${card.status === "approved" ? "Approved" : "Approve"}</button>
+          <button class="button danger" data-card-action="reject" type="button" ${disabled}>${card.status === "rejected" ? "Rejected" : "Reject"}</button>
         </div>
       </div>
     </details>`;
   }).join("");
+  const remaining = cards.length - visibleCards.length;
+  $("#card-pagination").innerHTML = remaining > 0 ? `<button class="button secondary" data-card-more type="button">Show ${Math.min(20, remaining)} more <span aria-hidden="true">↓</span></button><span class="muted small">${remaining} more ${remaining === 1 ? "card" : "cards"} in this view</span>` : "";
 }
 
 function renderAll() {
@@ -191,8 +247,9 @@ function renderAll() {
   $("#project-view").hidden = !hasProject;
   if (!hasProject) return;
   $("#project-status").textContent = project.status;
+  $("#project-status").className = `eyebrow status-label ${statusTone(project.status)}`.trim();
   $("#project-title").textContent = project.title;
-  $("#project-subtitle").textContent = `${project.brief?.topic || "No topic yet"} · ${project.cards?.length || 0} cards`;
+  $("#project-subtitle").textContent = `${project.brief?.topic || "No topic yet"} · ${formatCount(project.cards?.length || 0)} · ${project.brief?.difficulty || "adaptive"} difficulty`;
   fillBrief();
   renderMetrics();
   renderQuestions();
@@ -203,22 +260,85 @@ function renderAll() {
   const canExport = Boolean(project.canExport);
   $("#export-pill").textContent = canExport ? "Export ready" : "Review required";
   $("#export-pill").className = `pill ${canExport ? "good" : ""}`.trim();
+  const requiredQuestions = (project.clarifyingQuestions || []).some((question) => question.required);
+  const generateButton = $("#generate-project");
+  generateButton.disabled = !project.plan || requiredQuestions || project.status === "Generating";
+  generateButton.title = !project.plan ? "Build a plan before generating" : requiredQuestions ? "Complete the required brief fields first" : "Generate card candidates";
+  const buildPlanButton = $("#build-plan");
+  buildPlanButton.disabled = requiredQuestions;
+  updateWorkflow(project, requiredQuestions);
   renderProjectList();
 }
 
-async function createProject() {
-  const title = window.prompt("Project name", "New Anki deck");
-  if (!title) return;
+function updateWorkflow(project, requiredQuestions) {
+  const steps = [
+    { id: "brief-panel", complete: !requiredQuestions },
+    { id: "source-panel", complete: (project.sources || []).length > 0 },
+    { id: "plan-panel", complete: Boolean(project.plan) },
+    { id: "review-panel", complete: Boolean(project.cards?.length) && (project.computedMetrics?.approvedCards || 0) === project.cards.length },
+    { id: "export-panel", complete: Boolean(project.canExport) },
+  ];
+  let activeAssigned = false;
+  $$(".workflow-step").forEach((step, index) => {
+    const item = steps[index];
+    const active = !activeAssigned && !item.complete;
+    if (active) activeAssigned = true;
+    step.classList.toggle("complete", item.complete);
+    step.classList.toggle("active", active || (!activeAssigned && index === steps.length - 1));
+  });
+}
+
+function openProjectDialog() {
+  const dialog = $("#project-dialog");
+  const input = $("#project-name");
+  if (typeof dialog.showModal === "function") dialog.showModal();
+  else dialog.setAttribute("open", "");
+  input.value = "";
+  requestAnimationFrame(() => input.focus());
+}
+
+function closeProjectDialog() {
+  const dialog = $("#project-dialog");
+  if (typeof dialog.close === "function") dialog.close();
+  else dialog.removeAttribute("open");
+}
+
+function openRegenerateDialog(cardId, trigger) {
+  const dialog = $("#regenerate-dialog");
+  state.pendingRegeneration = { cardId, trigger };
+  $("#regenerate-instruction").value = "Improve clarity while preserving the learning objective and evidence.";
+  if (typeof dialog.showModal === "function") dialog.showModal();
+  else dialog.setAttribute("open", "");
+  requestAnimationFrame(() => $("#regenerate-instruction").focus());
+}
+
+function closeRegenerateDialog() {
+  const dialog = $("#regenerate-dialog");
+  state.pendingRegeneration = null;
+  if (typeof dialog.close === "function") dialog.close();
+  else dialog.removeAttribute("open");
+}
+
+async function createProject(title, submitButton) {
+  setBusy(submitButton, true);
   try {
     state.project = await api("/api/projects", { method: "POST", body: JSON.stringify({ title }) });
+    resetCardView();
+    closeProjectDialog();
     await loadProjects();
     renderAll();
-  } catch (error) { showMessage("#brief-message", error.message, "error"); }
+    showToast("Workspace created. Define the learning brief to begin.", "success");
+  } catch (error) {
+    showMessage("#brief-message", error.message, "error");
+  } finally {
+    setBusy(submitButton, false);
+  }
 }
 
 async function saveBrief(event) {
   event.preventDefault();
   const form = event.currentTarget;
+  const submitButton = form.querySelector('button[type="submit"]');
   const allowedTypes = $$('input[name="allowedTypes"]:checked', form).map((input) => input.value);
   const body = {
     topic: form.elements.topic.value,
@@ -236,20 +356,24 @@ async function saveBrief(event) {
     allowedTypes,
     confirmed: true,
   };
+  setBusy(submitButton, true);
   try {
     state.project = await api(`/api/projects/${state.project.id}/brief`, { method: "POST", body: JSON.stringify(body) });
     showMessage("#brief-message", "Brief saved. Build or revise the plan next.", "success");
     renderAll();
   } catch (error) { showMessage("#brief-message", error.message, "error"); }
+  finally { setBusy(submitButton, false); }
 }
 
-async function withProjectAction(action, successMessage = "Updated") {
+async function withProjectAction(action, successMessage = "Updated", trigger = null) {
+  setBusy(trigger, true);
   try {
     state.project = await action();
     showMessage("#brief-message", successMessage, "success");
     renderAll();
     await loadProjects();
   } catch (error) { showMessage("#brief-message", error.message, "error"); }
+  finally { setBusy(trigger, false); }
 }
 
 document.addEventListener("click", async (event) => {
@@ -257,15 +381,24 @@ document.addEventListener("click", async (event) => {
   if (projectButton) return loadProject(projectButton.dataset.projectId);
   const practiceButton = event.target.closest("[data-practice-slug]");
   if (practiceButton) {
-    try { state.project = await api(`/api/practice/${encodeURIComponent(practiceButton.dataset.practiceSlug)}`, { method: "POST", body: "{}" }); renderAll(); await loadProjects(); }
+    try { setBusy(practiceButton, true); state.project = await api(`/api/practice/${encodeURIComponent(practiceButton.dataset.practiceSlug)}`, { method: "POST", body: "{}" }); resetCardView(); renderAll(); await loadProjects(); }
     catch (error) { showMessage("#brief-message", error.message, "error"); }
+    finally { setBusy(practiceButton, false); }
+    return;
+  }
+  const moreButton = event.target.closest("[data-card-more]");
+  if (moreButton) {
+    state.cardLimit += 20;
+    renderCards();
     return;
   }
   const sourceAction = event.target.closest("[data-source-action]");
   if (sourceAction) {
     if (sourceAction.dataset.sourceAction === "fetch") {
+      setBusy(sourceAction, true);
       try { state.project = await api(`/api/projects/${state.project.id}/sources/${sourceAction.dataset.sourceId}/fetch`, { method: "POST", body: "{}" }); renderAll(); showMessage("#source-message", "Source snapshot refreshed.", "success"); }
       catch (error) { showMessage("#source-message", error.message, "error"); }
+      finally { setBusy(sourceAction, false); }
     }
     return;
   }
@@ -277,54 +410,90 @@ document.addEventListener("click", async (event) => {
     if (action === "save") {
       const get = (field) => details.querySelector(`[data-field="${field}"]`);
       const sourceId = get("sourceId")?.value;
-      await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/${cardId}`, { method: "PATCH", body: JSON.stringify({ front: get("front").value, back: get("back").value, extra: get("extra").value, tags: get("tags").value.split(",").map((tag) => tag.trim()).filter(Boolean), type: get("type").value, difficulty: get("difficulty").value, ...(sourceId ? { sourceIds: [sourceId] } : {}) }) }), "Card saved and sent back through validation.");
+      await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/${cardId}`, { method: "PATCH", body: JSON.stringify({ front: get("front").value, back: get("back").value, extra: get("extra").value, tags: get("tags").value.split(",").map((tag) => tag.trim()).filter(Boolean), type: get("type").value, difficulty: get("difficulty").value, ...(sourceId ? { sourceIds: [sourceId] } : {}) }) }), "Card saved and sent back through validation.", cardAction);
     }
     if (action === "toggle-lock") {
       const card = state.project.cards.find((item) => item.id === cardId);
-      await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/${cardId}`, { method: "PATCH", body: JSON.stringify({ locked: !card.locked }) }), card.locked ? "Card unlocked." : "Card locked.");
+      await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/${cardId}`, { method: "PATCH", body: JSON.stringify({ locked: !card.locked }) }), card.locked ? "Card unlocked." : "Card locked.", cardAction);
     }
     if (action === "approve") {
-      await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/bulk`, { method: "POST", body: JSON.stringify({ cardIds: [cardId], action: "approve" }) }), "Card approved. Validation will determine export readiness.");
+      await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/bulk`, { method: "POST", body: JSON.stringify({ cardIds: [cardId], action: "approve" }) }), "Card approved. Validation will determine export readiness.", cardAction);
     }
     if (action === "reject") {
-      await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/bulk`, { method: "POST", body: JSON.stringify({ cardIds: [cardId], action: "reject" }) }), "Card rejected and excluded from export.");
+      if (state.project.cards.find((card) => card.id === cardId)?.status !== "rejected" && !window.confirm("Reject this card? You can approve it again from the card review.")) return;
+      await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/bulk`, { method: "POST", body: JSON.stringify({ cardIds: [cardId], action: "reject" }) }), "Card rejected and excluded from export.", cardAction);
     }
     if (action === "regenerate") {
-      const instruction = window.prompt("Regeneration instruction", "Improve clarity while preserving the learning objective and evidence.");
-      if (instruction) await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/${cardId}/regenerate`, { method: "POST", body: JSON.stringify({ instruction }) }), "Card regenerated and returned to review.");
+      openRegenerateDialog(cardId, cardAction);
+      return;
     }
     if (action === "verify") {
       const sourceId = details.querySelector('[data-field="sourceId"]')?.value;
       if (!sourceId) { showMessage("#brief-message", "Choose a source before verifying this card.", "error"); return; }
-      await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/${cardId}/verify`, { method: "POST", body: JSON.stringify({ sourceIds: [sourceId] }) }), "Evidence recorded and card approved.");
+      await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/${cardId}/verify`, { method: "POST", body: JSON.stringify({ sourceIds: [sourceId] }) }), "Evidence recorded and card approved.", cardAction);
     }
   }
 });
 
-$("#new-project").addEventListener("click", createProject);
-$("#empty-new-project").addEventListener("click", createProject);
-$("#refresh-projects").addEventListener("click", async () => { await loadProjects(); await loadPractice(); renderAll(); });
+$("#new-project").addEventListener("click", openProjectDialog);
+$("#empty-new-project").addEventListener("click", openProjectDialog);
+$("#cancel-project-dialog").addEventListener("click", closeProjectDialog);
+$("#close-project-dialog").addEventListener("click", closeProjectDialog);
+$("#cancel-regenerate-dialog").addEventListener("click", closeRegenerateDialog);
+$("#close-regenerate-dialog").addEventListener("click", closeRegenerateDialog);
+$("#new-project-form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  createProject(form.elements.title.value.trim(), form.querySelector('button[type="submit"]'));
+});
+$("#regenerate-form").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const pending = state.pendingRegeneration;
+  if (!pending) return;
+  const instruction = form.elements.instruction.value.trim();
+  if (!instruction) return;
+  const submitButton = form.querySelector('button[type="submit"]');
+  setBusy(submitButton, true);
+  try {
+    closeRegenerateDialog();
+    await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/${pending.cardId}/regenerate`, { method: "POST", body: JSON.stringify({ instruction }) }), "Card regenerated and returned to review.", pending.trigger);
+  } finally {
+    setBusy(submitButton, false);
+  }
+});
+$("#refresh-projects").addEventListener("click", async (event) => { setBusy(event.currentTarget, true); try { await loadProjects(); await loadPractice(); renderAll(); showToast("Workspace refreshed.", "success"); } catch (error) { showToast(error.message, "error"); } finally { setBusy(event.currentTarget, false); } });
 $("#brief-form").addEventListener("submit", saveBrief);
 $("#source-form").addEventListener("submit", async (event) => {
   event.preventDefault();
   const form = event.currentTarget;
+  const submitButton = form.querySelector('button[type="submit"]');
+  setBusy(submitButton, true);
   try {
     state.project = await api(`/api/projects/${state.project.id}/sources`, { method: "POST", body: JSON.stringify({ title: form.elements.title.value, url: form.elements.url.value, content: form.elements.content.value, quality: form.elements.quality.value }) });
     form.reset();
     showMessage("#source-message", "Source added. Select it on a card to verify evidence.", "success");
     renderAll();
   } catch (error) { showMessage("#source-message", error.message, "error"); }
+  finally { setBusy(submitButton, false); }
 });
-$("#build-plan").addEventListener("click", () => withProjectAction(() => api(`/api/projects/${state.project.id}/plan`, { method: "POST", body: "{}" }), "Plan built. Review the scope contract before generating."));
-$("#generate-project").addEventListener("click", () => withProjectAction(() => api(`/api/projects/${state.project.id}/generate`, { method: "POST", body: JSON.stringify({ idempotencyKey: `ui-${Date.now()}` }) }), "Generation complete. Review findings and approve cards before export."));
-$("#validate-project").addEventListener("click", () => withProjectAction(() => api(`/api/projects/${state.project.id}/validate`, { method: "POST", body: "{}" }), "Validation complete."));
-$("#card-filter").addEventListener("change", (event) => { state.filter = event.target.value; renderCards(); });
-$("#approve-visible").addEventListener("click", () => {
-  const visible = (state.project.cards || []).filter((card) => state.filter === "all" || card.status === state.filter).map((card) => card.id);
-  withProjectAction(() => api(`/api/projects/${state.project.id}/cards/bulk`, { method: "POST", body: JSON.stringify({ cardIds: visible, action: "approve" }) }), `${visible.length} visible cards approved.`);
+$("#build-plan").addEventListener("click", (event) => withProjectAction(() => api(`/api/projects/${state.project.id}/plan`, { method: "POST", body: "{}" }), "Plan built. Review the scope contract before generating.", event.currentTarget));
+$("#generate-project").addEventListener("click", (event) => withProjectAction(() => api(`/api/projects/${state.project.id}/generate`, { method: "POST", body: JSON.stringify({ idempotencyKey: `ui-${Date.now()}` }) }), "Generation complete. Review findings and approve cards before export.", event.currentTarget));
+$("#validate-project").addEventListener("click", (event) => withProjectAction(() => api(`/api/projects/${state.project.id}/validate`, { method: "POST", body: "{}" }), "Validation complete.", event.currentTarget));
+$("#card-filter").addEventListener("change", (event) => { state.filter = event.target.value; state.cardLimit = 20; renderCards(); });
+$("#card-search").addEventListener("input", (event) => { state.search = event.target.value; state.cardLimit = 20; renderCards(); });
+$("#approve-visible").addEventListener("click", (event) => {
+  const visible = (state.project.cards || []).filter((card) => (state.filter === "all" || card.status === state.filter) && !card.locked && card.status !== "rejected").filter((card) => {
+    const haystack = [card.front, card.back, card.extra, ...(card.tags || [])].join(" ").toLowerCase();
+    return !state.search.trim() || haystack.includes(state.search.trim().toLowerCase());
+  }).map((card) => card.id);
+  if (!visible.length) { showToast("No eligible cards in this view.", "error"); return; }
+  withProjectAction(() => api(`/api/projects/${state.project.id}/cards/bulk`, { method: "POST", body: JSON.stringify({ cardIds: visible, action: "approve" }) }), `${visible.length} visible cards approved.`, event.currentTarget);
 });
 $("#export-button").addEventListener("click", async () => {
   const message = "#export-message";
+  const button = $("#export-button");
+  setBusy(button, true);
   try {
     const params = new URLSearchParams({ format: $("#export-format").value, cardType: $("#export-type").value });
     if ($("#include-unverified").checked) params.set("includeUnverified", "true");
@@ -338,8 +507,11 @@ $("#export-button").addEventListener("click", async () => {
     URL.revokeObjectURL(link.href);
     showMessage(message, `Downloaded ${response.headers.get("x-anki-notes")} notes / ${response.headers.get("x-anki-cards")} cards.`, "success");
   } catch (error) { showMessage(message, error.message, "error"); }
+  finally { setBusy(button, false); }
 });
 $("#preview-export").addEventListener("click", async () => {
+  const button = $("#preview-export");
+  setBusy(button, true);
   try {
     const params = new URLSearchParams({ format: $("#export-format").value, cardType: $("#export-type").value });
     if ($("#include-unverified").checked) params.set("includeUnverified", "true");
@@ -348,7 +520,16 @@ $("#preview-export").addEventListener("click", async () => {
     $("#export-preview").textContent = JSON.stringify(preview, null, 2);
     showMessage("#export-message", preview.blocked ? "Preview generated; resolve validation blockers before downloading." : "Preview is ready.", preview.blocked ? "error" : "success");
   } catch (error) { showMessage("#export-message", error.message, "error"); }
+  finally { setBusy(button, false); }
 });
 
-await Promise.all([loadProjects(), loadPractice()]);
-renderAll();
+async function init() {
+  try {
+    await Promise.all([loadProjects(), loadPractice()]);
+    renderAll();
+  } catch (error) {
+    showToast(`Could not load the workspace: ${error.message}`, "error");
+  }
+}
+
+init();

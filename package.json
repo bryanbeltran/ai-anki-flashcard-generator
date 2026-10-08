@@ -2,7 +2,7 @@
   "name": "ai-anki-flashcard-generator",
   "version": "0.1.0",
   "private": true,
-  "description": "A Codex-powered, evidence-aware Anki flashcard authoring workspace.",
+  "description": "Recall: a local-first, evidence-aware Anki flashcard authoring workspace.",
   "type": "module",
   "scripts": {
     "start": "node src/server.js",

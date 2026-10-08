@@ -42,6 +42,8 @@ test("API supports brief -> plan -> generate -> review -> export", async () => {
     const exportResponse = await fetch(`${base}/api/projects/${created.id}/export?format=tsv&includeUnverified=true`);
     assert.equal(exportResponse.ok, true);
     assert.match(await exportResponse.text(), /#columns:Front\tBack\tExtra\tTags\tCardType\tSource/);
+    const rejected = await json(base, `/api/projects/${created.id}/cards/bulk`, { method: "POST", body: JSON.stringify({ cardIds: [generated.cards[0].id], action: "reject" }) });
+    assert.equal(rejected.cards.find((card) => card.id === generated.cards[0].id).status, "rejected");
   } finally {
     await new Promise((resolve) => server.close(resolve));
   }
