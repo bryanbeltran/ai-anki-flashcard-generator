@@ -68,6 +68,135 @@
       ]
     },
     {
+      "slug": "korean-alphabet",
+      "title": "Korean Alphabet — Hangul Foundations",
+      "cardCount": 36,
+      "notes": 36,
+      "cards": 36,
+      "metrics": {
+        "requestedCards": 36,
+        "generatedCandidates": 36,
+        "approvedCards": 36,
+        "exportableCards": 36,
+        "verifiedCards": 36,
+        "unverifiedCards": 0,
+        "conflictingCards": 0,
+        "requiredScopeItems": 3,
+        "coveredRequiredScopeItems": 3,
+        "coveragePercent": 100,
+        "duplicateCount": 0,
+        "distribution": {
+          "byScope": {
+            "hangul-consonants": 14,
+            "hangul-vowels": 16,
+            "hangul-syllable-blocks": 6
+          },
+          "byType": {
+            "basic": 36
+          },
+          "byDifficulty": {
+            "beginner": 14,
+            "foundational": 22
+          },
+          "byObjective": {
+            "recall": 36
+          }
+        },
+        "hardGateCount": 0,
+        "warningCount": 0,
+        "notes": 0,
+        "updatedAt": "2026-10-08T00:00:00.000Z"
+      },
+      "sources": [
+        {
+          "id": "source-korean-hangul",
+          "title": "National Institute of Korean Language — Korean language resources",
+          "url": "https://www.korean.go.kr/",
+          "type": "reference",
+          "quality": "authoritative",
+          "retrievedAt": "2026-10-08T00:00:00.000Z",
+          "snapshotId": "source-korean-hangul-snapshot",
+          "accessStatus": "available",
+          "notes": "Official Korean language institution used for Hangul terminology and orthographic conventions."
+        },
+        {
+          "id": "source-korean-dictionary",
+          "title": "Korean-English Learners' Dictionary",
+          "url": "https://krdict.korean.go.kr/eng",
+          "type": "reference",
+          "quality": "authoritative",
+          "retrievedAt": "2026-10-08T00:00:00.000Z",
+          "snapshotId": "source-korean-dictionary-snapshot",
+          "accessStatus": "available",
+          "notes": "National Institute of Korean Language learner dictionary used for English glosses and usage notes."
+        }
+      ],
+      "parentDeck": "korean-foundations-alphabet-sight-words"
+    },
+    {
+      "slug": "korean-sight-words",
+      "title": "Korean Sight Words — English-Speaking Learners",
+      "cardCount": 45,
+      "notes": 45,
+      "cards": 45,
+      "metrics": {
+        "requestedCards": 45,
+        "generatedCandidates": 45,
+        "approvedCards": 45,
+        "exportableCards": 45,
+        "verifiedCards": 45,
+        "unverifiedCards": 0,
+        "conflictingCards": 0,
+        "requiredScopeItems": 1,
+        "coveredRequiredScopeItems": 1,
+        "coveragePercent": 100,
+        "duplicateCount": 0,
+        "distribution": {
+          "byScope": {
+            "korean-sight-words": 45
+          },
+          "byType": {
+            "basic": 45
+          },
+          "byDifficulty": {
+            "beginner": 45
+          },
+          "byObjective": {
+            "recall": 45
+          }
+        },
+        "hardGateCount": 0,
+        "warningCount": 0,
+        "notes": 0,
+        "updatedAt": "2026-10-08T00:00:00.000Z"
+      },
+      "sources": [
+        {
+          "id": "source-korean-hangul",
+          "title": "National Institute of Korean Language — Korean language resources",
+          "url": "https://www.korean.go.kr/",
+          "type": "reference",
+          "quality": "authoritative",
+          "retrievedAt": "2026-10-08T00:00:00.000Z",
+          "snapshotId": "source-korean-hangul-snapshot",
+          "accessStatus": "available",
+          "notes": "Official Korean language institution used for Hangul terminology and orthographic conventions."
+        },
+        {
+          "id": "source-korean-dictionary",
+          "title": "Korean-English Learners' Dictionary",
+          "url": "https://krdict.korean.go.kr/eng",
+          "type": "reference",
+          "quality": "authoritative",
+          "retrievedAt": "2026-10-08T00:00:00.000Z",
+          "snapshotId": "source-korean-dictionary-snapshot",
+          "accessStatus": "available",
+          "notes": "National Institute of Korean Language learner dictionary used for English glosses and usage notes."
+        }
+      ],
+      "parentDeck": "korean-foundations-alphabet-sight-words"
+    },
+    {
       "slug": "data-structures-interview-prep",
       "title": "Data Structures Interview Prep",
       "cardCount": 47,

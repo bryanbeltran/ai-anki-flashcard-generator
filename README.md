@@ -40,8 +40,9 @@ The provider is isolated behind `src/provider.js`. Provider errors are surfaced 
 
 `npm run seed-artifacts` writes validated, import-oriented files to `examples/decks/`:
 
-- `korean-foundations.json` and `korean-foundations.tsv`
-- `data-structures-interview.json` and `data-structures-interview.tsv`
+- `korean-foundations-alphabet-sight-words.json` and `.tsv`
+- `data-structures-interview-prep.json` and `.tsv`
+- `korean-alphabet.json` / `.tsv` and `korean-sight-words.json` / `.tsv` are independently importable Korean subsets.
 - `manifest.json` with card counts, validation metrics, and source metadata
 
 The TSV uses an explicit six-column mapping:

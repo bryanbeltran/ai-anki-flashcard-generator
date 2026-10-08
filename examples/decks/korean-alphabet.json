@@ -1,0 +1,1946 @@
+{
+  "id": "practice_korean_alphabet",
+  "title": "Korean Alphabet — Hangul Foundations",
+  "createdAt": "2026-10-08T00:00:00.000Z",
+  "updatedAt": "2026-10-08T00:00:00.000Z",
+  "status": "Export ready",
+  "brief": {
+    "topic": "Korean Hangul alphabet and high-frequency sight words",
+    "outcome": "An English-speaking learner can recognize core Hangul symbols and understand common Korean words and phrases on sight.",
+    "audience": "English-speaking Korean language learner at beginner level",
+    "prerequisites": "",
+    "cardCount": 36,
+    "difficulty": "foundational",
+    "allowedTypes": [
+      "basic"
+    ],
+    "direction": "English to Korean where requested; otherwise prompt-to-answer recall.",
+    "sourcePolicy": "trusted-external",
+    "language": "English explanations with Korean examples where relevant",
+    "deckName": "Korean Alphabet — Hangul Foundations",
+    "exportFormat": "tsv",
+    "includedScope": "hangul-consonants, hangul-vowels, hangul-syllable-blocks",
+    "excludedScope": "",
+    "sources": [
+      "https://www.korean.go.kr/",
+      "https://krdict.korean.go.kr/eng"
+    ],
+    "sensitiveContent": "",
+    "confirmed": true,
+    "assumptions": [
+      "Cards are study prompts, not professional advice.",
+      "Romanization is a pronunciation aid, not a replacement for Hangul."
+    ],
+    "updatedAt": "2026-10-08T00:00:00.000Z"
+  },
+  "plan": {
+    "id": "plan_practice_korean_foundations",
+    "version": 1,
+    "createdAt": "2026-10-08T00:00:00.000Z",
+    "scope": [
+      {
+        "id": "hangul-consonants",
+        "label": "Hangul consonants",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 14,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "hangul-vowels",
+        "label": "Hangul vowels",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 16,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "hangul-syllable-blocks",
+        "label": "Hangul syllable blocks and final consonants",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 6,
+        "coverageStatus": "covered"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "objective_hangul-consonants_recall",
+        "scopeId": "hangul-consonants",
+        "type": "recall",
+        "statement": "Recall Hangul consonants.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_hangul-vowels_recall",
+        "scopeId": "hangul-vowels",
+        "type": "recall",
+        "statement": "Recall Hangul vowels.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_hangul-syllable-blocks_recall",
+        "scopeId": "hangul-syllable-blocks",
+        "type": "recall",
+        "statement": "Recall Hangul syllable blocks and final consonants.",
+        "priority": "required"
+      }
+    ],
+    "requestedCardCount": 36,
+    "difficulty": "adaptive",
+    "typeDistribution": {
+      "basic": 81
+    },
+    "sourcePolicy": "trusted-external",
+    "exclusions": [],
+    "risks": [],
+    "approvedAt": "2026-10-08T00:00:00.000Z"
+  },
+  "sources": [
+    {
+      "id": "source-korean-hangul",
+      "title": "National Institute of Korean Language — Korean language resources",
+      "url": "https://www.korean.go.kr/",
+      "type": "reference",
+      "quality": "authoritative",
+      "retrievedAt": "2026-10-08T00:00:00.000Z",
+      "snapshotId": "source-korean-hangul-snapshot",
+      "accessStatus": "available",
+      "notes": "Official Korean language institution used for Hangul terminology and orthographic conventions."
+    },
+    {
+      "id": "source-korean-dictionary",
+      "title": "Korean-English Learners' Dictionary",
+      "url": "https://krdict.korean.go.kr/eng",
+      "type": "reference",
+      "quality": "authoritative",
+      "retrievedAt": "2026-10-08T00:00:00.000Z",
+      "snapshotId": "source-korean-dictionary-snapshot",
+      "accessStatus": "available",
+      "notes": "National Institute of Korean Language learner dictionary used for English glosses and usage notes."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_korean-alphabet-1",
+      "text": "What consonant is **ㄱ**, and what is its usual sound guide? — ㄱ is *기역* (giyeok). It is roughly **g** at the beginning of a syllable and **k** at the end; exact pronunciation depends on position and surrounding sounds.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-2",
+      "text": "What consonant is **ㄴ**, and what sound does it represent? — ㄴ is *니은* (nieun) and represents an **n** sound.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-3",
+      "text": "What consonant is **ㄷ**, and what is its usual sound guide? — ㄷ is *디귿* (digeut). It is roughly **d** initially and **t** finally.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-4",
+      "text": "What consonant is **ㄹ**, and why is its romanization context-dependent? — ㄹ is *리을* (rieul). It is commonly realized between an **r-like** sound in some onset positions and an **l-like** sound in coda or doubled contexts; English romanization is only an approximation.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-5",
+      "text": "What consonant is **ㅁ**, and what sound does it represent? — ㅁ is *미음* (mieum) and represents **m**.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-6",
+      "text": "What consonant is **ㅂ**, and what is its usual sound guide? — ㅂ is *비읍* (bieup). It is roughly **b** initially and **p** finally.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-7",
+      "text": "What consonant is **ㅅ**, and what sound does it usually represent? — ㅅ is *시옷* (siot) and is usually **s**, with context-dependent pronunciation before certain vowels.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-8",
+      "text": "What are the two main roles of **ㅇ**? — At the beginning of a syllable block, ㅇ is silent; at the end, it represents **ng** as in English *sing*.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-9",
+      "text": "What consonant is **ㅈ**, and what is its sound guide? — ㅈ is *지읒* (jieut) and is roughly **j** or a soft affricate sound.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-10",
+      "text": "What consonant is **ㅊ**, and how does it differ from ㅈ? — ㅊ is *치읓* (chieut) and is an aspirated **ch** sound; ㅈ is the less-aspirated counterpart.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-11",
+      "text": "What consonant is **ㅋ**, and what sound does it represent? — ㅋ is *키읔* (kieuk) and is an aspirated **k** sound.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-12",
+      "text": "What consonant is **ㅌ**, and what sound does it represent? — ㅌ is *티읕* (tieut) and is an aspirated **t** sound.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-13",
+      "text": "What consonant is **ㅍ**, and what sound does it represent? — ㅍ is *피읖* (pieup) and is an aspirated **p** sound.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-14",
+      "text": "What consonant is **ㅎ**, and what sound does it represent? — ㅎ is *히읗* (hieut) and is an **h** sound, with predictable effects on neighboring consonants.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-15",
+      "text": "What vowel is **ㅏ**, and what sound guide is commonly used? — ㅏ is *아* and is commonly represented as **a**, similar to the vowel in *father* for many learners.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-16",
+      "text": "What vowel is **ㅑ**, and what sound guide is commonly used? — ㅑ is *야* and is commonly represented as **ya**.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-17",
+      "text": "What vowel is **ㅓ**, and why is **eo** only an approximation? — ㅓ is *어*. Revised Romanization writes it **eo**; English has no exact equivalent, so learners should use Korean audio rather than treating the spelling as two sounds.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-18",
+      "text": "What vowel is **ㅕ**, and what sound guide is commonly used? — ㅕ is *여* and is commonly represented as **yeo**.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-19",
+      "text": "What vowel is **ㅗ**, and what sound guide is commonly used? — ㅗ is *오* and is commonly represented as **o**.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-20",
+      "text": "What vowel is **ㅛ**, and what sound guide is commonly used? — ㅛ is *요* and is commonly represented as **yo**.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-21",
+      "text": "What vowel is **ㅜ**, and what sound guide is commonly used? — ㅜ is *우* and is commonly represented as **u**, roughly like the vowel in *boot* for many learners.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-22",
+      "text": "What vowel is **ㅠ**, and what sound guide is commonly used? — ㅠ is *유* and is commonly represented as **yu**.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-23",
+      "text": "What vowel is **ㅡ**, and why is **eu** only a learner guide? — ㅡ is *으*. Revised Romanization writes it **eu**; it is a Korean vowel without a direct English equivalent.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-24",
+      "text": "What vowel is **ㅣ**, and what sound does it represent? — ㅣ is *이* and represents **i**, like the vowel in *machine* for many learners.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-25",
+      "text": "What is the common sound guide for **ㅐ**? — ㅐ is *애* and is written **ae**; in modern Seoul Korean its pronunciation is often close to ㅔ for many speakers.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-26",
+      "text": "What is the common sound guide for **ㅔ**? — ㅔ is *에* and is written **e**; it is distinct in spelling even though many speakers pronounce it similarly to ㅐ.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-27",
+      "text": "How is **ㅘ** formed and pronounced? — ㅘ is a compound vowel written **wa**, formed from ㅗ plus ㅏ.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-28",
+      "text": "How is **ㅝ** formed and pronounced? — ㅝ is a compound vowel written **wo**, formed from ㅜ plus ㅓ.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-29",
+      "text": "How is **ㅚ** commonly romanized, and what pronunciation variation should learners know? — ㅚ is commonly romanized **oe**; modern pronunciation is often close to **we** in many contexts, so audio matters.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-30",
+      "text": "What is the usual sound guide for **ㅟ**? — ㅟ is *위* and is commonly represented as **wi**.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-31",
+      "text": "How are Hangul syllable blocks constructed? — A syllable block combines an initial consonant, a vowel, and optionally a final consonant. The letters are arranged into one visual block, not written as a horizontal alphabetic string.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-32",
+      "text": "How can you decompose **한** into its jamo? — **한** is ㅎ + ㅏ + ㄴ: initial ㅎ, vowel ㅏ, and final consonant ㄴ.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-33",
+      "text": "What does **받침** (batchim) mean in Hangul reading? — 받침 is the final consonant position at the bottom of a syllable block. Its pronunciation follows Korean final-consonant rules and may change before the next syllable.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-34",
+      "text": "What sound family do final ㄱ, ㅋ, and ㄲ commonly represent? — In final position, ㄱ, ㅋ, and ㄲ are commonly realized as the unreleased **[k̚]**-type sound; they are not pronounced like a fully released English k.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-35",
+      "text": "What sound does final **ㅇ** commonly represent? — Final ㅇ represents **ng**, as in the ending of English *sing*.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-alphabet-36",
+      "text": "What does a double consonant such as **ㄲ** indicate? — A doubled jamo such as ㄲ is a tense consonant, not simply a longer version of ㄱ. Tense consonants have different articulation and are best learned with audio.",
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-1",
+      "text": "What does **안녕하세요** mean in common Korean? — hello",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-2",
+      "text": "What does **안녕** mean in common Korean? — hi / bye",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-3",
+      "text": "What does **감사합니다** mean in common Korean? — thank you",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-4",
+      "text": "What does **고마워요** mean in common Korean? — thank you",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-5",
+      "text": "What does **네** mean in common Korean? — yes / I understand",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-6",
+      "text": "What does **아니요** mean in common Korean? — no",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-7",
+      "text": "What does **죄송합니다** mean in common Korean? — I am sorry",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-8",
+      "text": "What does **미안해요** mean in common Korean? — I am sorry",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-9",
+      "text": "What does **괜찮아요** mean in common Korean? — it is okay / I am fine",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-10",
+      "text": "What does **주세요** mean in common Korean? — please give me / please",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-11",
+      "text": "What does **뭐** mean in common Korean? — what",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-12",
+      "text": "What does **어디** mean in common Korean? — where",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-13",
+      "text": "What does **누구** mean in common Korean? — who",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-14",
+      "text": "What does **왜** mean in common Korean? — why",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-15",
+      "text": "What does **언제** mean in common Korean? — when",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-16",
+      "text": "What does **어떻게** mean in common Korean? — how",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-17",
+      "text": "What does **이거** mean in common Korean? — this thing",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-18",
+      "text": "What does **그거** mean in common Korean? — that thing",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-19",
+      "text": "What does **저거** mean in common Korean? — that thing over there",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-20",
+      "text": "What does **여기** mean in common Korean? — here",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-21",
+      "text": "What does **거기** mean in common Korean? — there",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-22",
+      "text": "What does **저기** mean in common Korean? — over there",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-23",
+      "text": "What does **오늘** mean in common Korean? — today",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-24",
+      "text": "What does **내일** mean in common Korean? — tomorrow",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-25",
+      "text": "What does **어제** mean in common Korean? — yesterday",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-26",
+      "text": "What does **지금** mean in common Korean? — now",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-27",
+      "text": "What does **사람** mean in common Korean? — person / people",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-28",
+      "text": "What does **친구** mean in common Korean? — friend",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-29",
+      "text": "What does **집** mean in common Korean? — home / house",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-30",
+      "text": "What does **학교** mean in common Korean? — school",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-31",
+      "text": "What does **물** mean in common Korean? — water",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-32",
+      "text": "What does **밥** mean in common Korean? — rice / meal",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-33",
+      "text": "What does **화장실** mean in common Korean? — restroom / bathroom",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-34",
+      "text": "What does **이름** mean in common Korean? — name",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-35",
+      "text": "What does **한국** mean in common Korean? — Korea",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-36",
+      "text": "What does **영어** mean in common Korean? — English",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-37",
+      "text": "What does **좋아요** mean in common Korean? — it is good / I like it",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-38",
+      "text": "What does **싫어요** mean in common Korean? — I dislike it / I do not like it",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-39",
+      "text": "What does **있어요** mean in common Korean? — there is / I have / it exists",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-40",
+      "text": "What does **없어요** mean in common Korean? — there is not / I do not have",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-41",
+      "text": "What does **가요** mean in common Korean? — go / am going",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-42",
+      "text": "What does **와요** mean in common Korean? — come / am coming",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-43",
+      "text": "What does **먹어요** mean in common Korean? — eat / am eating",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-44",
+      "text": "What does **마셔요** mean in common Korean? — drink / am drinking",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_korean-sight-45",
+      "text": "What does **봐요** mean in common Korean? — see / watch / look",
+      "sourceIds": [
+        "source-korean-dictionary"
+      ],
+      "verificationStatus": "verified",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    }
+  ],
+  "cards": [
+    {
+      "id": "card_korean-alphabet-1",
+      "stableId": "korean-alphabet-1",
+      "type": "basic",
+      "front": "What consonant is **ㄱ**, and what is its usual sound guide?",
+      "back": "ㄱ is *기역* (giyeok). It is roughly **g** at the beginning of a syllable and **k** at the end; exact pronunciation depends on position and surrounding sounds.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-consonants"
+      ],
+      "scopeId": "hangul-consonants",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_korean-alphabet-1"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-2",
+      "stableId": "korean-alphabet-2",
+      "type": "basic",
+      "front": "What consonant is **ㄴ**, and what sound does it represent?",
+      "back": "ㄴ is *니은* (nieun) and represents an **n** sound.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-consonants"
+      ],
+      "scopeId": "hangul-consonants",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_korean-alphabet-2"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-3",
+      "stableId": "korean-alphabet-3",
+      "type": "basic",
+      "front": "What consonant is **ㄷ**, and what is its usual sound guide?",
+      "back": "ㄷ is *디귿* (digeut). It is roughly **d** initially and **t** finally.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-consonants"
+      ],
+      "scopeId": "hangul-consonants",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_korean-alphabet-3"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-4",
+      "stableId": "korean-alphabet-4",
+      "type": "basic",
+      "front": "What consonant is **ㄹ**, and why is its romanization context-dependent?",
+      "back": "ㄹ is *리을* (rieul). It is commonly realized between an **r-like** sound in some onset positions and an **l-like** sound in coda or doubled contexts; English romanization is only an approximation.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-consonants"
+      ],
+      "scopeId": "hangul-consonants",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_korean-alphabet-4"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-5",
+      "stableId": "korean-alphabet-5",
+      "type": "basic",
+      "front": "What consonant is **ㅁ**, and what sound does it represent?",
+      "back": "ㅁ is *미음* (mieum) and represents **m**.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-consonants"
+      ],
+      "scopeId": "hangul-consonants",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_korean-alphabet-5"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-6",
+      "stableId": "korean-alphabet-6",
+      "type": "basic",
+      "front": "What consonant is **ㅂ**, and what is its usual sound guide?",
+      "back": "ㅂ is *비읍* (bieup). It is roughly **b** initially and **p** finally.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-consonants"
+      ],
+      "scopeId": "hangul-consonants",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_korean-alphabet-6"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-7",
+      "stableId": "korean-alphabet-7",
+      "type": "basic",
+      "front": "What consonant is **ㅅ**, and what sound does it usually represent?",
+      "back": "ㅅ is *시옷* (siot) and is usually **s**, with context-dependent pronunciation before certain vowels.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-consonants"
+      ],
+      "scopeId": "hangul-consonants",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_korean-alphabet-7"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-8",
+      "stableId": "korean-alphabet-8",
+      "type": "basic",
+      "front": "What are the two main roles of **ㅇ**?",
+      "back": "At the beginning of a syllable block, ㅇ is silent; at the end, it represents **ng** as in English *sing*.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-consonants"
+      ],
+      "scopeId": "hangul-consonants",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_korean-alphabet-8"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-9",
+      "stableId": "korean-alphabet-9",
+      "type": "basic",
+      "front": "What consonant is **ㅈ**, and what is its sound guide?",
+      "back": "ㅈ is *지읒* (jieut) and is roughly **j** or a soft affricate sound.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-consonants"
+      ],
+      "scopeId": "hangul-consonants",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_korean-alphabet-9"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-10",
+      "stableId": "korean-alphabet-10",
+      "type": "basic",
+      "front": "What consonant is **ㅊ**, and how does it differ from ㅈ?",
+      "back": "ㅊ is *치읓* (chieut) and is an aspirated **ch** sound; ㅈ is the less-aspirated counterpart.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-consonants"
+      ],
+      "scopeId": "hangul-consonants",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_korean-alphabet-10"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-11",
+      "stableId": "korean-alphabet-11",
+      "type": "basic",
+      "front": "What consonant is **ㅋ**, and what sound does it represent?",
+      "back": "ㅋ is *키읔* (kieuk) and is an aspirated **k** sound.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-consonants"
+      ],
+      "scopeId": "hangul-consonants",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_korean-alphabet-11"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-12",
+      "stableId": "korean-alphabet-12",
+      "type": "basic",
+      "front": "What consonant is **ㅌ**, and what sound does it represent?",
+      "back": "ㅌ is *티읕* (tieut) and is an aspirated **t** sound.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-consonants"
+      ],
+      "scopeId": "hangul-consonants",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_korean-alphabet-12"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-13",
+      "stableId": "korean-alphabet-13",
+      "type": "basic",
+      "front": "What consonant is **ㅍ**, and what sound does it represent?",
+      "back": "ㅍ is *피읖* (pieup) and is an aspirated **p** sound.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-consonants"
+      ],
+      "scopeId": "hangul-consonants",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_korean-alphabet-13"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-14",
+      "stableId": "korean-alphabet-14",
+      "type": "basic",
+      "front": "What consonant is **ㅎ**, and what sound does it represent?",
+      "back": "ㅎ is *히읗* (hieut) and is an **h** sound, with predictable effects on neighboring consonants.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-consonants"
+      ],
+      "scopeId": "hangul-consonants",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_korean-alphabet-14"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-15",
+      "stableId": "korean-alphabet-15",
+      "type": "basic",
+      "front": "What vowel is **ㅏ**, and what sound guide is commonly used?",
+      "back": "ㅏ is *아* and is commonly represented as **a**, similar to the vowel in *father* for many learners.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-15"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-16",
+      "stableId": "korean-alphabet-16",
+      "type": "basic",
+      "front": "What vowel is **ㅑ**, and what sound guide is commonly used?",
+      "back": "ㅑ is *야* and is commonly represented as **ya**.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-16"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-17",
+      "stableId": "korean-alphabet-17",
+      "type": "basic",
+      "front": "What vowel is **ㅓ**, and why is **eo** only an approximation?",
+      "back": "ㅓ is *어*. Revised Romanization writes it **eo**; English has no exact equivalent, so learners should use Korean audio rather than treating the spelling as two sounds.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-17"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-18",
+      "stableId": "korean-alphabet-18",
+      "type": "basic",
+      "front": "What vowel is **ㅕ**, and what sound guide is commonly used?",
+      "back": "ㅕ is *여* and is commonly represented as **yeo**.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-18"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-19",
+      "stableId": "korean-alphabet-19",
+      "type": "basic",
+      "front": "What vowel is **ㅗ**, and what sound guide is commonly used?",
+      "back": "ㅗ is *오* and is commonly represented as **o**.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-19"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-20",
+      "stableId": "korean-alphabet-20",
+      "type": "basic",
+      "front": "What vowel is **ㅛ**, and what sound guide is commonly used?",
+      "back": "ㅛ is *요* and is commonly represented as **yo**.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-20"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-21",
+      "stableId": "korean-alphabet-21",
+      "type": "basic",
+      "front": "What vowel is **ㅜ**, and what sound guide is commonly used?",
+      "back": "ㅜ is *우* and is commonly represented as **u**, roughly like the vowel in *boot* for many learners.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-21"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-22",
+      "stableId": "korean-alphabet-22",
+      "type": "basic",
+      "front": "What vowel is **ㅠ**, and what sound guide is commonly used?",
+      "back": "ㅠ is *유* and is commonly represented as **yu**.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-22"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-23",
+      "stableId": "korean-alphabet-23",
+      "type": "basic",
+      "front": "What vowel is **ㅡ**, and why is **eu** only a learner guide?",
+      "back": "ㅡ is *으*. Revised Romanization writes it **eu**; it is a Korean vowel without a direct English equivalent.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-23"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-24",
+      "stableId": "korean-alphabet-24",
+      "type": "basic",
+      "front": "What vowel is **ㅣ**, and what sound does it represent?",
+      "back": "ㅣ is *이* and represents **i**, like the vowel in *machine* for many learners.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-24"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-25",
+      "stableId": "korean-alphabet-25",
+      "type": "basic",
+      "front": "What is the common sound guide for **ㅐ**?",
+      "back": "ㅐ is *애* and is written **ae**; in modern Seoul Korean its pronunciation is often close to ㅔ for many speakers.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-25"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-26",
+      "stableId": "korean-alphabet-26",
+      "type": "basic",
+      "front": "What is the common sound guide for **ㅔ**?",
+      "back": "ㅔ is *에* and is written **e**; it is distinct in spelling even though many speakers pronounce it similarly to ㅐ.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-26"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-27",
+      "stableId": "korean-alphabet-27",
+      "type": "basic",
+      "front": "How is **ㅘ** formed and pronounced?",
+      "back": "ㅘ is a compound vowel written **wa**, formed from ㅗ plus ㅏ.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-27"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-28",
+      "stableId": "korean-alphabet-28",
+      "type": "basic",
+      "front": "How is **ㅝ** formed and pronounced?",
+      "back": "ㅝ is a compound vowel written **wo**, formed from ㅜ plus ㅓ.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-28"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-29",
+      "stableId": "korean-alphabet-29",
+      "type": "basic",
+      "front": "How is **ㅚ** commonly romanized, and what pronunciation variation should learners know?",
+      "back": "ㅚ is commonly romanized **oe**; modern pronunciation is often close to **we** in many contexts, so audio matters.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-29"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-30",
+      "stableId": "korean-alphabet-30",
+      "type": "basic",
+      "front": "What is the usual sound guide for **ㅟ**?",
+      "back": "ㅟ is *위* and is commonly represented as **wi**.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-vowels"
+      ],
+      "scopeId": "hangul-vowels",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-30"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-31",
+      "stableId": "korean-alphabet-31",
+      "type": "basic",
+      "front": "How are Hangul syllable blocks constructed?",
+      "back": "A syllable block combines an initial consonant, a vowel, and optionally a final consonant. The letters are arranged into one visual block, not written as a horizontal alphabetic string.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-syllable-blocks"
+      ],
+      "scopeId": "hangul-syllable-blocks",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-31"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-32",
+      "stableId": "korean-alphabet-32",
+      "type": "basic",
+      "front": "How can you decompose **한** into its jamo?",
+      "back": "**한** is ㅎ + ㅏ + ㄴ: initial ㅎ, vowel ㅏ, and final consonant ㄴ.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-syllable-blocks"
+      ],
+      "scopeId": "hangul-syllable-blocks",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-32"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-33",
+      "stableId": "korean-alphabet-33",
+      "type": "basic",
+      "front": "What does **받침** (batchim) mean in Hangul reading?",
+      "back": "받침 is the final consonant position at the bottom of a syllable block. Its pronunciation follows Korean final-consonant rules and may change before the next syllable.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-syllable-blocks"
+      ],
+      "scopeId": "hangul-syllable-blocks",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-33"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-34",
+      "stableId": "korean-alphabet-34",
+      "type": "basic",
+      "front": "What sound family do final ㄱ, ㅋ, and ㄲ commonly represent?",
+      "back": "In final position, ㄱ, ㅋ, and ㄲ are commonly realized as the unreleased **[k̚]**-type sound; they are not pronounced like a fully released English k.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-syllable-blocks"
+      ],
+      "scopeId": "hangul-syllable-blocks",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-34"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-35",
+      "stableId": "korean-alphabet-35",
+      "type": "basic",
+      "front": "What sound does final **ㅇ** commonly represent?",
+      "back": "Final ㅇ represents **ng**, as in the ending of English *sing*.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-syllable-blocks"
+      ],
+      "scopeId": "hangul-syllable-blocks",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-35"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_korean-alphabet-36",
+      "stableId": "korean-alphabet-36",
+      "type": "basic",
+      "front": "What does a double consonant such as **ㄲ** indicate?",
+      "back": "A doubled jamo such as ㄲ is a tense consonant, not simply a longer version of ㄱ. Tense consonants have different articulation and are best learned with audio.",
+      "extra": "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
+      "tags": [
+        "korean",
+        "alphabet",
+        "hangul-syllable-blocks"
+      ],
+      "scopeId": "hangul-syllable-blocks",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_korean-alphabet-36"
+      ],
+      "sourceIds": [
+        "source-korean-hangul"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    }
+  ],
+  "validations": [],
+  "runs": [
+    {
+      "id": "run_practice_korean_foundations",
+      "kind": "curated-practice",
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "status": "succeeded",
+      "provider": "curated-source-grounded",
+      "completedAt": "2026-10-08T00:00:00.000Z"
+    }
+  ],
+  "exports": [],
+  "metrics": {
+    "requestedCards": 36,
+    "generatedCandidates": 36,
+    "approvedCards": 36,
+    "exportableCards": 36,
+    "verifiedCards": 36,
+    "unverifiedCards": 0,
+    "conflictingCards": 0,
+    "requiredScopeItems": 3,
+    "coveredRequiredScopeItems": 3,
+    "coveragePercent": 100,
+    "duplicateCount": 0,
+    "distribution": {
+      "byScope": {
+        "hangul-consonants": 14,
+        "hangul-vowels": 16,
+        "hangul-syllable-blocks": 6
+      },
+      "byType": {
+        "basic": 36
+      },
+      "byDifficulty": {
+        "beginner": 14,
+        "foundational": 22
+      },
+      "byObjective": {
+        "recall": 36
+      }
+    },
+    "hardGateCount": 0,
+    "warningCount": 0,
+    "notes": 0,
+    "updatedAt": "2026-10-08T00:00:00.000Z"
+  }
+}
