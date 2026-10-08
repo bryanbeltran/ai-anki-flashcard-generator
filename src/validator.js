@@ -29,6 +29,9 @@ function validateCard(card, project) {
   if (card.type === "type-in" && !(card.acceptedAnswers || []).length) {
     findings.push(finding({ ruleId: "type.accepted-answers", severity: "error", message: "Type-in cards need at least one canonical or accepted answer.", cardId: card.id }));
   }
+  if ((card.front.match(/\?/g) || []).length > 1) {
+    findings.push(finding({ ruleId: "quality.atomicity", severity: "warning", message: "Prompt appears to contain multiple questions; split or make the retrieval target explicit.", cardId: card.id }));
+  }
   if (card.front.length > 260 || card.back.length > 600) {
     findings.push(finding({ ruleId: "quality.reading-load", severity: "warning", message: "This card is unusually long; review whether it should be split.", cardId: card.id }));
   }
@@ -43,6 +46,21 @@ function validateCard(card, project) {
   if (card.evidenceStatus !== "verified") {
     const severity = project.brief.sourcePolicy === "source-only" ? "error" : "warning";
     findings.push(finding({ ruleId: "evidence.unverified", severity, message: `Evidence status is ${card.evidenceStatus || "missing"}; verify before export.`, cardId: card.id }));
+  }
+  if (card.evidenceStatus === "conflicting") {
+    findings.push(finding({ ruleId: "evidence.conflict", severity: "error", message: "Conflicting evidence must be resolved or explicitly excluded before export.", cardId: card.id }));
+  }
+  if (card.confidence !== undefined && (Number(card.confidence) < 0 || Number(card.confidence) > 1)) {
+    findings.push(finding({ ruleId: "evidence.confidence-range", severity: "error", message: "Confidence must be between 0 and 1.", cardId: card.id }));
+  }
+  if (card.confidence !== undefined && Number(card.confidence) < 0.6) {
+    findings.push(finding({ ruleId: "evidence.low-confidence", severity: "warning", message: "Low model/source confidence; review the evidence before studying.", cardId: card.id }));
+  }
+  if (card.validUntil && new Date(card.validUntil).getTime() < Date.now()) {
+    findings.push(finding({ ruleId: "evidence.stale", severity: "warning", message: `Evidence validity ended on ${card.validUntil}.`, cardId: card.id }));
+  }
+  if ((/!\[|<img\b|\[sound:/i.test(`${card.front}\n${card.back}`)) && !(card.media || []).length) {
+    findings.push(finding({ ruleId: "media.missing", severity: "error", message: "Card references media but has no packaged media assets.", cardId: card.id }));
   }
   if (["rejected", "needs-review", "draft"].includes(card.status)) {
     findings.push(finding({ ruleId: "review.not-approved", severity: "warning", message: `Card status is ${card.status}; approve it before export.`, cardId: card.id }));
@@ -100,6 +118,12 @@ export function validateProject(project) {
   const requiredCovered = coverage.filter((item) => item.covered).length;
   const coveragePercent = requiredScope.length ? Math.round((requiredCovered / requiredScope.length) * 100) : 100;
   const duplicateCount = findings.filter((item) => item.ruleId === "quality.duplicate").length;
+  const distribution = {
+    byScope: countBy(cards, (card) => card.scopeId),
+    byType: countBy(cards, (card) => card.type),
+    byDifficulty: countBy(cards, (card) => card.difficulty),
+    byObjective: countBy(cards, (card) => card.objective),
+  };
   const metrics = {
     requestedCards: requested,
     generatedCandidates: cards.length,
@@ -112,6 +136,7 @@ export function validateProject(project) {
     coveredRequiredScopeItems: requiredCovered,
     coveragePercent,
     duplicateCount,
+    distribution,
     hardGateCount,
     warningCount,
     notes: cards.length - exportableCards.length,
@@ -121,14 +146,23 @@ export function validateProject(project) {
   return { findings, coverage, metrics, canExport, exportableCards };
 }
 
-export function applyValidation(project) {
+function countBy(items, keyFn) {
+  return items.reduce((counts, item) => {
+    const key = keyFn(item) || "unknown";
+    counts[key] = (counts[key] || 0) + 1;
+    return counts;
+  }, {});
+}
+
+export function applyValidation(project, { timestamp = isoNow() } = {}) {
   const result = validateProject(project);
   project.validations = result.findings;
   project.metrics = result.metrics;
+  project.metrics.updatedAt = timestamp;
   if (!project.cards.length) project.status = "Draft";
   else if (result.canExport) project.status = "Export ready";
   else project.status = "Needs review";
-  project.updatedAt = isoNow();
+  project.updatedAt = timestamp;
   return result;
 }
 

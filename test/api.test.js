@@ -29,6 +29,9 @@ test("API supports brief -> plan -> generate -> review -> export", async () => {
     const generated = await json(base, `/api/projects/${created.id}/generate`, { method: "POST", body: JSON.stringify({ idempotencyKey: "test-run-1" }) });
     assert.equal(generated.cards.length, 4);
     assert.equal(generated.status, "Needs review");
+    const edited = await json(base, `/api/projects/${created.id}/cards/${generated.cards[0].id}`, { method: "PATCH", body: JSON.stringify({ front: "Edited interview prompt?" }) });
+    assert.equal(edited.cards[0].status, "needs-review");
+    assert.equal(edited.cards[0].revisions.length, 1);
     const approved = await json(base, `/api/projects/${created.id}/cards/bulk`, { method: "POST", body: JSON.stringify({ cardIds: generated.cards.map((card) => card.id), action: "approve" }) });
     assert.equal(approved.metrics.approvedCards, 4);
     const validated = await json(base, `/api/projects/${created.id}/validate`, { method: "POST", body: "{}" });

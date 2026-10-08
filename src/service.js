@@ -288,7 +288,7 @@ export function validateAndSave(store, projectId) {
   return presentProject(save(store, project));
 }
 
-const EDITABLE_CARD_FIELDS = new Set(["front", "back", "extra", "tags", "type", "difficulty", "acceptedAnswers", "evidenceStatus", "status", "locked", "sourceIds", "claimIds", "typeRationale"]);
+const EDITABLE_CARD_FIELDS = new Set(["front", "back", "extra", "tags", "type", "difficulty", "acceptedAnswers", "evidenceStatus", "status", "locked", "sourceIds", "claimIds", "typeRationale", "notes"]);
 
 export function patchCard(store, projectId, cardId, patch) {
   const project = requireProject(store, projectId);
@@ -304,12 +304,16 @@ export function patchCard(store, projectId, cardId, patch) {
     throw error;
   }
   const contentChanged = Object.keys(patch).some((key) => ["front", "back", "extra", "type", "difficulty", "acceptedAnswers", "sourceIds", "claimIds"].includes(key));
+  const before = clone(card);
   for (const key of Object.keys(patch)) {
     if (EDITABLE_CARD_FIELDS.has(key)) card[key] = patch[key];
   }
   if (contentChanged && patch.status === undefined) {
     card.status = "needs-review";
     if (patch.evidenceStatus === undefined) card.evidenceStatus = "unverified";
+  }
+  if (contentChanged) {
+    card.revisions = [...(card.revisions || []), { id: id("revision"), changedAt: new Date().toISOString(), actor: "local-user", reason: "manual-edit", before: { front: before.front, back: before.back, type: before.type }, after: { front: card.front, back: card.back, type: card.type } }];
   }
   card.updatedAt = new Date().toISOString();
   applyValidation(project);
@@ -331,7 +335,7 @@ export function bulkCards(store, projectId, { cardIds = [], action, tag = null }
   return presentProject(save(store, project));
 }
 
-export async function regenerateCard(store, projectId, cardId, { provider, instruction = "Improve clarity and preserve the learning objective." } = {}) {
+export async function regenerateCard(store, projectId, cardId, { provider, instruction = "Improve clarity and preserve the learning objective.", field = null } = {}) {
   const project = requireProject(store, projectId);
   const card = project.cards.find((item) => item.id === cardId);
   if (!card) {
@@ -344,9 +348,13 @@ export async function regenerateCard(store, projectId, cardId, { provider, instr
     error.statusCode = 409;
     throw error;
   }
-  const regenerated = await provider.regenerate({ card: clone(card), brief: project.brief, plan: project.plan, instruction });
+  const before = clone(card);
+  const regenerated = await provider.regenerate({ card: clone(card), brief: project.brief, plan: project.plan, instruction, field });
   const preserve = { id: card.id, stableId: card.stableId, createdAt: card.createdAt, locked: false };
-  Object.assign(card, regenerated, preserve, { status: "needs-review", evidenceStatus: regenerated.evidenceStatus || "unverified", updatedAt: new Date().toISOString() });
+  const allowedFields = new Set(["front", "back", "extra", "type", "difficulty", "tags", "acceptedAnswers"]);
+  const changes = field && allowedFields.has(field) && regenerated[field] !== undefined ? { [field]: regenerated[field] } : regenerated;
+  Object.assign(card, changes, preserve, { status: "needs-review", evidenceStatus: regenerated.evidenceStatus || "unverified", updatedAt: new Date().toISOString() });
+  card.revisions = [...(card.revisions || []), { id: id("revision"), changedAt: new Date().toISOString(), actor: "provider", reason: instruction, field: field || "card", before: { front: before.front, back: before.back, type: before.type }, after: { front: card.front, back: card.back, type: card.type } }];
   applyValidation(project);
   return presentProject(save(store, project));
 }

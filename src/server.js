@@ -72,7 +72,7 @@ function apiPath(pathname) {
 function staticFile(pathname) {
   const requested = pathname === "/" ? "/index.html" : pathname;
   const candidate = normalize(join(root, requested));
-  if (!candidate.startsWith(root)) return null;
+  if (candidate !== root && !candidate.startsWith(`${root}/`)) return null;
   try {
     if (!statSync(candidate).isFile()) return null;
     return { file: candidate, body: readFileSync(candidate), type: { ".html": "text/html", ".js": "text/javascript", ".css": "text/css" }[extname(candidate)] || "application/octet-stream" };

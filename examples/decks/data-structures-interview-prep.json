@@ -2,7 +2,7 @@
   "id": "practice_data_structures_interview",
   "title": "Data Structures Interview Prep",
   "createdAt": "2026-10-08T00:00:00.000Z",
-  "updatedAt": "2026-10-08T02:45:19.503Z",
+  "updatedAt": "2026-10-08T00:00:00.000Z",
   "status": "Export ready",
   "brief": {
     "topic": "Data structures and algorithms for technical interviews",
@@ -740,6 +740,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -770,6 +771,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -800,6 +802,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -830,6 +833,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -860,6 +864,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -890,6 +895,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -920,6 +926,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -950,6 +957,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -980,6 +988,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1010,6 +1019,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1040,6 +1050,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1070,6 +1081,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1100,6 +1112,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1130,6 +1143,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1160,6 +1174,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1190,6 +1205,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1220,6 +1236,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1250,6 +1267,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1280,6 +1298,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1310,6 +1329,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1340,6 +1360,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1370,6 +1391,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1400,6 +1422,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1430,6 +1453,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1460,6 +1484,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1490,6 +1515,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1520,6 +1546,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1550,6 +1577,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1580,6 +1608,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1610,6 +1639,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1640,6 +1670,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1670,6 +1701,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1700,6 +1732,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1730,6 +1763,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1760,6 +1794,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1790,6 +1825,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1820,6 +1856,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1850,6 +1887,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1880,6 +1918,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1910,6 +1949,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1940,6 +1980,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -1970,6 +2011,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -2000,6 +2042,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -2030,6 +2073,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -2060,6 +2104,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -2090,6 +2135,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     },
@@ -2120,6 +2166,7 @@
       "evidenceStatus": "verified",
       "status": "approved",
       "locked": false,
+      "confidence": 0.97,
       "createdAt": "2026-10-08T00:00:00.000Z",
       "updatedAt": "2026-10-08T00:00:00.000Z"
     }
@@ -2148,9 +2195,36 @@
     "coveredRequiredScopeItems": 11,
     "coveragePercent": 100,
     "duplicateCount": 0,
+    "distribution": {
+      "byScope": {
+        "arrays": 5,
+        "hash-tables": 4,
+        "linked-lists": 4,
+        "stacks-queues": 4,
+        "trees": 4,
+        "heaps": 4,
+        "sorting": 4,
+        "graphs": 7,
+        "union-find": 2,
+        "patterns": 5,
+        "complexity": 4
+      },
+      "byType": {
+        "basic": 47
+      },
+      "byDifficulty": {
+        "foundational": 24,
+        "intermediate": 14,
+        "beginner": 2,
+        "advanced": 7
+      },
+      "byObjective": {
+        "explain": 47
+      }
+    },
     "hardGateCount": 0,
     "warningCount": 0,
     "notes": 0,
-    "updatedAt": "2026-10-08T02:45:19.503Z"
+    "updatedAt": "2026-10-08T00:00:00.000Z"
   }
 }

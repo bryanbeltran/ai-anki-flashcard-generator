@@ -1,6 +1,7 @@
 import { applyValidation } from "./validator.js";
 
-const SNAPSHOT = "2026-10-08T00:00:00.000Z";
+export const PRACTICE_SNAPSHOT = "2026-10-08T00:00:00.000Z";
+const SNAPSHOT = PRACTICE_SNAPSHOT;
 
 function source(id, title, url, notes) {
   return { id, title, url, type: "reference", quality: "authoritative", retrievedAt: SNAPSHOT, snapshotId: `${id}-snapshot`, accessStatus: "available", notes };
@@ -50,6 +51,7 @@ function makeCard({ key, type = "basic", front, back, extra = "", tags, scopeId,
     evidenceStatus: "verified",
     status: "approved",
     locked: false,
+    confidence: 0.97,
     createdAt: SNAPSHOT,
     updatedAt: SNAPSHOT,
   };
@@ -118,7 +120,7 @@ function makeDeck({ id, title, topic, outcome, audience, sources, cards, scope }
     exports: [],
     metrics: null,
   };
-  applyValidation(project);
+  applyValidation(project, { timestamp: SNAPSHOT });
   return project;
 }
 
