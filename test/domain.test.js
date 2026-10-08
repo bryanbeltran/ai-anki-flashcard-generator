@@ -24,3 +24,12 @@ test("plan creates an exact card budget across scope", () => {
   assert.equal(plan.scope.reduce((total, item) => total + item.allocatedCards, 0), 11);
   assert.equal(plan.scope.length, 3);
 });
+
+test("count ranges are normalized and the plan chooses a documented midpoint", () => {
+  const brief = normalizeBrief({ topic: "Sorting", cardCount: "10-20" });
+  assert.deepEqual(brief.cardCountRange, { min: 10, max: 20 });
+  assert.equal(brief.cardCount, null);
+  const plan = buildPlan(brief);
+  assert.equal(plan.requestedCardCount, 15);
+  assert.deepEqual(plan.requestedCardCountRange, { min: 10, max: 20 });
+});

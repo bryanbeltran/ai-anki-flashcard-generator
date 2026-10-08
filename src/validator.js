@@ -106,6 +106,10 @@ export function validateProject(project) {
   if (requested && cards.length !== requested) {
     findings.push(finding({ ruleId: "count.exact", severity: "error", message: `Requested exactly ${requested} cards, but the run contains ${cards.length}.` }));
   }
+  const requestedRange = project.brief.cardCountRange || project.plan?.requestedCardCountRange || null;
+  if (!requested && requestedRange && (cards.length < requestedRange.min || cards.length > requestedRange.max)) {
+    findings.push(finding({ ruleId: "count.range", severity: "error", message: `Requested between ${requestedRange.min} and ${requestedRange.max} cards, but the run contains ${cards.length}.` }));
+  }
 
   const hardGateCount = findings.filter((item) => item.severity === "error").length;
   const warningCount = findings.filter((item) => item.severity === "warning").length;

@@ -17,8 +17,14 @@ export function isoNow() {
 
 export function normalizeBrief(input = {}, existing = {}) {
   const merged = { ...existing, ...input };
-  const cardCount = Number.isFinite(Number(merged.cardCount)) && Number(merged.cardCount) > 0
+  const rawCount = String(merged.cardCount ?? "").trim();
+  const rangeMatch = rawCount.match(/^(\d+)\s*[-–]\s*(\d+)$/);
+  const parsedRange = rangeMatch ? { min: Number(rangeMatch[1]), max: Number(rangeMatch[2]) } : merged.cardCountRange;
+  const cardCount = !rangeMatch && Number.isFinite(Number(merged.cardCount)) && Number(merged.cardCount) > 0
     ? Math.min(500, Math.floor(Number(merged.cardCount)))
+    : null;
+  const cardCountRange = parsedRange && Number(parsedRange.min) > 0 && Number(parsedRange.max) >= Number(parsedRange.min)
+    ? { min: Math.min(500, Math.floor(Number(parsedRange.min))), max: Math.min(500, Math.floor(Number(parsedRange.max))) }
     : null;
   const allowedTypes = Array.isArray(merged.allowedTypes) && merged.allowedTypes.length
     ? merged.allowedTypes.filter((type) => CARD_TYPES.includes(type))
@@ -30,6 +36,7 @@ export function normalizeBrief(input = {}, existing = {}) {
     audience: String(merged.audience || "").trim(),
     prerequisites: String(merged.prerequisites || "").trim(),
     cardCount,
+    cardCountRange,
     difficulty: DIFFICULTIES.includes(merged.difficulty) ? merged.difficulty : "adaptive",
     allowedTypes,
     direction: String(merged.direction || "").trim(),
@@ -89,7 +96,7 @@ export function buildClarifyingQuestions(brief) {
   if (!brief.audience) {
     questions.push({ id: "audience", label: "Learner level", question: "Who is the learner and what prerequisite knowledge can the cards assume?", required: true });
   }
-  if (!brief.cardCount) {
+  if (!brief.cardCount && !brief.cardCountRange) {
     questions.push({ id: "cardCount", label: "Card count", question: "How many cards do you want, or what range should the planner use?", required: true });
   }
   if (!brief.difficulty || brief.difficulty === "adaptive") {
@@ -109,7 +116,7 @@ export function buildClarifyingQuestions(brief) {
 
 export function buildPlan(brief) {
   const scopeLabels = splitScope(brief.includedScope, brief.topic);
-  const requestedCount = brief.cardCount || Math.max(10, scopeLabels.length * 5);
+  const requestedCount = brief.cardCount || (brief.cardCountRange ? Math.round((brief.cardCountRange.min + brief.cardCountRange.max) / 2) : Math.max(10, scopeLabels.length * 5));
   const base = Math.floor(requestedCount / scopeLabels.length);
   const remainder = requestedCount % scopeLabels.length;
   const scope = scopeLabels.map((label, index) => ({
@@ -141,6 +148,7 @@ export function buildPlan(brief) {
       priority: "required",
     }))),
     requestedCardCount: requestedCount,
+    requestedCardCountRange: brief.cardCountRange,
     difficulty: brief.difficulty,
     typeDistribution,
     sourcePolicy: brief.sourcePolicy,
