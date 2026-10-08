@@ -132,6 +132,7 @@
                 <select name="exportFormat">
                   <option value="tsv">UTF-8 TSV</option>
                   <option value="csv">UTF-8 CSV</option>
+                  <option value="apkg">Anki package (.apkg)</option>
                 </select>
               </label>
               <label>Deck name
@@ -228,16 +229,19 @@
             <p class="muted panel-intro">The export includes an explicit mapping: Front, Back, Extra, Tags, CardType, Source. Approve every card and resolve hard gates before exporting.</p>
             <div class="export-controls">
               <label>Format
-                <select id="export-format"><option value="tsv">TSV</option><option value="csv">CSV</option></select>
+                <select id="export-format"><option value="tsv">TSV</option><option value="csv">CSV</option><option value="apkg">APKG deck</option></select>
               </label>
               <label>Card type
                 <select id="export-type"><option value="all">All types</option><option value="basic">Basic</option><option value="reversed-basic">Reversed basic</option><option value="cloze">Cloze</option><option value="type-in">Type-in</option></select>
               </label>
               <label class="check export-warning"><input type="checkbox" id="include-unverified" /> Include unverified warnings</label>
               <button class="button secondary" id="preview-export" type="button">Preview mapping</button>
+              <button class="button secondary" id="copy-apkg-link" type="button" hidden>Copy Anki link</button>
               <button class="button primary" id="export-button" type="button">Download export <span aria-hidden="true">↓</span></button>
             </div>
             <p class="form-message" id="export-message" role="status"></p>
+            <p class="muted small" id="apkg-link-hint" hidden>Paste this direct URL into AnkiMobile’s Download Link dialog. The device must be able to reach this Recall server.</p>
+            <a class="muted small" id="apkg-link" href="" target="_blank" rel="noreferrer" hidden></a>
             <pre class="export-preview" id="export-preview" hidden></pre>
           </section>
         </div>

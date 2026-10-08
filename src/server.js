@@ -39,6 +39,11 @@ function sendText(res, statusCode, body, headers = {}) {
   res.end(body);
 }
 
+function sendBuffer(res, statusCode, body, headers = {}) {
+  res.writeHead(statusCode, { "content-type": "application/octet-stream", ...headers });
+  res.end(body);
+}
+
 async function readJson(req) {
   const chunks = [];
   let size = 0;
@@ -121,21 +126,28 @@ export function createApp({ store = createDefaultStore(), provider = createProvi
           if (req.method === "POST" && parts[3] === "sources" && parts.length === 4) return sendJson(res, 201, addSource(store, projectId, await readJson(req)));
           if (req.method === "POST" && parts[3] === "sources" && parts[4] && parts[5] === "fetch") return sendJson(res, 200, await fetchSource(store, projectId, parts[4]));
           if (req.method === "POST" && parts[3] === "runs" && parts[4] && parts[5] === "cancel") return sendJson(res, 200, cancelRun(store, projectId, parts[4]));
-          if (req.method === "GET" && parts[3] === "export") {
+          if (req.method === "GET" && ["export", "export.apkg"].includes(parts[3])) {
             const project = store.getProject(projectId);
             if (!project) return sendJson(res, 404, { error: "Project not found" });
-            if (parts[4] === "preview") return sendJson(res, 200, previewExport(project, {
+            const packageRoute = parts[3] === "export.apkg";
+            if (!packageRoute && parts[4] === "preview") return sendJson(res, 200, previewExport(project, {
               format: url.searchParams.get("format") || project.brief.exportFormat || "tsv",
               cardType: url.searchParams.get("cardType") || "all",
               includeUnverified: boolQuery(url.searchParams.get("includeUnverified")),
             }));
             const artifact = buildExport(project, {
-              format: url.searchParams.get("format") || project.brief.exportFormat || "tsv",
+              format: packageRoute ? "apkg" : url.searchParams.get("format") || project.brief.exportFormat || "tsv",
               cardType: url.searchParams.get("cardType") || "all",
               includeUnverified: boolQuery(url.searchParams.get("includeUnverified")),
             });
             recordExport(project, artifact);
             store.saveProject(project);
+            if (artifact.body) return sendBuffer(res, 200, artifact.body, {
+              "content-type": artifact.contentType || "application/apkg",
+              "content-disposition": `attachment; filename="${artifact.fileName}"`,
+              "x-anki-notes": String(artifact.notes),
+              "x-anki-cards": String(artifact.cards),
+            });
             return sendText(res, 200, artifact.text, {
               "content-type": artifact.format === "csv" ? "text/csv; charset=utf-8" : "text/tab-separated-values; charset=utf-8",
               "content-disposition": `attachment; filename="${artifact.fileName}"`,

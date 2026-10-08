@@ -136,6 +136,27 @@ function fillBrief() {
   $("#export-format").value = brief.exportFormat || "tsv";
 }
 
+function buildApkgLink() {
+  if (!state.project) return "";
+  const params = new URLSearchParams({ cardType: $("#export-type").value || "all" });
+  if ($("#include-unverified").checked) params.set("includeUnverified", "true");
+  return new URL(`/api/projects/${encodeURIComponent(state.project.id)}/export.apkg?${params}`, window.location.origin).href;
+}
+
+function updateExportFormatUi() {
+  const isApkg = $("#export-format").value === "apkg";
+  const copyButton = $("#copy-apkg-link");
+  const hint = $("#apkg-link-hint");
+  const link = $("#apkg-link");
+  if (copyButton) copyButton.hidden = !isApkg;
+  if (hint) hint.hidden = !isApkg;
+  if (link) {
+    link.hidden = !isApkg;
+    link.href = isApkg ? buildApkgLink() : "";
+    link.textContent = isApkg ? buildApkgLink() : "";
+  }
+}
+
 function renderMetrics() {
   const metrics = state.project?.computedMetrics || state.project?.metrics || {};
   const values = [
@@ -266,6 +287,7 @@ function renderAll() {
   generateButton.title = !project.plan ? "Build a plan before generating" : requiredQuestions ? "Complete the required brief fields first" : "Generate card candidates";
   const buildPlanButton = $("#build-plan");
   buildPlanButton.disabled = requiredQuestions;
+  updateExportFormatUi();
   updateWorkflow(project, requiredQuestions);
   renderProjectList();
 }
@@ -508,6 +530,26 @@ $("#export-button").addEventListener("click", async () => {
     showMessage(message, `Downloaded ${response.headers.get("x-anki-notes")} notes / ${response.headers.get("x-anki-cards")} cards.`, "success");
   } catch (error) { showMessage(message, error.message, "error"); }
   finally { setBusy(button, false); }
+});
+$("#export-format").addEventListener("change", updateExportFormatUi);
+$("#export-type").addEventListener("change", updateExportFormatUi);
+$("#include-unverified").addEventListener("change", updateExportFormatUi);
+$("#copy-apkg-link").addEventListener("click", async (event) => {
+  const link = buildApkgLink();
+  if (!link) return;
+  setBusy(event.currentTarget, true);
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(link);
+      showMessage("#export-message", "Anki download link copied.", "success");
+    } else {
+      showMessage("#export-message", `Copy this Anki URL: ${link}`, "success");
+    }
+  } catch (error) {
+    showMessage("#export-message", `Copy this Anki URL: ${link}`, "error");
+  } finally {
+    setBusy(event.currentTarget, false);
+  }
 });
 $("#preview-export").addEventListener("click", async () => {
   const button = $("#preview-export");

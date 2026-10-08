@@ -11,7 +11,7 @@ The repository also ships two practice decks:
 
 ## Run locally
 
-Requires Node.js 20 or newer. The app has no runtime dependencies.
+Requires Node.js 20 or newer. The app has no npm runtime dependencies; APKG export additionally uses the host's `python3` and standard-library `sqlite3`.
 
 ```bash
 npm test
@@ -21,7 +21,7 @@ npm start
 
 Open <http://localhost:3000>.
 
-The JSON store is created at `data/store.json` on first run. Set `ANKI_DATA_DIR` to use another data directory.
+The JSON store is created at `data/store.json` on first run. Set `ANKI_DATA_DIR` to use another data directory. APKG export uses the system `python3` runtime and its standard-library `sqlite3` module to build the legacy-compatible Anki collection database.
 
 ## Product surface
 
@@ -31,7 +31,7 @@ The Recall workspace is intentionally designed for a portfolio-sized end-to-end 
 - **Evidence-aware:** add pasted notes or public URLs, preserve bounded snapshots and hashes, and attach claim/source records to cards.
 - **Reviewable by design:** edit, verify, approve, reject, lock, regenerate, search, and filter cards without losing revision context.
 - **Quality gates:** inspect coverage, duplicate detection, evidence state, confidence, media references, stale sources, card types, and export readiness.
-- **Anki-friendly handoff:** preview and download explicit UTF-8 TSV/CSV columns (`Front`, `Back`, `Extra`, `Tags`, `CardType`, `Source`).
+- **Anki-friendly handoff:** preview and download explicit UTF-8 TSV/CSV columns (`Front`, `Back`, `Extra`, `Tags`, `CardType`, `Source`), or export a packaged `.apkg` deck with deterministic note IDs and card templates.
 - **Runnable demo data:** open the curated Korean or data-structures decks to see the full workflow with source-linked cards.
 
 The interface is responsive, keyboard-friendly, reduced-motion aware, and dependency-free. It uses the same HTTP API that powers the tests, so the UI and integration story remain easy to inspect.
@@ -56,6 +56,7 @@ The provider is isolated behind `src/provider.js`. Provider errors are surfaced 
 - `korean-foundations-alphabet-sight-words.json` and `.tsv`
 - `data-structures-interview-prep.json` and `.tsv`
 - `korean-alphabet.json` / `.tsv` and `korean-sight-words.json` / `.tsv` are independently importable Korean subsets.
+- Each deck also has a directly importable `.apkg` package for Anki and AnkiMobile.
 - `manifest.json` with card counts, validation metrics, and source metadata
 
 The TSV uses an explicit six-column mapping:
@@ -85,6 +86,8 @@ The `CardType` column lets a user route Basic, Reversed Basic, Cloze, or Type-in
 - `POST /api/projects/:id/duplicate`
 - `POST /api/projects/:id/runs/:runId/cancel`
 - `GET /api/projects/:id/export?format=tsv&cardType=all`
+- `GET /api/projects/:id/export?format=apkg&cardType=all`
+- `GET /api/projects/:id/export.apkg?cardType=all` (direct URL for AnkiMobile's Download Link)
 - `GET /api/projects/:id/export/preview?format=tsv&cardType=all`
 - `GET /api/practice`
 - `POST /api/practice/:slug`
@@ -99,7 +102,7 @@ The implementation deliberately keeps the first product slice local-first and de
 - **Generation:** deterministic offline provider and optional Responses API provider.
 - **Quality:** required-field, type, evidence, duplicate, exact-count, coverage, and export gates.
 - **Review:** field-level patching, locking, bulk status changes, regeneration, and diffs.
-- **Export:** UTF-8 TSV with escaping, import mapping, notes/cards counts, and hard-gate enforcement.
+- **Export:** UTF-8 TSV/CSV with escaping, or a valid Anki `.apkg` containing `collection.anki2` and `media`; all formats preserve hard-gate enforcement and export metadata.
 - **Reliability:** persisted projects/runs, idempotent generation, cancellation-ready run state, and prior-good artifact preservation.
 
-Native `.apkg` creation, media packaging, image occlusion, multi-user collaboration, and scheduler integration remain explicit follow-on phases from the PRD rather than hidden partial implementations.
+Media packaging, image occlusion, multi-user collaboration, and scheduler integration remain explicit follow-on phases from the PRD rather than hidden partial implementations. APKG export currently packages card text, tags, note templates, and provenance fields; it does not fetch or bundle external media.

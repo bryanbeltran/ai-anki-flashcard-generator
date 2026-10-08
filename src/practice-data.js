@@ -333,5 +333,28 @@ export function buildPracticeDecks() {
 }
 
 export function practiceDeckBySlug(slug) {
-  return buildPracticeDecks().find((deck) => deck.id === `practice_${slug}` || deck.id.endsWith(`_${slug}`) || slug === "korean-foundations" && deck.id === "practice_korean_foundations" || slug === "data-structures-interview" && deck.id === "practice_data_structures_interview") || null;
+  const decks = buildPracticeDecks();
+  const direct = decks.find((deck) => deck.id === `practice_${slug}` || deck.id.endsWith(`_${slug}`));
+  if (direct) return direct;
+  const korean = decks.find((deck) => deck.id === "practice_korean_foundations");
+  const subsets = {
+    "korean-foundations": { id: "practice_korean_foundations", title: "Korean Foundations — Alphabet + Sight Words", scopes: ["hangul-consonants", "hangul-vowels", "hangul-syllable-blocks", "korean-sight-words"] },
+    "korean-alphabet": { id: "practice_korean_alphabet", title: "Korean Alphabet — Hangul Foundations", scopes: ["hangul-consonants", "hangul-vowels", "hangul-syllable-blocks"] },
+    "korean-sight-words": { id: "practice_korean_sight_words", title: "Korean Sight Words — English-Speaking Learners", scopes: ["korean-sight-words"] },
+  };
+  const subset = subsets[slug];
+  if (!subset || !korean) return slug === "data-structures-interview" ? decks.find((deck) => deck.id === "practice_data_structures_interview") || null : null;
+  if (subset.scopes.length === korean.plan.scope.length) return korean;
+  const cards = korean.cards.filter((card) => subset.scopes.includes(card.scopeId));
+  const scope = korean.plan.scope.filter((item) => subset.scopes.includes(item.id));
+  return makeDeck({
+    id: subset.id,
+    title: subset.title,
+    topic: korean.brief.topic,
+    outcome: korean.brief.outcome,
+    audience: korean.brief.audience,
+    sources: korean.sources,
+    cards,
+    scope,
+  });
 }

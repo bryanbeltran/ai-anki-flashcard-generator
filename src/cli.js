@@ -15,10 +15,12 @@ if (command === "seed-artifacts") {
   for (const deck of decks) {
     const slug = sanitizeFileName(deck.title);
     const artifact = buildExport(deck, { format: "tsv", cardType: "all" });
+    const apkg = buildExport(deck, { format: "apkg", cardType: "all" });
     writeFileSync(resolve(outputDir, `${slug}.json`), `${JSON.stringify(deck, null, 2)}\n`, "utf8");
     writeFileSync(resolve(outputDir, `${slug}.tsv`), artifact.text, "utf8");
-    manifest.decks.push({ slug, title: deck.title, cardCount: deck.cards.length, notes: artifact.notes, cards: artifact.cards, metrics: deck.metrics, sources: deck.sources });
-    console.log(`${deck.title}: ${artifact.notes} notes -> ${slug}.tsv`);
+    writeFileSync(resolve(outputDir, `${slug}.apkg`), apkg.body);
+    manifest.decks.push({ slug, title: deck.title, cardCount: deck.cards.length, notes: artifact.notes, cards: artifact.cards, metrics: deck.metrics, sources: deck.sources, files: [`${slug}.json`, `${slug}.tsv`, `${slug}.apkg`] });
+    console.log(`${deck.title}: ${artifact.notes} notes -> ${slug}.tsv, ${slug}.apkg`);
 
     if (deck.id === "practice_korean_foundations") {
       const subsets = [
@@ -38,10 +40,12 @@ if (command === "seed-artifacts") {
         };
         applyValidation(subdeck, { timestamp: PRACTICE_SNAPSHOT });
         const subArtifact = buildExport(subdeck, { format: "tsv", cardType: "all" });
+        const subApkg = buildExport(subdeck, { format: "apkg", cardType: "all" });
         writeFileSync(resolve(outputDir, `${subset.slug}.json`), `${JSON.stringify(subdeck, null, 2)}\n`, "utf8");
         writeFileSync(resolve(outputDir, `${subset.slug}.tsv`), subArtifact.text, "utf8");
-        manifest.decks.push({ slug: subset.slug, title: subset.title, cardCount: cards.length, notes: subArtifact.notes, cards: subArtifact.cards, metrics: subdeck.metrics, sources: subdeck.sources, parentDeck: slug });
-        console.log(`${subset.title}: ${subArtifact.notes} notes -> ${subset.slug}.tsv`);
+        writeFileSync(resolve(outputDir, `${subset.slug}.apkg`), subApkg.body);
+        manifest.decks.push({ slug: subset.slug, title: subset.title, cardCount: cards.length, notes: subArtifact.notes, cards: subArtifact.cards, metrics: subdeck.metrics, sources: subdeck.sources, parentDeck: slug, files: [`${subset.slug}.json`, `${subset.slug}.tsv`, `${subset.slug}.apkg`] });
+        console.log(`${subset.title}: ${subArtifact.notes} notes -> ${subset.slug}.tsv, ${subset.slug}.apkg`);
       }
     }
   }

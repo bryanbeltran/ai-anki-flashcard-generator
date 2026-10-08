@@ -49,16 +49,36 @@ test("API supports brief -> plan -> generate -> review -> export", async () => {
   }
 });
 
-test("practice endpoint creates both requested decks", async () => {
+test("practice endpoint lists and creates the available decks", async () => {
   const { server, base } = await start();
   try {
     const decks = await json(base, "/api/practice");
-    assert.equal(decks.decks.length, 2);
+    assert.equal(decks.decks.length, 4);
     const korean = await json(base, "/api/practice/korean-foundations", { method: "POST", body: "{}" });
     assert.equal(korean.metrics.coveragePercent, 100);
     assert.ok(korean.cards.some((card) => card.front.includes("안녕하세요")));
     const data = await json(base, "/api/practice/data-structures-interview", { method: "POST", body: "{}" });
     assert.ok(data.cards.some((card) => card.front.includes("hash table")));
+  } finally {
+    await new Promise((resolve) => server.close(resolve));
+  }
+});
+
+test("APKG export exposes a direct Anki download URL", async () => {
+  const { server, base } = await start();
+  try {
+    const seeded = await json(base, "/api/practice/korean-sight-words", { method: "POST", body: "{}" });
+    const response = await fetch(`${base}/api/projects/${seeded.id}/export.apkg`);
+    assert.equal(response.ok, true);
+    assert.equal(response.headers.get("content-type"), "application/apkg");
+    assert.match(response.headers.get("content-disposition"), /Korean-Sight-Words-English-Speaking-Learners\.apkg/);
+    assert.equal(response.headers.get("x-anki-notes"), "45");
+    assert.equal(response.headers.get("x-anki-cards"), "45");
+    assert.equal(Buffer.from(await response.arrayBuffer()).subarray(0, 2).toString(), "PK");
+
+    const project = await json(base, `/api/projects/${seeded.id}`);
+    assert.equal(project.exports.at(-1).format, "apkg");
+    assert.equal(Object.hasOwn(project.exports.at(-1), "body"), false);
   } finally {
     await new Promise((resolve) => server.close(resolve));
   }

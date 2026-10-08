@@ -11,6 +11,10 @@ test("normalizeBrief preserves explicit constraints and safe defaults", () => {
   assert.equal(brief.sourcePolicy, "mixed");
 });
 
+test("normalizeBrief accepts packaged Anki export", () => {
+  assert.equal(normalizeBrief({ exportFormat: "apkg" }).exportFormat, "apkg");
+});
+
 test("clarifying questions prioritize missing required decisions", () => {
   const project = createProject({ title: "Test" });
   const questions = buildClarifyingQuestions(project.brief);

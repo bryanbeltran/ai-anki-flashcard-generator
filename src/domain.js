@@ -45,7 +45,7 @@ export function normalizeBrief(input = {}, existing = {}) {
       : "mixed",
     language: String(merged.language || "English").trim(),
     deckName: String(merged.deckName || merged.topic || "Untitled Anki Deck").trim(),
-    exportFormat: ["tsv", "csv"].includes(merged.exportFormat) ? merged.exportFormat : "tsv",
+    exportFormat: ["tsv", "csv", "apkg"].includes(merged.exportFormat) ? merged.exportFormat : "tsv",
     includedScope: String(merged.includedScope || "").trim(),
     excludedScope: String(merged.excludedScope || "").trim(),
     sources: Array.isArray(merged.sources) ? merged.sources : [],
@@ -109,7 +109,7 @@ export function buildClarifyingQuestions(brief) {
     questions.push({ id: "sourcePolicy", label: "Source policy", question: "Use only supplied sources, trusted external sources, or both?", required: false });
   }
   if (!brief.exportFormat) {
-    questions.push({ id: "exportFormat", label: "Export format", question: "Do you want UTF-8 TSV or CSV for Anki import?", required: true });
+    questions.push({ id: "exportFormat", label: "Export format", question: "Do you want UTF-8 TSV, CSV, or a packaged APKG deck for Anki import?", required: true });
   }
   return questions;
 }

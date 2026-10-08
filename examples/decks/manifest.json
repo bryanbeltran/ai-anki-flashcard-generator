@@ -65,6 +65,11 @@
           "accessStatus": "available",
           "notes": "National Institute of Korean Language learner dictionary used for English glosses and usage notes."
         }
+      ],
+      "files": [
+        "korean-foundations-alphabet-sight-words.json",
+        "korean-foundations-alphabet-sight-words.tsv",
+        "korean-foundations-alphabet-sight-words.apkg"
       ]
     },
     {
@@ -131,7 +136,12 @@
           "notes": "National Institute of Korean Language learner dictionary used for English glosses and usage notes."
         }
       ],
-      "parentDeck": "korean-foundations-alphabet-sight-words"
+      "parentDeck": "korean-foundations-alphabet-sight-words",
+      "files": [
+        "korean-alphabet.json",
+        "korean-alphabet.tsv",
+        "korean-alphabet.apkg"
+      ]
     },
     {
       "slug": "korean-sight-words",
@@ -194,7 +204,12 @@
           "notes": "National Institute of Korean Language learner dictionary used for English glosses and usage notes."
         }
       ],
-      "parentDeck": "korean-foundations-alphabet-sight-words"
+      "parentDeck": "korean-foundations-alphabet-sight-words",
+      "files": [
+        "korean-sight-words.json",
+        "korean-sight-words.tsv",
+        "korean-sight-words.apkg"
+      ]
     },
     {
       "slug": "data-structures-interview-prep",
@@ -269,6 +284,11 @@
           "accessStatus": "available",
           "notes": "Cormen, Leiserson, Rivest, and Stein used for canonical algorithm and complexity claims."
         }
+      ],
+      "files": [
+        "data-structures-interview-prep.json",
+        "data-structures-interview-prep.tsv",
+        "data-structures-interview-prep.apkg"
       ]
     }
   ]

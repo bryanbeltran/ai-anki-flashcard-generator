@@ -1,5 +1,6 @@
 import { isExportable, validateProject } from "./validator.js";
 import { isoNow, sanitizeFileName } from "./domain.js";
+import { buildApkg } from "./apkg.js";
 
 function escapeTsv(value) {
   return String(value ?? "")
@@ -41,12 +42,14 @@ export function exportRows(project, { cardType = "all", includeUnverified = fals
     Tags: (card.tags || []).join(" "),
     CardType: card.type,
     Source: sourceText(card, project),
+    StableId: card.stableId || card.id,
   }));
 }
 
-export function buildExport(project, { format = "tsv", cardType = "all", includeUnverified = false } = {}) {
-  if (!["tsv", "csv"].includes(format)) throw new Error(`Unsupported export format: ${format}`);
+export function buildExport(project, { format = "tsv", cardType = "all", includeUnverified = false, timestamp = Date.now() } = {}) {
+  if (!["tsv", "csv", "apkg"].includes(format)) throw new Error(`Unsupported export format: ${format}`);
   const rows = exportRows(project, { cardType, includeUnverified });
+  if (format === "apkg") return buildApkg(project, rows, { timestamp, cardType });
   const columns = ["Front", "Back", "Extra", "Tags", "CardType", "Source"];
   const delimiter = format === "csv" ? "," : "\t";
   const escape = format === "csv" ? escapeCsv : escapeTsv;
@@ -82,8 +85,10 @@ export function previewExport(project, { format = "tsv", cardType = "all", inclu
   return {
     format,
     cardType,
-    columns: ["Front", "Back", "Extra", "Tags", "CardType", "Source"],
-    mapping: { Front: "prompt", Back: "answer", Extra: "explanation/notes", Tags: "space-delimited tags", CardType: "Anki note template selector", Source: "provenance URL/title" },
+    columns: format === "apkg" ? ["Front", "Back", "Extra", "Tags", "CardType", "Source"] : ["Front", "Back", "Extra", "Tags", "CardType", "Source"],
+    mapping: format === "apkg"
+      ? { package: "Anki deck package (.apkg)", Front: "note prompt", Back: "note answer", Extra: "note explanation", Tags: "Anki tags", CardType: "Anki note template", Source: "hidden provenance field" }
+      : { Front: "prompt", Back: "answer", Extra: "explanation/notes", Tags: "space-delimited tags", CardType: "Anki note template selector", Source: "provenance URL/title" },
     sampleRows: rows.slice(0, 5),
     validation: { metrics: validation.metrics, findings: validation.findings },
     blocked,
@@ -92,9 +97,10 @@ export function previewExport(project, { format = "tsv", cardType = "all", inclu
 
 export function recordExport(project, artifact) {
   project.exports = project.exports || [];
+  const { body, text, ...metadata } = artifact;
   project.exports.push({
     id: `export_${Date.now()}`,
-    ...artifact,
+    ...metadata,
     text: undefined,
   });
   project.updatedAt = isoNow();

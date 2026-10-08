@@ -9,7 +9,7 @@
     "dev": "node --watch src/server.js",
     "test": "node --test",
     "seed-artifacts": "node src/cli.js seed-artifacts",
-    "check": "node --check src/server.js && node --check src/service.js && node --check src/provider.js && node --check src/practice-data.js && node --check src/public/app.js && npm test"
+    "check": "node --check src/server.js && node --check src/service.js && node --check src/provider.js && node --check src/practice-data.js && node --check src/exporter.js && node --check src/apkg.js && node --check src/public/app.js && npm test"
   },
   "engines": {
     "node": ">=20"

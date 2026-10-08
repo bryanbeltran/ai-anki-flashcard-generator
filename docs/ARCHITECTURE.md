@@ -15,7 +15,7 @@ source snapshots → claims/evidence → structured card provider
                          ↙       ↓          ↘
                    coverage   review/edit   duplicates
                                       ↓
-                         UTF-8 TSV/CSV export
+                         UTF-8 TSV/CSV or APKG export
 ```
 
 ## Ownership
@@ -25,7 +25,7 @@ source snapshots → claims/evidence → structured card provider
 - `src/provider.js` owns the generation seam. The deterministic provider is an offline draft generator; the optional Responses API provider requires an explicit environment setting and returns errors instead of silently producing fallback cards.
 - `src/practice-data.js` owns curated, source-linked Korean and data-structures examples. Each card has a stable ID, objective, scope, type rationale, claim ID, source IDs, verification state, and review state.
 - `src/validator.js` owns hard gates and warnings: required fields, supported types, cloze/type-in constraints, source/claim references, evidence state, duplicate detection, exact counts, required-scope coverage, approval status, and exportability metrics.
-- `src/exporter.js` owns Anki-oriented TSV/CSV escaping, explicit field mapping, card-type metadata, artifact metadata, and export history records.
+- `src/exporter.js` owns Anki-oriented TSV/CSV escaping, explicit field mapping, card-type metadata, artifact metadata, and export history records. `src/apkg.js` builds a legacy-compatible `collection.anki2` SQLite database plus a `media` manifest inside a deterministic ZIP package for direct Anki import.
 - `src/service.js` owns lifecycle transitions, source ingestion and snapshot hashing, review edits, locking, regeneration, explicit verification, duplication, cancellation, and practice-deck seeding.
 - `src/server.js` owns HTTP transport and maps routes to service operations. It does not contain domain rules.
 - `src/public/` owns the browser workflow: brief, source entry, plan, review, evidence selection, validation, and download.
@@ -38,7 +38,8 @@ source snapshots → claims/evidence → structured card provider
 4. A changed or user-edited card is returned to review and its prior verification is not assumed to remain valid.
 5. Required-scope coverage and exact-count drift are hard errors.
 6. Practice decks are source-linked and exportable without a model call, so the demo remains reproducible.
+7. APKG export contains no external media unless media packaging is explicitly added; source URLs are retained in a hidden note field.
 
 ## Deliberate boundaries
 
-The following are explicit next phases rather than fake partial implementations: native `.apkg` packaging, media upload/attachment packaging, image occlusion, authentication/multi-user sharing, Anki scheduler integration, and asynchronous worker queues. The API includes run/provider/idempotency seams so those additions do not require rewriting the review or validation model.
+The following are explicit next phases rather than fake partial implementations: media upload/attachment packaging, image occlusion, authentication/multi-user sharing, Anki scheduler integration, and asynchronous worker queues. The API includes run/provider/idempotency seams so those additions do not require rewriting the review or validation model.

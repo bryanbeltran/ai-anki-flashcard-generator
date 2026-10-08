@@ -171,7 +171,8 @@ export function verifyCard(store, projectId, cardId, input = {}) {
 }
 
 export function listPracticeDecks() {
-  return buildPracticeDecks().map((deck) => ({
+  const decks = [...buildPracticeDecks(), practiceDeckBySlug("korean-alphabet"), practiceDeckBySlug("korean-sight-words")].filter(Boolean);
+  return decks.map((deck) => ({
     slug: deck.id.replace(/^practice_/, "").replaceAll("_", "-"),
     id: deck.id,
     title: deck.title,
