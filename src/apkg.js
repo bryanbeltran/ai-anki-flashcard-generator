@@ -388,7 +388,8 @@ export function buildApkg(project, rows, { timestamp = Date.now(), cardType = "a
   const payload = buildCollectionPayload(project, rows, timestamp);
   const collection = buildSqlite(payload);
   const body = zipArchive([
-    { name: "collection.anki2", body: collection },
+    // Store SQLite bytes so APKG output is independent of the host Node/zlib build.
+    { name: "collection.anki2", body: collection, store: true },
     { name: "media", body: Buffer.from("{}", "utf8"), store: true },
   ], timestamp);
   return {

@@ -22,6 +22,7 @@ import zipfile
 
 package = zipfile.ZipFile(io.BytesIO(sys.stdin.buffer.read()))
 assert set(package.namelist()) == {"collection.anki2", "media"}
+assert package.getinfo("collection.anki2").compress_type == zipfile.ZIP_STORED
 database = tempfile.NamedTemporaryFile(suffix=".anki2", delete=False)
 database.write(package.read("collection.anki2"))
 database.close()
