@@ -67,8 +67,11 @@
               <label class="wide">Learning outcome
                 <textarea name="outcome" rows="2" placeholder="What should the learner be able to do after studying?"></textarea>
               </label>
-              <label>Learner and prerequisites
+              <label>Learner level
                 <input name="audience" placeholder="e.g. English-speaking beginner" />
+              </label>
+              <label>Prerequisites
+                <input name="prerequisites" placeholder="e.g. knows the Latin alphabet" />
               </label>
               <label>Card count
                 <input name="cardCount" type="number" min="1" max="500" placeholder="40" />
@@ -103,6 +106,9 @@
               </label>
               <label class="wide">Excluded scope
                 <textarea name="excludedScope" rows="2" placeholder="What should not be included?"></textarea>
+              </label>
+              <label class="wide">Sensitive or regulated content constraints
+                <textarea name="sensitiveContent" rows="2" placeholder="Exclude personal data, graphic examples, or regulated advice unless explicitly requested"></textarea>
               </label>
               <fieldset class="wide">
                 <legend>Allowed card types</legend>

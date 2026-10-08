@@ -87,7 +87,7 @@ function fillBrief() {
   if (!project) return;
   const form = $("#brief-form");
   const brief = project.brief || {};
-  ["topic", "outcome", "audience", "prerequisites", "cardCount", "difficulty", "sourcePolicy", "exportFormat", "deckName", "includedScope", "excludedScope"].forEach((name) => setFormValue(form, name, brief[name]));
+  ["topic", "outcome", "audience", "prerequisites", "cardCount", "difficulty", "sourcePolicy", "exportFormat", "deckName", "includedScope", "excludedScope", "sensitiveContent"].forEach((name) => setFormValue(form, name, brief[name]));
   $$('input[name="allowedTypes"]', form).forEach((input) => { input.checked = (brief.allowedTypes || []).includes(input.value); });
   $("#export-format").value = brief.exportFormat || "tsv";
 }
@@ -223,6 +223,7 @@ async function saveBrief(event) {
     topic: form.elements.topic.value,
     outcome: form.elements.outcome.value,
     audience: form.elements.audience.value,
+    prerequisites: form.elements.prerequisites.value,
     cardCount: form.elements.cardCount.value ? Number(form.elements.cardCount.value) : null,
     difficulty: form.elements.difficulty.value,
     sourcePolicy: form.elements.sourcePolicy.value,
@@ -230,6 +231,7 @@ async function saveBrief(event) {
     deckName: form.elements.deckName.value,
     includedScope: form.elements.includedScope.value,
     excludedScope: form.elements.excludedScope.value,
+    sensitiveContent: form.elements.sensitiveContent.value,
     allowedTypes,
     confirmed: true,
   };
