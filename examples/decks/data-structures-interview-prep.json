@@ -249,6 +249,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "O(1), because the address is computed from the base address and element offset.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -259,6 +262,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Existing elements may need to shift one position to make room, touching a linear number of elements.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -269,6 +275,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "O(1) amortized. Most appends are constant time; an occasional resize copies O(n) elements, but the cost is spread across many appends.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -279,6 +288,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "The search range must be ordered according to the comparison predicate; otherwise discarding half the range is not justified.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -289,6 +301,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "O(log n) comparisons on a sorted random-access sequence, assuming the midpoint and access to each tested element are O(1).",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -299,6 +314,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "O(1) expected or average time under a suitable hash function and bounded load factor; worst-case lookup can be O(n).",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -309,6 +327,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Two distinct keys map to the same table index. The table must resolve collisions, commonly by chaining or open addressing.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -319,6 +340,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "To keep the load factor within a target range so collisions remain manageable and expected operations stay near O(1).",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -329,6 +353,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Chaining stores collision groups in buckets or linked structures; open addressing stores entries in the table and probes for another slot. Open addressing needs a deletion strategy such as tombstones.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -339,6 +366,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "When the node reference is already available: update a constant number of pointers. Finding the node first may still cost O(n).",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -349,6 +379,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Nodes are not contiguous and do not provide an index-to-address calculation, so reaching position i generally requires walking from an endpoint: O(n).",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -359,6 +392,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Walk through the list while maintaining previous, current, and next pointers; reverse current.next to previous, then advance all pointers.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -369,6 +405,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "A cycle in a linked structure. A slow pointer advances one step and a fast pointer two; if they meet, a cycle exists.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -379,6 +418,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "LIFO: last in, first out. Push and pop happen at the same end, usually in O(1).",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -389,6 +431,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "FIFO: first in, first out. Enqueue at one end and dequeue at the other, usually in O(1) with a proper implementation.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -399,6 +444,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Removing index 0 from a plain array shifts remaining elements and costs O(n); a deque or ring buffer can maintain both ends in O(1).",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -409,6 +457,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "It solves next-greater/next-smaller and related range queries in O(n) by maintaining elements in monotonic order and popping each item at most once.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -419,6 +470,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "For each node, keys in the left subtree compare smaller and keys in the right subtree compare larger, according to the tree's duplicate policy.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -429,6 +483,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "O(h). It is O(log n) when the tree is balanced and can degrade to O(n) when it becomes a chain.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -439,6 +496,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Its height is kept logarithmic in the number of nodes, typically by enforcing a balance invariant such as AVL height differences or red-black coloring rules.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -449,6 +509,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Keys in sorted order, assuming the traversal visits left subtree, node, then right subtree and the BST invariant holds.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -459,6 +522,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Every parent key is greater than or equal to its children, so the maximum element is at the root.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -469,6 +535,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Both are O(log n), because an element may move along the heap height. Reading the root is O(1).",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -479,6 +548,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "It provides constant-time access to the highest- or lowest-priority item and logarithmic insertion/removal while using a compact array representation.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -489,6 +561,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "O(n), not O(n log n), because most nodes are near the leaves and require little sift-down work.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -499,6 +574,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "O(n log n) time in best, average, and worst cases; the usual array implementation uses O(n) auxiliary space.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -509,6 +587,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Average O(n log n); worst-case O(n) when partitions are repeatedly very unbalanced. Randomized or careful pivots reduce the likelihood of the worst case.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -519,6 +600,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Equal-key records preserve their original relative order. Stability matters when sorting by multiple keys in successive passes.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -529,6 +613,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "When keys are integers in a manageable bounded range. It can run in O(n + k), but space and time depend on the key range k, not only the number of items.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -539,6 +626,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "O(V + E), because each reachable vertex and edge is processed a constant number of times.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -549,6 +639,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "For an unweighted graph, or when every edge has equal cost. BFS explores by distance layers and returns minimum edge-count distance.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -559,6 +652,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Edge weights must be nonnegative. A negative edge can invalidate the assumption that a finalized distance is optimal.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -569,6 +665,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "When negative edge weights may exist or when detecting a reachable negative cycle is required; its standard complexity is O(VE).",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -579,6 +678,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "A linear ordering of a directed acyclic graph in which every directed edge u→v places u before v. It exists only for DAGs.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -589,6 +691,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "It repeatedly removes zero-indegree vertices. If fewer than V vertices are removed, the remaining graph contains a directed cycle.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -599,6 +704,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Lists use O(V + E) space and are efficient for sparse graphs; matrices use O(V²) space but provide O(1) edge-existence lookup.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -609,6 +717,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Find identifies a set representative; union merges two sets. With path compression and union by rank/size, sequences run in near-constant amortized time O(α(n)).",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -619,6 +730,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "It processes edges in increasing weight order and adds an edge when its endpoints are in different components, using find/union to avoid cycles.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -629,6 +743,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "A hash map from key to node plus a doubly linked list ordered by recency. The map finds nodes and the list moves/removes them in O(1).",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -639,6 +756,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Prefix queries over strings. Insert, lookup, and prefix traversal take O(L) time in the key length L, with space depending on stored nodes and alphabet representation.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -649,6 +769,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Maintain a contiguous interval and move its left/right boundaries while preserving a condition, often reducing a nested scan to O(n).",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -659,6 +782,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "For repeated range-sum queries: after O(n) preprocessing, a range sum can be answered in O(1) with two prefix values, subject to the chosen endpoint convention.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -669,6 +795,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "It should state what the current window or pair represents and why moving a pointer cannot discard a valid solution under the problem's ordering/monotonicity assumptions.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -679,6 +808,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Worst-case bounds one operation; amortized analysis bounds the average cost over a sequence, without assuming random input.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -689,6 +821,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Each active call stores parameters, locals, and return state. A recursion depth of h contributes O(h) stack space even if the algorithm allocates no explicit collection.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -699,6 +834,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "An invariant is a condition preserved after each iteration or operation; it makes correctness reasoning and boundary-case debugging explicit.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -709,6 +847,9 @@
         "source-clrs"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Input size and representation, operation semantics, expected versus worst-case assumptions, recursion/auxiliary space, and whether preprocessing is included.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     }
   ],

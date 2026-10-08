@@ -98,6 +98,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㄱ is *기역* (giyeok). It is roughly **g** at the beginning of a syllable and **k** at the end; exact pronunciation depends on position and surrounding sounds.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -107,6 +110,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㄴ is *니은* (nieun) and represents an **n** sound.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -116,6 +122,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㄷ is *디귿* (digeut). It is roughly **d** initially and **t** finally.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -125,6 +134,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㄹ is *리을* (rieul). It is commonly realized between an **r-like** sound in some onset positions and an **l-like** sound in coda or doubled contexts; English romanization is only an approximation.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -134,6 +146,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅁ is *미음* (mieum) and represents **m**.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -143,6 +158,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅂ is *비읍* (bieup). It is roughly **b** initially and **p** finally.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -152,6 +170,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅅ is *시옷* (siot) and is usually **s**, with context-dependent pronunciation before certain vowels.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -161,6 +182,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "At the beginning of a syllable block, ㅇ is silent; at the end, it represents **ng** as in English *sing*.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -170,6 +194,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅈ is *지읒* (jieut) and is roughly **j** or a soft affricate sound.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -179,6 +206,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅊ is *치읓* (chieut) and is an aspirated **ch** sound; ㅈ is the less-aspirated counterpart.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -188,6 +218,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅋ is *키읔* (kieuk) and is an aspirated **k** sound.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -197,6 +230,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅌ is *티읕* (tieut) and is an aspirated **t** sound.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -206,6 +242,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅍ is *피읖* (pieup) and is an aspirated **p** sound.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -215,6 +254,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅎ is *히읗* (hieut) and is an **h** sound, with predictable effects on neighboring consonants.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -224,6 +266,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅏ is *아* and is commonly represented as **a**, similar to the vowel in *father* for many learners.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -233,6 +278,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅑ is *야* and is commonly represented as **ya**.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -242,6 +290,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅓ is *어*. Revised Romanization writes it **eo**; English has no exact equivalent, so learners should use Korean audio rather than treating the spelling as two sounds.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -251,6 +302,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅕ is *여* and is commonly represented as **yeo**.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -260,6 +314,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅗ is *오* and is commonly represented as **o**.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -269,6 +326,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅛ is *요* and is commonly represented as **yo**.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -278,6 +338,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅜ is *우* and is commonly represented as **u**, roughly like the vowel in *boot* for many learners.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -287,6 +350,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅠ is *유* and is commonly represented as **yu**.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -296,6 +362,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅡ is *으*. Revised Romanization writes it **eu**; it is a Korean vowel without a direct English equivalent.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -305,6 +374,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅣ is *이* and represents **i**, like the vowel in *machine* for many learners.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -314,6 +386,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅐ is *애* and is written **ae**; in modern Seoul Korean its pronunciation is often close to ㅔ for many speakers.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -323,6 +398,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅔ is *에* and is written **e**; it is distinct in spelling even though many speakers pronounce it similarly to ㅐ.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -332,6 +410,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅘ is a compound vowel written **wa**, formed from ㅗ plus ㅏ.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -341,6 +422,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅝ is a compound vowel written **wo**, formed from ㅜ plus ㅓ.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -350,6 +434,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅚ is commonly romanized **oe**; modern pronunciation is often close to **we** in many contexts, so audio matters.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -359,6 +446,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "ㅟ is *위* and is commonly represented as **wi**.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -368,6 +458,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "A syllable block combines an initial consonant, a vowel, and optionally a final consonant. The letters are arranged into one visual block, not written as a horizontal alphabetic string.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -377,6 +470,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "**한** is ㅎ + ㅏ + ㄴ: initial ㅎ, vowel ㅏ, and final consonant ㄴ.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -386,6 +482,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "받침 is the final consonant position at the bottom of a syllable block. Its pronunciation follows Korean final-consonant rules and may change before the next syllable.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -395,6 +494,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "In final position, ㄱ, ㅋ, and ㄲ are commonly realized as the unreleased **[k̚]**-type sound; they are not pronounced like a fully released English k.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -404,6 +506,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Final ㅇ represents **ng**, as in the ending of English *sing*.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -413,6 +518,9 @@
         "source-korean-hangul"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "A doubled jamo such as ㄲ is a tense consonant, not simply a longer version of ㄱ. Tense consonants have different articulation and are best learned with audio.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -422,6 +530,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "hello",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -431,6 +542,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "hi / bye",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -440,6 +554,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "thank you",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -449,6 +566,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "thank you",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -458,6 +578,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "yes / I understand",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -467,6 +590,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "no",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -476,6 +602,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "I am sorry",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -485,6 +614,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "I am sorry",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -494,6 +626,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "it is okay / I am fine",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -503,6 +638,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "please give me / please",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -512,6 +650,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "what",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -521,6 +662,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "where",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -530,6 +674,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "who",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -539,6 +686,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "why",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -548,6 +698,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "when",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -557,6 +710,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "how",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -566,6 +722,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "this thing",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -575,6 +734,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "that thing",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -584,6 +746,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "that thing over there",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -593,6 +758,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "here",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -602,6 +770,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "there",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -611,6 +782,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "over there",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -620,6 +794,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "today",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -629,6 +806,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "tomorrow",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -638,6 +818,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "yesterday",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -647,6 +830,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "now",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -656,6 +842,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "person / people",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -665,6 +854,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "friend",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -674,6 +866,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "home / house",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -683,6 +878,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "school",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -692,6 +890,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "water",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -701,6 +902,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "rice / meal",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -710,6 +914,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "restroom / bathroom",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -719,6 +926,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "name",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -728,6 +938,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "Korea",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -737,6 +950,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "English",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -746,6 +962,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "it is good / I like it",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -755,6 +974,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "I dislike it / I do not like it",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -764,6 +986,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "there is / I have / it exists",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -773,6 +998,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "there is not / I do not have",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -782,6 +1010,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "go / am going",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -791,6 +1022,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "come / am coming",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -800,6 +1034,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "eat / am eating",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -809,6 +1046,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "drink / am drinking",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     },
     {
@@ -818,6 +1058,9 @@
         "source-korean-dictionary"
       ],
       "verificationStatus": "verified",
+      "evidenceExcerpt": "see / watch / look",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
       "checkedAt": "2026-10-08T00:00:00.000Z"
     }
   ],

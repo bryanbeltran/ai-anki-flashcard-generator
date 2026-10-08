@@ -39,6 +39,10 @@ function validateCard(card, project) {
   if (unknownSources.length) findings.push(finding({ ruleId: "evidence.unknown-source", severity: "error", message: `Card references unknown source IDs: ${unknownSources.join(", ")}.`, cardId: card.id }));
   const unknownClaims = (card.claimIds || []).filter((claimId) => !claimIds.has(claimId));
   if (unknownClaims.length) findings.push(finding({ ruleId: "evidence.unknown-claim", severity: "error", message: `Card references unknown claim IDs: ${unknownClaims.join(", ")}.`, cardId: card.id }));
+  const claims = (card.claimIds || []).map((claimId) => (project.claims || []).find((claim) => claim.id === claimId)).filter(Boolean);
+  if (claims.some((claim) => !claim.evidenceExcerpt)) {
+    findings.push(finding({ ruleId: "evidence.excerpt-missing", severity: "warning", message: "One or more claims lack a supporting excerpt or location pointer.", cardId: card.id }));
+  }
   if (!(card.sourceIds || []).length || !(card.claimIds || []).length) {
     const severity = project.brief.sourcePolicy === "source-only" ? "error" : "warning";
     findings.push(finding({ ruleId: "evidence.missing", severity, message: "Card has no complete claim/evidence trail.", cardId: card.id }));

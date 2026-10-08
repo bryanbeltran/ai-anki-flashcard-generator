@@ -63,6 +63,9 @@ function makeDeck({ id, title, topic, outcome, audience, sources, cards, scope }
     text: `${card.front} — ${card.back}`,
     sourceIds: card.sourceIds,
     verificationStatus: "verified",
+    evidenceExcerpt: card.back,
+    evidenceLocation: "Curated card-level reference review",
+    evidenceStrength: "authoritative-reference",
     checkedAt: SNAPSHOT,
   }));
   const typeDistribution = cards.reduce((result, card) => {
