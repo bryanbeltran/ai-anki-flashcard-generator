@@ -48,6 +48,8 @@ import zipfile
 
 package = zipfile.ZipFile(io.BytesIO(sys.stdin.buffer.read()))
 database = package.read("collection.anki2")
+assert database[24:28] == (14).to_bytes(4, "big")
+assert database[92:96] == (14).to_bytes(4, "big")
 assert database[96:100] == (3046001).to_bytes(4, "big")
 `], { input: artifact.body, maxBuffer: 1_000_000 });
   assert.equal(check.status, 0, check.stderr?.toString() || check.stdout?.toString());
