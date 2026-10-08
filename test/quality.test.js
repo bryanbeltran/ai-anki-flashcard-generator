@@ -49,3 +49,11 @@ test("validator catches malformed cloze and missing type-in answers", () => {
   assert.ok(result.findings.some((finding) => finding.ruleId === "type.cloze-syntax"));
   assert.ok(result.findings.some((finding) => finding.ruleId === "type.accepted-answers"));
 });
+
+test("validator warns when a card difficulty differs from a fixed brief", () => {
+  const project = createProject({ title: "Difficulty", brief: normalizeBrief({ topic: "Difficulty", cardCount: 1, difficulty: "foundational" }) });
+  project.plan = { requestedCardCount: 1, scope: [{ id: "scope_1", label: "Core", required: true }] };
+  project.cards = [{ id: "card_1", type: "basic", front: "Prompt", back: "Answer", scopeId: "scope_1", difficulty: "beginner", status: "approved", evidenceStatus: "verified" }];
+  const result = validateProject(project);
+  assert.ok(result.findings.some((finding) => finding.ruleId === "quality.difficulty-mismatch" && finding.severity === "warning"));
+});

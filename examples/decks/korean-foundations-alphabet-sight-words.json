@@ -10,7 +10,7 @@
     "audience": "English-speaking Korean language learner at beginner level",
     "prerequisites": "",
     "cardCount": 81,
-    "difficulty": "foundational",
+    "difficulty": "adaptive",
     "allowedTypes": [
       "basic"
     ],

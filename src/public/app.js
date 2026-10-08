@@ -177,6 +177,7 @@ function renderCards() {
           <button class="button secondary" data-card-action="regenerate" ${disabled}>Regenerate</button>
           <button class="button secondary" data-card-action="verify" ${disabled}>Verify with source</button>
           <button class="button ${card.status === "approved" ? "secondary" : "primary"}" data-card-action="approve" ${disabled}>${card.status === "approved" ? "Approved" : "Approve"}</button>
+          <button class="button secondary" data-card-action="reject" ${disabled}>Reject</button>
         </div>
       </div>
     </details>`;
@@ -284,6 +285,9 @@ document.addEventListener("click", async (event) => {
     }
     if (action === "approve") {
       await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/bulk`, { method: "POST", body: JSON.stringify({ cardIds: [cardId], action: "approve" }) }), "Card approved. Validation will determine export readiness.");
+    }
+    if (action === "reject") {
+      await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/bulk`, { method: "POST", body: JSON.stringify({ cardIds: [cardId], action: "reject" }) }), "Card rejected and excluded from export.");
     }
     if (action === "regenerate") {
       const instruction = window.prompt("Regeneration instruction", "Improve clarity while preserving the learning objective and evidence.");

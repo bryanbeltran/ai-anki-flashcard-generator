@@ -35,6 +35,9 @@ function validateCard(card, project) {
   if (card.front.length > 260 || card.back.length > 600) {
     findings.push(finding({ ruleId: "quality.reading-load", severity: "warning", message: "This card is unusually long; review whether it should be split.", cardId: card.id }));
   }
+  if (project.brief.difficulty && project.brief.difficulty !== "adaptive" && card.difficulty && card.difficulty !== project.brief.difficulty) {
+    findings.push(finding({ ruleId: "quality.difficulty-mismatch", severity: "warning", message: `Card difficulty is ${card.difficulty}, while the brief requests ${project.brief.difficulty}.`, cardId: card.id }));
+  }
   const unknownSources = (card.sourceIds || []).filter((sourceId) => !sourceIds.has(sourceId));
   if (unknownSources.length) findings.push(finding({ ruleId: "evidence.unknown-source", severity: "error", message: `Card references unknown source IDs: ${unknownSources.join(", ")}.`, cardId: card.id }));
   const unknownClaims = (card.claimIds || []).filter((claimId) => !claimIds.has(claimId));

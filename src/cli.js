@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { buildExport } from "./exporter.js";
-import { buildPracticeDecks, PRACTICE_SNAPSHOT } from "./practice-data.js";
+import { buildPracticeDecks, inferDifficulty, PRACTICE_SNAPSHOT } from "./practice-data.js";
 import { sanitizeFileName } from "./domain.js";
 import { applyValidation } from "./validator.js";
 
@@ -27,13 +27,14 @@ if (command === "seed-artifacts") {
       ];
       for (const subset of subsets) {
         const cards = deck.cards.filter((card) => subset.scopes.includes(card.scopeId));
+        const difficulty = inferDifficulty(cards);
         const subdeck = {
           ...deck,
           id: `practice_${subset.slug.replaceAll("-", "_")}`,
           title: subset.title,
           cards,
-          brief: { ...deck.brief, deckName: subset.title, cardCount: cards.length, includedScope: subset.scopes.join(", ") },
-          plan: { ...deck.plan, requestedCardCount: cards.length, scope: deck.plan.scope.filter((scope) => subset.scopes.includes(scope.id)), objectives: deck.plan.objectives.filter((objective) => subset.scopes.includes(objective.scopeId)) },
+          brief: { ...deck.brief, deckName: subset.title, cardCount: cards.length, difficulty, includedScope: subset.scopes.join(", ") },
+          plan: { ...deck.plan, difficulty, requestedCardCount: cards.length, scope: deck.plan.scope.filter((scope) => subset.scopes.includes(scope.id)), objectives: deck.plan.objectives.filter((objective) => subset.scopes.includes(objective.scopeId)) },
         };
         applyValidation(subdeck, { timestamp: PRACTICE_SNAPSHOT });
         const subArtifact = buildExport(subdeck, { format: "tsv", cardType: "all" });

@@ -57,6 +57,11 @@ function makeCard({ key, type = "basic", front, back, extra = "", tags, scopeId,
   };
 }
 
+export function inferDifficulty(cards) {
+  const levels = [...new Set(cards.map((card) => card.difficulty).filter(Boolean))];
+  return levels.length === 1 ? levels[0] : "adaptive";
+}
+
 function makeDeck({ id, title, topic, outcome, audience, sources, cards, scope }) {
   const claims = cards.map((card) => ({
     id: card.claimIds[0],
@@ -72,6 +77,7 @@ function makeDeck({ id, title, topic, outcome, audience, sources, cards, scope }
     result[card.type] = (result[card.type] || 0) + 1;
     return result;
   }, {});
+  const difficulty = inferDifficulty(cards);
   const project = {
     id,
     title,
@@ -84,7 +90,7 @@ function makeDeck({ id, title, topic, outcome, audience, sources, cards, scope }
       audience,
       prerequisites: "",
       cardCount: cards.length,
-      difficulty: cards.some((card) => card.difficulty === "advanced") ? "adaptive" : "foundational",
+      difficulty,
       allowedTypes: Object.keys(typeDistribution),
       direction: "English to Korean where requested; otherwise prompt-to-answer recall.",
       sourcePolicy: "trusted-external",
@@ -108,7 +114,7 @@ function makeDeck({ id, title, topic, outcome, audience, sources, cards, scope }
         { id: `objective_${item.id}_recall`, scopeId: item.id, type: "recall", statement: `Recall ${item.label}.`, priority: "required" },
       ]),
       requestedCardCount: cards.length,
-      difficulty: "adaptive",
+      difficulty,
       typeDistribution,
       sourcePolicy: "trusted-external",
       exclusions: [],
