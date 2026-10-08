@@ -87,6 +87,8 @@ import sys
 database_path = sys.argv[1]
 payload = json.load(sys.stdin)
 connection = sqlite3.connect(database_path)
+# Zero deleted page content so APKG bytes do not depend on the host SQLite build.
+connection.execute("PRAGMA secure_delete = ON")
 connection.executescript(payload["schema"])
 connection.execute(
     "INSERT INTO col VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",

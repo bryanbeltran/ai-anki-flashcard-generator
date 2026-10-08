@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { buildExport } from "../src/exporter.js";
 import { buildPracticeDecks, PRACTICE_SNAPSHOT } from "../src/practice-data.js";
 
@@ -51,4 +52,10 @@ database = package.read("collection.anki2")
 assert database[96:100] == (3046001).to_bytes(4, "big")
 `], { input: artifact.body, maxBuffer: 1_000_000 });
   assert.equal(check.status, 0, check.stderr?.toString() || check.stdout?.toString());
+});
+
+test("APKG export remains byte-reproducible across SQLite builds", () => {
+  const artifact = buildExport(buildPracticeDecks()[0], { format: "apkg", timestamp: Date.parse(PRACTICE_SNAPSHOT) });
+  const digest = createHash("sha256").update(artifact.body).digest("hex");
+  assert.equal(digest, "cfdfe5ef0f3043266f07811d186a3b054574fb082300072cbfb0eb37a889a0da");
 });
