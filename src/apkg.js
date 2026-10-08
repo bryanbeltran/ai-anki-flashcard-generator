@@ -109,6 +109,10 @@ const ZIP_LOCAL_FILE = 0x04034b50;
 const ZIP_CENTRAL_FILE = 0x02014b50;
 const ZIP_END = 0x06054b50;
 const ZIP_VERSION = 20;
+// SQLite stores the library version that last wrote a database in its header.
+// Keep that metadata fixed so APKG bytes do not depend on the host SQLite build.
+const SQLITE_FILE_VERSION = 3_046_001;
+const SQLITE_FILE_VERSION_OFFSET = 96;
 const crcTable = Array.from({ length: 256 }, (_, index) => {
   let value = index;
   for (let bit = 0; bit < 8; bit += 1) value = value & 1 ? 0xedb88320 ^ (value >>> 1) : value >>> 1;
@@ -362,7 +366,9 @@ function buildSqlite(payload) {
       const detail = result.error?.message || result.stderr?.toString("utf8").trim() || `exit code ${result.status}`;
       throw new Error(`APKG export requires Python 3 with sqlite3: ${detail}`);
     }
-    return readFileSync(databasePath);
+    const database = readFileSync(databasePath);
+    database.writeUInt32BE(SQLITE_FILE_VERSION, SQLITE_FILE_VERSION_OFFSET);
+    return database;
   } finally {
     rmSync(directory, { recursive: true, force: true });
   }

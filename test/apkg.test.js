@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { buildExport } from "../src/exporter.js";
-import { buildPracticeDecks } from "../src/practice-data.js";
+import { buildPracticeDecks, PRACTICE_SNAPSHOT } from "../src/practice-data.js";
 
 test("APKG export is a readable Anki deck package", () => {
   const artifact = buildExport(buildPracticeDecks()[0], { format: "apkg" });
@@ -35,6 +35,20 @@ decks = json.loads(connection.execute("select decks from col").fetchone()[0])
 assert len(models) == 1
 assert list(decks.values())[0]["name"] == "Korean Foundations — Alphabet + Sight Words"
 connection.close()
+`], { input: artifact.body, maxBuffer: 1_000_000 });
+  assert.equal(check.status, 0, check.stderr?.toString() || check.stdout?.toString());
+});
+
+test("APKG export fixes SQLite runtime metadata for reproducible artifacts", () => {
+  const artifact = buildExport(buildPracticeDecks()[0], { format: "apkg", timestamp: Date.parse(PRACTICE_SNAPSHOT) });
+  const check = spawnSync("python3", ["-c", `
+import io
+import sys
+import zipfile
+
+package = zipfile.ZipFile(io.BytesIO(sys.stdin.buffer.read()))
+database = package.read("collection.anki2")
+assert database[96:100] == (3046001).to_bytes(4, "big")
 `], { input: artifact.body, maxBuffer: 1_000_000 });
   assert.equal(check.status, 0, check.stderr?.toString() || check.stdout?.toString());
 });
