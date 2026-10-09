@@ -21,6 +21,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+      - run: npm ci
       - run: TMPDIR=/var/tmp npm run check
       - run: npm install --global agent-browser@0.38.2
       - run: agent-browser install
