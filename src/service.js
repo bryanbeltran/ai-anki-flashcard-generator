@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { buildClarifyingQuestions, buildPlan, clone, createRun, id, normalizeBrief, touch } from "./domain.js";
 import { normalizeGeneratedDeck } from "./provider.js";
 import { applyValidation, validateProject } from "./validator.js";
-import { buildPracticeDecks, practiceDeckBySlug } from "./practice-data.js";
+import { buildDemoDeck, buildPracticeDecks, practiceDeckBySlug } from "./practice-data.js";
 
 function requireProject(store, projectId) {
   const project = store.getProject(projectId);
@@ -171,13 +171,19 @@ export function verifyCard(store, projectId, cardId, input = {}) {
 }
 
 export function listPracticeDecks() {
-  const decks = [...buildPracticeDecks(), practiceDeckBySlug("korean-alphabet"), practiceDeckBySlug("korean-sight-words")].filter(Boolean);
+  const decks = [buildDemoDeck(), ...buildPracticeDecks(), practiceDeckBySlug("korean-alphabet"), practiceDeckBySlug("korean-sight-words")].filter(Boolean);
   return decks.map((deck) => ({
     slug: deck.id.replace(/^practice_/, "").replaceAll("_", "-"),
     id: deck.id,
     title: deck.title,
     cardCount: deck.cards.length,
     metrics: deck.metrics,
+    featured: deck.id === "practice_recall_demo",
+    description: deck.id === "practice_recall_demo"
+      ? "A seven-card walkthrough of claims, excerpts, hashes, Unicode, and Anki templates."
+      : deck.id === "practice_cs6603_ai_ethics_and_society"
+        ? "The complete 22-lesson, four-module CS 6603 sequence with source-linked ethics, statistics, AI/ML, fairness, and mitigation cards."
+        : "Curated, source-linked study content.",
   }));
 }
 

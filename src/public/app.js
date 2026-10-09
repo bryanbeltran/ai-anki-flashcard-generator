@@ -1,4 +1,4 @@
-const state = { project: null, projects: [], practice: [], filter: "all", search: "", cardLimit: 20, toastTimer: null, pendingRegeneration: null };
+const state = { project: null, projects: [], practice: [], filter: "all", search: "", cardLimit: 20, toastTimer: null, pendingRegeneration: null, dirty: false, modalReturnFocus: null };
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -47,6 +47,31 @@ function showMessage(selector, message, kind = "") {
   if (message) showToast(message, kind);
 }
 
+function showWorkspaceError(message) {
+  const panel = $("#workspace-error");
+  if (!panel) return;
+  $("#workspace-error-message").textContent = message;
+  panel.hidden = false;
+}
+
+function clearWorkspaceError() {
+  const panel = $("#workspace-error");
+  if (panel) panel.hidden = true;
+}
+
+function canLeaveWorkspace() {
+  if (!state.dirty) return true;
+  const leave = window.confirm("You have unsaved changes. Leave without saving?");
+  if (leave) state.dirty = false;
+  return leave;
+}
+
+function formatDate(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? "" : new Intl.DateTimeFormat(undefined, { dateStyle: "medium" }).format(date);
+}
+
 function setBusy(element, busy) {
   if (!element) return;
   element.disabled = busy;
@@ -78,6 +103,7 @@ function resetCardView() {
 
 async function loadProjects() {
   const payload = await api("/api/projects");
+  clearWorkspaceError();
   state.projects = payload.projects || [];
   renderProjectList();
   if (!state.project && state.projects[0]) await loadProject(state.projects[0].id);
@@ -85,6 +111,7 @@ async function loadProjects() {
 
 async function loadPractice() {
   const payload = await api("/api/practice");
+  clearWorkspaceError();
   state.practice = payload.decks || [];
   renderPractice();
 }
@@ -92,6 +119,7 @@ async function loadPractice() {
 async function loadProject(id) {
   try {
     state.project = await api(`/api/projects/${encodeURIComponent(id)}`);
+    state.dirty = false;
     resetCardView();
     renderAll();
   } catch (error) {
@@ -116,8 +144,9 @@ function renderPractice() {
   $("#practice-decks").innerHTML = state.practice.map((deck) => `
     <article class="practice-card">
       <div class="practice-card-title"><span class="practice-dot" aria-hidden="true">✦</span><strong>${escapeHtml(deck.title)}</strong></div>
-      <span class="muted small">${formatCount(deck.cardCount)} · ${deck.metrics?.coveragePercent ?? 0}% covered</span>
-      <button class="button secondary" data-practice-slug="${escapeHtml(deck.slug)}" type="button">Open deck <span aria-hidden="true">→</span></button>
+      <span class="muted small">${formatCount(deck.cardCount)} · ${deck.metrics?.verifiedCards ?? 0} verified · ${deck.metrics?.coveragePercent ?? 0}% covered</span>
+      <span class="practice-description muted small">${escapeHtml(deck.description || "Curated, source-linked study content.")}</span>
+      <button class="button secondary" aria-label="Open ${escapeHtml(deck.title)}" data-practice-slug="${escapeHtml(deck.slug)}" type="button">${deck.featured ? "Open guided demo" : "Open deck"} <span aria-hidden="true">→</span></button>
     </article>`).join("");
 }
 
@@ -193,7 +222,12 @@ function renderPlan() {
 function renderSources() {
   const sources = state.project?.sources || [];
   $("#source-count").textContent = `${sources.length} source${sources.length === 1 ? "" : "s"}`;
-  $("#sources").innerHTML = sources.length ? sources.map((source) => `<div class="source-row"><div class="source-info"><span class="source-icon" aria-hidden="true">⌁</span><span><strong>${escapeHtml(source.title)}</strong><small>${escapeHtml(source.url || source.contentPreview || "Pasted source")}</small></span></div><div class="source-actions">${source.url ? `<button class="button secondary" data-source-action="fetch" data-source-id="${escapeHtml(source.id)}" type="button">Refresh snapshot</button>` : ""}<span class="pill ${source.accessStatus === "available" ? "good" : ""}">${escapeHtml(source.accessStatus || "available")}</span></div></div>`).join("") : '<div class="empty-list"><span aria-hidden="true">⌁</span><span><strong>No sources yet</strong><small>Mixed-source drafts can generate, but verified export requires evidence.</small></span></div>';
+  $("#sources").innerHTML = sources.length ? sources.map((source) => {
+    const location = source.url ? `<a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.url)}</a>` : escapeHtml(source.contentPreview || "Pasted source");
+    const hash = source.contentHash ? `SHA-256 ${source.contentHash}` : "No snapshot hash yet";
+    const snapshot = source.snapshotId ? `Snapshot ${source.snapshotId}` : "Snapshot pending";
+    return `<details class="source-row"><summary class="source-summary"><div class="source-info"><span class="source-icon" aria-hidden="true">⌁</span><span><strong>${escapeHtml(source.title)}</strong><small>${location}</small></span></div><span class="pill ${source.accessStatus === "available" ? "good" : ""}">${escapeHtml(source.accessStatus || "available")}</span></summary><div class="source-detail"><div><span class="eyebrow">Snapshot identity</span><code>${escapeHtml(hash)}</code></div><div><span class="eyebrow">Captured</span><span>${escapeHtml(formatDate(source.retrievedAt) || "Not captured")}</span></div><div><span class="eyebrow">Reference</span><span>${escapeHtml(snapshot)}</span></div>${source.notes ? `<p class="muted small">${escapeHtml(source.notes)}</p>` : ""}<div class="source-detail-actions">${source.url ? `<button class="button secondary" data-source-action="fetch" data-source-id="${escapeHtml(source.id)}" type="button">Refresh snapshot</button>` : ""}</div></div></details>`;
+  }).join("") : '<div class="empty-list"><span aria-hidden="true">⌁</span><span><strong>No sources yet</strong><small>Mixed-source drafts can generate, but verified export requires evidence.</small></span></div>';
 }
 
 function renderCoverage() {
@@ -206,6 +240,28 @@ function statusLabel(card) {
   if (card.status === "approved" && card.evidenceStatus === "verified") return "Approved · verified";
   if (card.status === "approved") return "Approved · review evidence";
   return card.status || "Draft";
+}
+
+function claimsFor(card) {
+  const claims = state.project?.claims || [];
+  return (card.claimIds || []).map((claimId) => claims.find((claim) => claim.id === claimId)).filter(Boolean);
+}
+
+function sourceFor(id) {
+  return (state.project?.sources || []).find((source) => source.id === id);
+}
+
+function renderEvidence(card, disabled) {
+  const claims = claimsFor(card);
+  const latest = claims.at(-1);
+  const sourceTitles = (card.sourceIds || []).map((sourceId) => sourceFor(sourceId)?.title).filter(Boolean);
+  const claimText = latest?.text || `${card.front} — ${card.back}`;
+  const excerpt = latest?.evidenceExcerpt || card.back;
+  const location = latest?.evidenceLocation || "User-selected source snapshot";
+  const history = claims.length
+    ? `<ol class="evidence-history">${[...claims].reverse().map((claim) => `<li><div><strong>${escapeHtml(claim.verificationStatus === "verified" ? "Verified" : "Review event")}</strong><span>${escapeHtml(formatDate(claim.checkedAt) || "Undated")} · ${escapeHtml(claim.verifier || "local review")}</span></div><blockquote>${rich(claim.evidenceExcerpt || "No excerpt recorded.")}</blockquote><small>${escapeHtml(claim.evidenceLocation || "No location recorded.")}</small></li>`).join("")}</ol>`
+    : '<p class="muted small">No verification events yet. Select a source, quote the relevant passage, and record where it came from.</p>';
+  return `<section class="evidence-panel" aria-label="Evidence trail"><div class="evidence-heading"><div><p class="eyebrow">Evidence trail</p><strong>${card.evidenceStatus === "verified" ? "Verified claim" : "Needs a source check"}</strong></div><span class="pill ${card.evidenceStatus === "verified" ? "good" : ""}">${escapeHtml(card.evidenceStatus || "unverified")}</span></div><p class="muted small">${sourceTitles.length ? `Linked source${sourceTitles.length === 1 ? "" : "s"}: ${escapeHtml(sourceTitles.join(" · "))}` : "No source linked yet."}</p><div class="evidence-fields"><label>Claim being checked<textarea data-field="claimText" rows="2" ${disabled}>${escapeHtml(claimText)}</textarea></label><label>Supporting excerpt<textarea data-field="evidenceExcerpt" rows="3" ${disabled}>${escapeHtml(excerpt)}</textarea></label><label>Location or pointer<input data-field="evidenceLocation" value="${escapeHtml(location)}" ${disabled} /></label></div><div class="evidence-history-heading"><span class="eyebrow">Verification history</span><span class="muted small">${claims.length} event${claims.length === 1 ? "" : "s"}</span></div>${history}</section>`;
 }
 
 function option(value, label, current) {
@@ -232,7 +288,8 @@ function renderCards() {
     const cardNumber = allCards.indexOf(card) + 1 || index + 1;
     const cardFindings = findings.filter((finding) => finding.cardId === card.id);
     const disabled = card.locked ? "disabled" : "";
-    const sourceOptions = (state.project?.sources || []).map((source) => `<option value="${escapeHtml(source.id)}" ${(card.sourceIds || []).includes(source.id) ? "selected" : ""}>${escapeHtml(source.title)}</option>`).join("");
+    const selectedSource = card.sourceIds?.[0] || "";
+    const sourceOptions = (state.project?.sources || []).map((source) => `<option value="${escapeHtml(source.id)}" ${source.id === selectedSource ? "selected" : ""}>${escapeHtml(source.title)}</option>`).join("");
     return `<details class="card-item" data-card-id="${escapeHtml(card.id)}">
       <summary class="card-summary"><span class="card-number">${String(cardNumber).padStart(2, "0")}</span><span class="card-front"><strong>${rich(card.front)}</strong><small>${escapeHtml(card.type)} · ${escapeHtml(card.difficulty)} · ${escapeHtml(card.tags?.join(" · ") || "untagged")}</small></span><span class="card-status ${card.evidenceStatus === "verified" && card.status === "approved" ? "good" : "warn"}">${escapeHtml(statusLabel(card))}</span></summary>
       <div class="card-editor">
@@ -245,6 +302,7 @@ function renderCards() {
           <label>Difficulty<select name="difficulty" data-field="difficulty" ${disabled}>${option("beginner", "Beginner", card.difficulty)}${option("foundational", "Foundational", card.difficulty)}${option("intermediate", "Intermediate", card.difficulty)}${option("advanced", "Advanced", card.difficulty)}</select></label>
           <label>Evidence source<select name="sourceId" data-field="sourceId" ${disabled}><option value="">Choose a source</option>${sourceOptions}</select></label>
         </div>
+        ${renderEvidence(card, disabled)}
         ${cardFindings.length ? `<ul class="finding-list">${cardFindings.map((finding) => `<li class="${finding.severity === "error" ? "error" : ""}">${escapeHtml(finding.severity)}: ${escapeHtml(finding.message)}</li>`).join("")}</ul>` : ""}
         <div class="editor-actions">
           <button class="button secondary" data-card-action="save" type="button" ${disabled}>Save edits</button>
@@ -264,6 +322,7 @@ function renderCards() {
 function renderAll() {
   const project = state.project;
   const hasProject = Boolean(project);
+  clearWorkspaceError();
   $("#empty-state").hidden = hasProject;
   $("#project-view").hidden = !hasProject;
   if (!hasProject) return;
@@ -313,21 +372,30 @@ function updateWorkflow(project, requiredQuestions) {
 function openProjectDialog() {
   const dialog = $("#project-dialog");
   const input = $("#project-name");
+  state.modalReturnFocus = document.activeElement;
   if (typeof dialog.showModal === "function") dialog.showModal();
   else dialog.setAttribute("open", "");
   input.value = "";
   requestAnimationFrame(() => input.focus());
 }
 
+function restoreModalFocus() {
+  const target = state.modalReturnFocus;
+  state.modalReturnFocus = null;
+  target?.focus?.();
+}
+
 function closeProjectDialog() {
   const dialog = $("#project-dialog");
   if (typeof dialog.close === "function") dialog.close();
   else dialog.removeAttribute("open");
+  restoreModalFocus();
 }
 
 function openRegenerateDialog(cardId, trigger) {
   const dialog = $("#regenerate-dialog");
   state.pendingRegeneration = { cardId, trigger };
+  state.modalReturnFocus = trigger || document.activeElement;
   $("#regenerate-instruction").value = "Improve clarity while preserving the learning objective and evidence.";
   if (typeof dialog.showModal === "function") dialog.showModal();
   else dialog.setAttribute("open", "");
@@ -339,6 +407,7 @@ function closeRegenerateDialog() {
   state.pendingRegeneration = null;
   if (typeof dialog.close === "function") dialog.close();
   else dialog.removeAttribute("open");
+  restoreModalFocus();
 }
 
 async function createProject(title, submitButton) {
@@ -346,6 +415,7 @@ async function createProject(title, submitButton) {
   try {
     state.project = await api("/api/projects", { method: "POST", body: JSON.stringify({ title }) });
     resetCardView();
+    state.dirty = false;
     closeProjectDialog();
     await loadProjects();
     renderAll();
@@ -381,6 +451,7 @@ async function saveBrief(event) {
   setBusy(submitButton, true);
   try {
     state.project = await api(`/api/projects/${state.project.id}/brief`, { method: "POST", body: JSON.stringify(body) });
+    state.dirty = false;
     showMessage("#brief-message", "Brief saved. Build or revise the plan next.", "success");
     renderAll();
   } catch (error) { showMessage("#brief-message", error.message, "error"); }
@@ -391,6 +462,7 @@ async function withProjectAction(action, successMessage = "Updated", trigger = n
   setBusy(trigger, true);
   try {
     state.project = await action();
+    state.dirty = false;
     showMessage("#brief-message", successMessage, "success");
     renderAll();
     await loadProjects();
@@ -400,9 +472,13 @@ async function withProjectAction(action, successMessage = "Updated", trigger = n
 
 document.addEventListener("click", async (event) => {
   const projectButton = event.target.closest("[data-project-id]");
-  if (projectButton) return loadProject(projectButton.dataset.projectId);
+  if (projectButton) {
+    if (canLeaveWorkspace()) return loadProject(projectButton.dataset.projectId);
+    return;
+  }
   const practiceButton = event.target.closest("[data-practice-slug]");
   if (practiceButton) {
+    if (!canLeaveWorkspace()) return;
     try { setBusy(practiceButton, true); state.project = await api(`/api/practice/${encodeURIComponent(practiceButton.dataset.practiceSlug)}`, { method: "POST", body: "{}" }); resetCardView(); renderAll(); await loadProjects(); }
     catch (error) { showMessage("#brief-message", error.message, "error"); }
     finally { setBusy(practiceButton, false); }
@@ -452,13 +528,19 @@ document.addEventListener("click", async (event) => {
     if (action === "verify") {
       const sourceId = details.querySelector('[data-field="sourceId"]')?.value;
       if (!sourceId) { showMessage("#brief-message", "Choose a source before verifying this card.", "error"); return; }
-      await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/${cardId}/verify`, { method: "POST", body: JSON.stringify({ sourceIds: [sourceId] }) }), "Evidence recorded and card approved.", cardAction);
+      const get = (field) => details.querySelector(`[data-field="${field}"]`);
+      await withProjectAction(() => api(`/api/projects/${state.project.id}/cards/${cardId}/verify`, { method: "POST", body: JSON.stringify({ sourceIds: [sourceId], claimText: get("claimText")?.value.trim(), evidenceExcerpt: get("evidenceExcerpt")?.value.trim(), evidenceLocation: get("evidenceLocation")?.value.trim() }) }), "Evidence recorded and card approved.", cardAction);
     }
   }
 });
 
 $("#new-project").addEventListener("click", openProjectDialog);
 $("#empty-new-project").addEventListener("click", openProjectDialog);
+$("#project-dialog").addEventListener("close", restoreModalFocus);
+$("#regenerate-dialog").addEventListener("close", () => {
+  state.pendingRegeneration = null;
+  restoreModalFocus();
+});
 $("#cancel-project-dialog").addEventListener("click", closeProjectDialog);
 $("#close-project-dialog").addEventListener("click", closeProjectDialog);
 $("#cancel-regenerate-dialog").addEventListener("click", closeRegenerateDialog);
@@ -565,11 +647,35 @@ $("#preview-export").addEventListener("click", async () => {
   finally { setBusy(button, false); }
 });
 
+document.addEventListener("input", (event) => {
+  if (event.target.closest("#brief-form, #source-form, .card-editor")) state.dirty = true;
+});
+
+document.addEventListener("change", (event) => {
+  if (event.target.closest("#brief-form, #source-form, .card-editor")) state.dirty = true;
+});
+
+window.addEventListener("beforeunload", (event) => {
+  if (!state.dirty) return;
+  event.preventDefault();
+  event.returnValue = "";
+});
+
+$("#retry-workspace").addEventListener("click", async (event) => {
+  setBusy(event.currentTarget, true);
+  try {
+    await init();
+  } finally {
+    setBusy(event.currentTarget, false);
+  }
+});
+
 async function init() {
   try {
     await Promise.all([loadProjects(), loadPractice()]);
     renderAll();
   } catch (error) {
+    showWorkspaceError(error.message);
     showToast(`Could not load the workspace: ${error.message}`, "error");
   }
 }

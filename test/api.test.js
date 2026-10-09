@@ -53,12 +53,23 @@ test("practice endpoint lists and creates the available decks", async () => {
   const { server, base } = await start();
   try {
     const decks = await json(base, "/api/practice");
-    assert.equal(decks.decks.length, 4);
+    assert.equal(decks.decks.length, 6);
+    assert.equal(decks.decks[0].slug, "recall-demo");
+    assert.equal(decks.decks[0].featured, true);
     const korean = await json(base, "/api/practice/korean-foundations", { method: "POST", body: "{}" });
     assert.equal(korean.metrics.coveragePercent, 100);
     assert.ok(korean.cards.some((card) => card.front.includes("안녕하세요")));
     const data = await json(base, "/api/practice/data-structures-interview", { method: "POST", body: "{}" });
     assert.ok(data.cards.some((card) => card.front.includes("hash table")));
+    const cs6603 = await json(base, "/api/practice/cs6603-ai-ethics-and-society", { method: "POST", body: "{}" });
+    assert.equal(cs6603.course.code, "CS 6603");
+    assert.equal(cs6603.course.lessonCount, 22);
+    assert.equal(cs6603.metrics.coveragePercent, 100);
+    assert.ok(cs6603.cards.length > 200);
+    const demo = await json(base, "/api/practice/recall-demo", { method: "POST", body: "{}" });
+    assert.equal(demo.metrics.hardGateCount, 0);
+    assert.deepEqual(Object.keys(demo.metrics.distribution.byType).sort(), ["basic", "cloze", "reversed-basic", "type-in"]);
+    assert.ok(demo.claims.every((claim) => claim.evidenceExcerpt && claim.evidenceLocation));
   } finally {
     await new Promise((resolve) => server.close(resolve));
   }
@@ -94,9 +105,29 @@ test("source snapshots are redacted in responses and can verify a card", async (
     const withSource = await json(base, `/api/projects/${created.id}/sources`, { method: "POST", body: JSON.stringify({ title: "User notes", content: "A tree is a connected acyclic graph.", quality: "user-provided" }) });
     assert.equal(withSource.sources.at(-1).content, undefined);
     assert.match(withSource.sources.at(-1).contentPreview, /connected acyclic/);
-    const verified = await json(base, `/api/projects/${created.id}/cards/${generated.cards[0].id}/verify`, { method: "POST", body: JSON.stringify({ sourceIds: [withSource.sources.at(-1).id], claimText: "The user notes support this card." }) });
+    const verified = await json(base, `/api/projects/${created.id}/cards/${generated.cards[0].id}/verify`, { method: "POST", body: JSON.stringify({ sourceIds: [withSource.sources.at(-1).id], claimText: "The user notes support this card.", evidenceExcerpt: "A tree is a connected acyclic graph.", evidenceLocation: "User notes, line 1" }) });
     assert.equal(verified.metrics.verifiedCards, 1);
     assert.equal(verified.metrics.hardGateCount, 0);
+    const claim = verified.claims.at(-1);
+    assert.equal(claim.text, "The user notes support this card.");
+    assert.equal(claim.evidenceExcerpt, "A tree is a connected acyclic graph.");
+    assert.equal(claim.evidenceLocation, "User notes, line 1");
+  } finally {
+    await new Promise((resolve) => server.close(resolve));
+  }
+});
+
+test("local API exposes its boundary and rejects unsafe mutation shapes", async () => {
+  const { server, base } = await start();
+  try {
+    const health = await json(base, "/api/health");
+    assert.equal(health.service, "recall");
+    assert.equal(health.runtime, "local-only");
+
+    const missingContentType = await fetch(`${base}/api/projects`, { method: "POST", body: "{}" });
+    assert.equal(missingContentType.status, 415);
+    const crossOrigin = await fetch(`${base}/api/projects`, { method: "POST", headers: { "content-type": "application/json", origin: "https://attacker.example" }, body: "{}" });
+    assert.equal(crossOrigin.status, 403);
   } finally {
     await new Promise((resolve) => server.close(resolve));
   }

@@ -1,6 +1,6 @@
 import { dirname } from "node:path";
 import { mkdirSync, existsSync, readFileSync, renameSync, writeFileSync } from "node:fs";
-import { clone, createProject, id, isoNow } from "./domain.js";
+import { clone, createProject } from "./domain.js";
 
 function emptyState() {
   return { projects: [], version: 1 };

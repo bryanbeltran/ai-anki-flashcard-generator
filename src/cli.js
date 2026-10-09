@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { buildExport } from "./exporter.js";
-import { buildPracticeDecks, inferDifficulty, PRACTICE_SNAPSHOT } from "./practice-data.js";
+import { buildDemoDeck, buildPracticeDecks, inferDifficulty, PRACTICE_SNAPSHOT } from "./practice-data.js";
 import { sanitizeFileName } from "./domain.js";
 import { applyValidation } from "./validator.js";
 
@@ -10,7 +10,7 @@ const command = process.argv[2];
 if (command === "seed-artifacts") {
   const outputDir = resolve("examples/decks");
   mkdirSync(outputDir, { recursive: true });
-  const decks = buildPracticeDecks();
+  const decks = [buildDemoDeck(), ...buildPracticeDecks()];
   const artifactTimestamp = Date.parse(PRACTICE_SNAPSHOT);
   const manifest = { generatedAt: PRACTICE_SNAPSHOT, decks: [] };
   for (const deck of decks) {
@@ -51,7 +51,7 @@ if (command === "seed-artifacts") {
     }
   }
   writeFileSync(resolve(outputDir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
-  console.log(`Wrote ${decks.length} practice decks to ${outputDir}`);
+  console.log(`Wrote ${decks.length} curated decks to ${outputDir}`);
 } else {
   console.error("Usage: node src/cli.js seed-artifacts");
   process.exitCode = 1;

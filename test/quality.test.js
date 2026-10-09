@@ -1,16 +1,20 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { buildExport } from "../src/exporter.js";
-import { buildPracticeDecks } from "../src/practice-data.js";
+import { buildDemoDeck, buildPracticeDecks } from "../src/practice-data.js";
 import { applyValidation, validateProject } from "../src/validator.js";
 import { createProject, normalizeBrief } from "../src/domain.js";
 
 test("curated practice decks satisfy evidence, coverage, count, and export gates", () => {
   const decks = buildPracticeDecks();
-  assert.equal(decks.length, 2);
+  assert.equal(decks.length, 3);
   assert.ok(decks[0].cards.some((card) => card.front.includes("ㄱ")));
   assert.ok(decks[0].cards.some((card) => card.front.includes("안녕하세요")));
   assert.ok(decks[1].cards.some((card) => card.front.includes("hash table")));
+  assert.ok(decks[2].cards.length > 200);
+  assert.equal(decks[2].course.code, "CS 6603");
+  assert.equal(decks[2].course.lessonCount, 22);
+  assert.equal(decks[2].plan.scope.length, 22);
   for (const deck of decks) {
     assert.equal(deck.metrics.hardGateCount, 0);
     assert.equal(deck.metrics.coveragePercent, 100);
@@ -19,6 +23,20 @@ test("curated practice decks satisfy evidence, coverage, count, and export gates
     assert.match(artifact.text, /#columns:Front\tBack\tExtra\tTags\tCardType\tSource/);
     assert.equal(artifact.notes, deck.cards.length);
   }
+});
+
+test("CS 6603 deck covers every official lesson in order", () => {
+  const cs6603 = buildPracticeDecks()[2];
+  assert.equal(cs6603.metrics.hardGateCount, 0);
+  assert.equal(cs6603.metrics.coveragePercent, 100);
+  assert.equal(cs6603.metrics.exportableCards, cs6603.cards.length);
+  assert.equal(cs6603.metrics.verifiedCards, cs6603.cards.length);
+  assert.equal(cs6603.plan.scope.every((scope) => scope.allocatedCards > 0), true);
+  assert.match(cs6603.cards.find((card) => card.front.includes("What is demographic parity")).back, /positive decisions/);
+  assert.ok(cs6603.cards.some((card) => card.front.includes("{{c1::data, individuals, and society}}")));
+  assert.ok(cs6603.cards.some((card) => card.front.includes("What is calibration?")));
+  assert.ok(cs6603.sources.some((source) => source.url.includes("cs-6603-ai-ethics-and-society-course-videos")));
+  assert.equal(buildExport(cs6603, { format: "tsv" }).notes, cs6603.cards.length);
 });
 
 test("all Korean practice cards include a written pronunciation guide", () => {
@@ -31,6 +49,16 @@ test("all Korean practice cards include a written pronunciation guide", () => {
   assert.equal(koreanCards.some((card) => card.extra.includes(removedLearnerNote)), false);
   assert.equal(buildExport(korean, { format: "tsv", cardType: "all" }).text.includes(removedLearnerNote), false);
   assert.match(koreanCards.find((card) => card.front.includes("안녕하세요")).extra, /annyeonghaseyo/);
+});
+
+test("guided demo has useful verified cards across every Anki template", () => {
+  const demo = buildDemoDeck();
+  assert.equal(demo.cards.length, 7);
+  assert.equal(demo.metrics.hardGateCount, 0);
+  assert.equal(demo.metrics.warningCount, 0);
+  assert.deepEqual(Object.keys(demo.metrics.distribution.byType).sort(), ["basic", "cloze", "reversed-basic", "type-in"]);
+  assert.ok(demo.cards.some((card) => `${card.front} ${card.back}`.includes("α(n)")));
+  assert.ok(demo.claims.every((claim) => claim.evidenceExcerpt && claim.evidenceLocation));
 });
 
 test("validator blocks exact-count drift and duplicate fronts", () => {

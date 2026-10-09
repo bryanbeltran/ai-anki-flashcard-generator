@@ -30,17 +30,19 @@ function sendJson(res, statusCode, payload) {
   res.writeHead(statusCode, {
     "content-type": "application/json; charset=utf-8",
     "cache-control": "no-store",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "no-referrer",
   });
   res.end(body);
 }
 
 function sendText(res, statusCode, body, headers = {}) {
-  res.writeHead(statusCode, { "content-type": "text/plain; charset=utf-8", ...headers });
+  res.writeHead(statusCode, { "content-type": "text/plain; charset=utf-8", "x-content-type-options": "nosniff", "referrer-policy": "no-referrer", ...headers });
   res.end(body);
 }
 
 function sendBuffer(res, statusCode, body, headers = {}) {
-  res.writeHead(statusCode, { "content-type": "application/octet-stream", ...headers });
+  res.writeHead(statusCode, { "content-type": "application/octet-stream", "x-content-type-options": "nosniff", "referrer-policy": "no-referrer", ...headers });
   res.end(body);
 }
 
@@ -70,6 +72,27 @@ function boolQuery(value) {
   return value === "true" || value === "1";
 }
 
+function assertSameOrigin(req) {
+  const origin = req.headers.origin;
+  if (!origin) return;
+  const expected = [`http://${req.headers.host}`, `https://${req.headers.host}`];
+  if (!expected.includes(origin)) {
+    const error = new Error("Cross-origin API mutations are not allowed by this local-only server.");
+    error.statusCode = 403;
+    throw error;
+  }
+}
+
+function assertJsonMutation(req) {
+  if (["GET", "HEAD", "OPTIONS"].includes(req.method)) return;
+  const contentType = String(req.headers["content-type"] || "").toLowerCase();
+  if (!contentType.includes("application/json")) {
+    const error = new Error("API mutations require application/json.");
+    error.statusCode = 415;
+    throw error;
+  }
+}
+
 function apiPath(pathname) {
   return pathname.split("/").filter(Boolean).map(decodeURIComponent);
 }
@@ -91,9 +114,11 @@ export function createApp({ store = createDefaultStore(), provider = createProvi
     const url = new URL(req.url || "/", "http://localhost");
     try {
       if (url.pathname.startsWith("/api/")) {
+        assertSameOrigin(req);
+        assertJsonMutation(req);
         const parts = apiPath(url.pathname);
         if (req.method === "GET" && url.pathname === "/api/health") {
-          return sendJson(res, 200, { status: "ok", service: "ai-anki-flashcard-generator", provider: provider.name, time: new Date().toISOString() });
+          return sendJson(res, 200, { status: "ok", service: "recall", runtime: "local-only", provider: provider.name, time: new Date().toISOString() });
         }
         if (req.method === "GET" && url.pathname === "/api/projects") {
           return sendJson(res, 200, { projects: store.listProjects() });
@@ -164,7 +189,14 @@ export function createApp({ store = createDefaultStore(), provider = createProvi
       }
       const asset = staticFile(url.pathname);
       if (!asset) return sendText(res, 404, "Not found");
-      res.writeHead(200, { "content-type": `${asset.type}; charset=utf-8`, "cache-control": "no-cache" });
+      res.writeHead(200, {
+        "content-type": `${asset.type}; charset=utf-8`,
+        "cache-control": "no-cache",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'",
+        "x-content-type-options": "nosniff",
+        "x-frame-options": "DENY",
+        "referrer-policy": "no-referrer",
+      });
       res.end(asset.body);
     } catch (error) {
       const status = error.statusCode || (error.code === "EXPORT_BLOCKED" || error.code === "NO_EXPORTABLE_CARDS" ? 409 : 500);
@@ -179,6 +211,14 @@ export function createApp({ store = createDefaultStore(), provider = createProvi
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const port = Number(process.env.PORT || 3000);
+  const host = process.env.HOST || "127.0.0.1";
+  if (!new Set(["127.0.0.1", "localhost", "::1"]).has(host) && process.env.RECALL_ALLOW_PUBLIC !== "true") {
+    throw new Error("Recall is local-only by default. Use HOST=127.0.0.1 or explicitly set RECALL_ALLOW_PUBLIC=true after adding a deployment boundary.");
+  }
   const server = createApp();
-  server.listen(port, () => console.log(`AI Anki Flashcard Generator listening on http://localhost:${port}`));
+  server.listen(port, host, () => {
+    const address = server.address();
+    const boundPort = typeof address === "object" && address ? address.port : port;
+    console.log(`Recall listening locally on http://${host}:${boundPort}`);
+  });
 }

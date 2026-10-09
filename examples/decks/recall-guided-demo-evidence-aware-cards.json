@@ -1,0 +1,532 @@
+{
+  "id": "practice_recall_demo",
+  "title": "Recall Guided Demo — Evidence-aware cards",
+  "createdAt": "2026-10-08T00:00:00.000Z",
+  "updatedAt": "2026-10-08T00:00:00.000Z",
+  "status": "Export ready",
+  "brief": {
+    "topic": "Data-structure fundamentals with evidence-aware review",
+    "outcome": "A learner can recall core data-structure invariants and explain the assumptions behind common complexity claims.",
+    "audience": "Engineer evaluating an evidence-aware study workflow",
+    "prerequisites": "",
+    "cardCount": 7,
+    "difficulty": "adaptive",
+    "allowedTypes": [
+      "basic",
+      "cloze",
+      "type-in",
+      "reversed-basic"
+    ],
+    "direction": "English to Korean where requested; otherwise prompt-to-answer recall.",
+    "sourcePolicy": "trusted-external",
+    "language": "English explanations with Korean examples where relevant",
+    "deckName": "Recall Guided Demo — Evidence-aware cards",
+    "exportFormat": "tsv",
+    "includedScope": "Array access, Hash-table expectations, Search invariants, Graph traversal, Stack access rules, Union-find bounds",
+    "excludedScope": "",
+    "sources": [
+      "https://opendatastructures.org/",
+      "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/"
+    ],
+    "sensitiveContent": "",
+    "confirmed": true,
+    "assumptions": [
+      "Cards are study prompts, not professional advice.",
+      "Romanization is a pronunciation aid, not a replacement for Hangul."
+    ],
+    "updatedAt": "2026-10-08T00:00:00.000Z"
+  },
+  "plan": {
+    "id": "plan_practice_recall_demo",
+    "version": 1,
+    "createdAt": "2026-10-08T00:00:00.000Z",
+    "scope": [
+      {
+        "id": "demo-arrays",
+        "label": "Array access",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 1,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "demo-hash-tables",
+        "label": "Hash-table expectations",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 1,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "demo-search",
+        "label": "Search invariants",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 2,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "demo-graphs",
+        "label": "Graph traversal",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 1,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "demo-stacks",
+        "label": "Stack access rules",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 1,
+        "coverageStatus": "covered"
+      },
+      {
+        "id": "demo-union-find",
+        "label": "Union-find bounds",
+        "required": true,
+        "priority": "required",
+        "allocatedCards": 1,
+        "coverageStatus": "covered"
+      }
+    ],
+    "objectives": [
+      {
+        "id": "objective_demo-arrays_recall",
+        "scopeId": "demo-arrays",
+        "type": "recall",
+        "statement": "Recall Array access.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_demo-hash-tables_recall",
+        "scopeId": "demo-hash-tables",
+        "type": "recall",
+        "statement": "Recall Hash-table expectations.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_demo-search_recall",
+        "scopeId": "demo-search",
+        "type": "recall",
+        "statement": "Recall Search invariants.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_demo-graphs_recall",
+        "scopeId": "demo-graphs",
+        "type": "recall",
+        "statement": "Recall Graph traversal.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_demo-stacks_recall",
+        "scopeId": "demo-stacks",
+        "type": "recall",
+        "statement": "Recall Stack access rules.",
+        "priority": "required"
+      },
+      {
+        "id": "objective_demo-union-find_recall",
+        "scopeId": "demo-union-find",
+        "type": "recall",
+        "statement": "Recall Union-find bounds.",
+        "priority": "required"
+      }
+    ],
+    "requestedCardCount": 7,
+    "difficulty": "adaptive",
+    "typeDistribution": {
+      "basic": 4,
+      "cloze": 1,
+      "type-in": 1,
+      "reversed-basic": 1
+    },
+    "sourcePolicy": "trusted-external",
+    "exclusions": [],
+    "risks": [],
+    "approvedAt": "2026-10-08T00:00:00.000Z"
+  },
+  "sources": [
+    {
+      "id": "source-open-data-structures",
+      "title": "Open Data Structures",
+      "url": "https://opendatastructures.org/",
+      "type": "reference",
+      "quality": "authoritative",
+      "retrievedAt": "2026-10-08T00:00:00.000Z",
+      "snapshotId": "source-open-data-structures-snapshot",
+      "accessStatus": "available",
+      "notes": "Pat Morin's open textbook used for data-structure invariants, operations, and asymptotic bounds."
+    },
+    {
+      "id": "source-clrs",
+      "title": "Introduction to Algorithms, 4th edition",
+      "url": "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/",
+      "type": "reference",
+      "quality": "authoritative",
+      "retrievedAt": "2026-10-08T00:00:00.000Z",
+      "snapshotId": "source-clrs-snapshot",
+      "accessStatus": "available",
+      "notes": "Cormen, Leiserson, Rivest, and Stein used for canonical algorithm and complexity claims."
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim_demo-array-lookup",
+      "text": "When an array index is known, what is the typical access complexity? — O(1), because the address is computed from the base address and element offset.",
+      "sourceIds": [
+        "source-open-data-structures"
+      ],
+      "verificationStatus": "verified",
+      "evidenceExcerpt": "O(1), because the address is computed from the base address and element offset.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_demo-hash-lookup",
+      "text": "Which structure gives expected O(1) lookup when its load factor and hash function are suitable? — A hash table. Its worst-case lookup can still be O(n) when many keys collide.",
+      "sourceIds": [
+        "source-open-data-structures"
+      ],
+      "verificationStatus": "verified",
+      "evidenceExcerpt": "A hash table. Its worst-case lookup can still be O(n) when many keys collide.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_demo-binary-search-cloze",
+      "text": "Binary search is justified only when the search range is {{c1::ordered}} under the comparison predicate. — The search range must be ordered; otherwise dropping half the candidates is not justified.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "evidenceExcerpt": "The search range must be ordered; otherwise dropping half the candidates is not justified.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_demo-bfs-unicode",
+      "text": "What is the adjacency-list time complexity of BFS or DFS? — O(V + E), where V is the number of vertices and E is the number of edges.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "evidenceExcerpt": "O(V + E), where V is the number of vertices and E is the number of edges.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_demo-type-in-complexity",
+      "text": "Type the typical time complexity of binary search on a sorted random-access sequence. — O(log n)",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "evidenceExcerpt": "O(log n)",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_demo-stack-reverse",
+      "text": "LIFO: last in, first out; push and pop happen at the same end. — What access rule defines a stack?",
+      "sourceIds": [
+        "source-open-data-structures"
+      ],
+      "verificationStatus": "verified",
+      "evidenceExcerpt": "What access rule defines a stack?",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "claim_demo-union-find-unicode",
+      "text": "What does α(n) represent in the amortized bound for union-find with path compression and union by size? — The inverse Ackermann function: it grows so slowly that the amortized operation cost is effectively constant for practical input sizes.",
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "verificationStatus": "verified",
+      "evidenceExcerpt": "The inverse Ackermann function: it grows so slowly that the amortized operation cost is effectively constant for practical input sizes.",
+      "evidenceLocation": "Curated card-level reference review",
+      "evidenceStrength": "authoritative-reference",
+      "checkedAt": "2026-10-08T00:00:00.000Z"
+    }
+  ],
+  "cards": [
+    {
+      "id": "card_demo-array-lookup",
+      "stableId": "demo-array-lookup",
+      "type": "basic",
+      "front": "When an array index is known, what is the typical access complexity?",
+      "back": "O(1), because the address is computed from the base address and element offset.",
+      "extra": "Evidence note: this assumes a contiguous, random-access representation and a known valid index.",
+      "tags": [
+        "guided-demo",
+        "arrays",
+        "complexity"
+      ],
+      "scopeId": "demo-arrays",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_demo-array-lookup"
+      ],
+      "sourceIds": [
+        "source-open-data-structures"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_demo-hash-lookup",
+      "stableId": "demo-hash-lookup",
+      "type": "basic",
+      "front": "Which structure gives expected O(1) lookup when its load factor and hash function are suitable?",
+      "back": "A hash table. Its worst-case lookup can still be O(n) when many keys collide.",
+      "extra": "Evidence note: expected-time language matters; do not present O(1) as an unconditional worst-case guarantee.",
+      "tags": [
+        "guided-demo",
+        "hash-tables",
+        "tradeoffs"
+      ],
+      "scopeId": "demo-hash-tables",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_demo-hash-lookup"
+      ],
+      "sourceIds": [
+        "source-open-data-structures"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_demo-binary-search-cloze",
+      "stableId": "demo-binary-search-cloze",
+      "type": "cloze",
+      "front": "Binary search is justified only when the search range is {{c1::ordered}} under the comparison predicate.",
+      "back": "The search range must be ordered; otherwise dropping half the candidates is not justified.",
+      "extra": "Evidence note: without ordering, discarding half of the range is not justified.",
+      "tags": [
+        "guided-demo",
+        "binary-search",
+        "cloze"
+      ],
+      "scopeId": "demo-search",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_demo-binary-search-cloze"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "The missing term is a meaningful retrieval target inside a stable context sentence.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_demo-bfs-unicode",
+      "stableId": "demo-bfs-unicode",
+      "type": "basic",
+      "front": "What is the adjacency-list time complexity of BFS or DFS?",
+      "back": "O(V + E), where V is the number of vertices and E is the number of edges.",
+      "extra": "Evidence note: each reachable vertex and edge is processed a constant number of times. The symbols V and E are preserved in the Anki package.",
+      "tags": [
+        "guided-demo",
+        "graphs",
+        "unicode-α"
+      ],
+      "scopeId": "demo-graphs",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_demo-bfs-unicode"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_demo-type-in-complexity",
+      "stableId": "demo-type-in-complexity",
+      "type": "type-in",
+      "front": "Type the typical time complexity of binary search on a sorted random-access sequence.",
+      "back": "O(log n)",
+      "extra": "Evidence note: this assumes midpoint calculation and indexed access are O(1).",
+      "tags": [
+        "guided-demo",
+        "binary-search",
+        "type-in"
+      ],
+      "scopeId": "demo-search",
+      "objective": "recall",
+      "difficulty": "foundational",
+      "claimIds": [
+        "claim_demo-type-in-complexity"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "A constrained answer field makes the learner retrieve the canonical term instead of recognizing it.",
+      "acceptedAnswers": [
+        "O(log n)",
+        "log n",
+        "O(log N)",
+        "log N"
+      ],
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_demo-stack-reverse",
+      "stableId": "demo-stack-reverse",
+      "type": "reversed-basic",
+      "front": "LIFO: last in, first out; push and pop happen at the same end.",
+      "back": "What access rule defines a stack?",
+      "extra": "Evidence note: the reverse card tests production of the concept from its invariant, not only recognition of the label.",
+      "tags": [
+        "guided-demo",
+        "stacks",
+        "reversed"
+      ],
+      "scopeId": "demo-stacks",
+      "objective": "recall",
+      "difficulty": "beginner",
+      "claimIds": [
+        "claim_demo-stack-reverse"
+      ],
+      "sourceIds": [
+        "source-open-data-structures"
+      ],
+      "typeRationale": "The reverse direction checks whether the learner can produce the concept from its defining answer.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    },
+    {
+      "id": "card_demo-union-find-unicode",
+      "stableId": "demo-union-find-unicode",
+      "type": "basic",
+      "front": "What does α(n) represent in the amortized bound for union-find with path compression and union by size?",
+      "back": "The inverse Ackermann function: it grows so slowly that the amortized operation cost is effectively constant for practical input sizes.",
+      "extra": "Evidence note: this is a near-constant amortized bound, not a literal O(1) worst-case bound for every individual operation.",
+      "tags": [
+        "guided-demo",
+        "union-find",
+        "unicode"
+      ],
+      "scopeId": "demo-union-find",
+      "objective": "recall",
+      "difficulty": "advanced",
+      "claimIds": [
+        "claim_demo-union-find-unicode"
+      ],
+      "sourceIds": [
+        "source-open-data-structures",
+        "source-clrs"
+      ],
+      "typeRationale": "Basic recall is direct and unambiguous for this learning point.",
+      "evidenceStatus": "verified",
+      "status": "approved",
+      "locked": false,
+      "confidence": 0.97,
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "updatedAt": "2026-10-08T00:00:00.000Z"
+    }
+  ],
+  "validations": [],
+  "runs": [
+    {
+      "id": "run_practice_recall_demo",
+      "kind": "curated-practice",
+      "createdAt": "2026-10-08T00:00:00.000Z",
+      "status": "succeeded",
+      "provider": "curated-source-grounded",
+      "completedAt": "2026-10-08T00:00:00.000Z"
+    }
+  ],
+  "exports": [],
+  "metrics": {
+    "requestedCards": 7,
+    "generatedCandidates": 7,
+    "approvedCards": 7,
+    "exportableCards": 7,
+    "verifiedCards": 7,
+    "unverifiedCards": 0,
+    "conflictingCards": 0,
+    "requiredScopeItems": 6,
+    "coveredRequiredScopeItems": 6,
+    "coveragePercent": 100,
+    "duplicateCount": 0,
+    "distribution": {
+      "byScope": {
+        "demo-arrays": 1,
+        "demo-hash-tables": 1,
+        "demo-search": 2,
+        "demo-graphs": 1,
+        "demo-stacks": 1,
+        "demo-union-find": 1
+      },
+      "byType": {
+        "basic": 4,
+        "cloze": 1,
+        "type-in": 1,
+        "reversed-basic": 1
+      },
+      "byDifficulty": {
+        "foundational": 5,
+        "beginner": 1,
+        "advanced": 1
+      },
+      "byObjective": {
+        "recall": 7
+      }
+    },
+    "hardGateCount": 0,
+    "warningCount": 0,
+    "notes": 0,
+    "updatedAt": "2026-10-08T00:00:00.000Z"
+  }
+}

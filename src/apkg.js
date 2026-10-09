@@ -361,26 +361,34 @@ function buildCollectionPayload(project, rows, timestamp) {
 }
 
 function buildSqlite(payload) {
-  const directory = mkdtempSync(join(tmpdir(), "recall-apkg-"));
-  const databasePath = join(directory, "collection.anki2");
-  try {
-    const result = spawnSync(process.env.RECALL_PYTHON || "python3", ["-c", PYTHON_SQLITE_BUILDER, databasePath], {
-      input: Buffer.from(JSON.stringify(payload)),
-      maxBuffer: 2_000_000,
-      stdio: ["pipe", "ignore", "pipe"],
-    });
-    if (result.error || result.status !== 0) {
-      const detail = result.error?.message || result.stderr?.toString("utf8").trim() || `exit code ${result.status}`;
-      throw new Error(`APKG export requires Python 3 with sqlite3: ${detail}`);
+  const roots = [...new Set([process.env.RECALL_TMP_DIR, tmpdir(), "/var/tmp"].filter(Boolean))];
+  let lastError;
+  for (const root of roots) {
+    let directory;
+    try {
+      directory = mkdtempSync(join(root, "recall-apkg-"));
+      const databasePath = join(directory, "collection.anki2");
+      const result = spawnSync(process.env.RECALL_PYTHON || "python3", ["-c", PYTHON_SQLITE_BUILDER, databasePath], {
+        input: Buffer.from(JSON.stringify(payload)),
+        maxBuffer: 2_000_000,
+        stdio: ["pipe", "ignore", "pipe"],
+      });
+      if (result.error || result.status !== 0) {
+        const detail = result.error?.message || result.stderr?.toString("utf8").trim() || `exit code ${result.status}`;
+        throw new Error(detail);
+      }
+      const database = readFileSync(databasePath);
+      database.writeUInt32BE(SQLITE_CHANGE_COUNTER, SQLITE_CHANGE_COUNTER_OFFSET);
+      database.writeUInt32BE(SQLITE_CHANGE_COUNTER, SQLITE_VERSION_VALID_FOR_OFFSET);
+      database.writeUInt32BE(SQLITE_FILE_VERSION, SQLITE_FILE_VERSION_OFFSET);
+      return database;
+    } catch (error) {
+      lastError = error;
+    } finally {
+      if (directory) rmSync(directory, { recursive: true, force: true });
     }
-    const database = readFileSync(databasePath);
-    database.writeUInt32BE(SQLITE_CHANGE_COUNTER, SQLITE_CHANGE_COUNTER_OFFSET);
-    database.writeUInt32BE(SQLITE_CHANGE_COUNTER, SQLITE_VERSION_VALID_FOR_OFFSET);
-    database.writeUInt32BE(SQLITE_FILE_VERSION, SQLITE_FILE_VERSION_OFFSET);
-    return database;
-  } finally {
-    rmSync(directory, { recursive: true, force: true });
   }
+  throw new Error(`APKG export requires Python 3 with sqlite3: ${lastError?.message || "unable to create a temporary SQLite database"}`);
 }
 
 export function buildApkg(project, rows, { timestamp = Date.now(), cardType = "all" } = {}) {

@@ -1,4 +1,5 @@
 import { applyValidation } from "./validator.js";
+import { buildCs6603Deck } from "./cs6603-data.js";
 
 export const PRACTICE_SNAPSHOT = "2026-10-08T00:00:00.000Z";
 const SNAPSHOT = PRACTICE_SNAPSHOT;
@@ -32,9 +33,16 @@ const CLRS = source(
   "Cormen, Leiserson, Rivest, and Stein used for canonical algorithm and complexity claims."
 );
 
-function makeCard({ key, type = "basic", front, back, extra = "", pronunciation = "", tags, scopeId, objective = "recall", difficulty = "foundational", sourceIds }) {
+function makeCard({ key, type = "basic", front, back, extra = "", pronunciation = "", tags, scopeId, objective = "recall", difficulty = "foundational", sourceIds, acceptedAnswers = [] }) {
   const claimId = `claim_${key}`;
   const pronunciationGuide = String(pronunciation || "").trim();
+  const typeRationale = type === "cloze"
+    ? "The missing term is a meaningful retrieval target inside a stable context sentence."
+    : type === "type-in"
+      ? "A constrained answer field makes the learner retrieve the canonical term instead of recognizing it."
+      : type === "reversed-basic"
+        ? "The reverse direction checks whether the learner can produce the concept from its defining answer."
+        : "Basic recall is direct and unambiguous for this learning point.";
   return {
     id: `card_${key}`,
     stableId: key,
@@ -49,7 +57,8 @@ function makeCard({ key, type = "basic", front, back, extra = "", pronunciation 
     difficulty,
     claimIds: [claimId],
     sourceIds,
-    typeRationale: type === "cloze" ? "The missing term is a meaningful retrieval target inside a stable context sentence." : "Basic recall is direct and unambiguous for this learning point.",
+    typeRationale,
+    ...(acceptedAnswers.length ? { acceptedAnswers } : {}),
     evidenceStatus: "verified",
     status: "approved",
     locked: false,
@@ -303,6 +312,105 @@ const dsCards = [
   sourceIds: [ODS.id, CLRS.id],
 }));
 
+const demoCards = [
+  makeCard({
+    key: "demo-array-lookup",
+    front: "When an array index is known, what is the typical access complexity?",
+    back: "O(1), because the address is computed from the base address and element offset.",
+    extra: "Evidence note: this assumes a contiguous, random-access representation and a known valid index.",
+    tags: ["guided-demo", "arrays", "complexity"],
+    scopeId: "demo-arrays",
+    difficulty: "foundational",
+    sourceIds: [ODS.id],
+  }),
+  makeCard({
+    key: "demo-hash-lookup",
+    front: "Which structure gives expected O(1) lookup when its load factor and hash function are suitable?",
+    back: "A hash table. Its worst-case lookup can still be O(n) when many keys collide.",
+    extra: "Evidence note: expected-time language matters; do not present O(1) as an unconditional worst-case guarantee.",
+    tags: ["guided-demo", "hash-tables", "tradeoffs"],
+    scopeId: "demo-hash-tables",
+    difficulty: "foundational",
+    sourceIds: [ODS.id],
+  }),
+  makeCard({
+    key: "demo-binary-search-cloze",
+    type: "cloze",
+    front: "Binary search is justified only when the search range is {{c1::ordered}} under the comparison predicate.",
+    back: "The search range must be ordered; otherwise dropping half the candidates is not justified.",
+    extra: "Evidence note: without ordering, discarding half of the range is not justified.",
+    tags: ["guided-demo", "binary-search", "cloze"],
+    scopeId: "demo-search",
+    difficulty: "foundational",
+    sourceIds: [ODS.id, CLRS.id],
+  }),
+  makeCard({
+    key: "demo-bfs-unicode",
+    front: "What is the adjacency-list time complexity of BFS or DFS?",
+    back: "O(V + E), where V is the number of vertices and E is the number of edges.",
+    extra: "Evidence note: each reachable vertex and edge is processed a constant number of times. The symbols V and E are preserved in the Anki package.",
+    tags: ["guided-demo", "graphs", "unicode-α"],
+    scopeId: "demo-graphs",
+    difficulty: "foundational",
+    sourceIds: [ODS.id, CLRS.id],
+  }),
+  makeCard({
+    key: "demo-type-in-complexity",
+    type: "type-in",
+    front: "Type the typical time complexity of binary search on a sorted random-access sequence.",
+    back: "O(log n)",
+    acceptedAnswers: ["O(log n)", "log n", "O(log N)", "log N"],
+    extra: "Evidence note: this assumes midpoint calculation and indexed access are O(1).",
+    tags: ["guided-demo", "binary-search", "type-in"],
+    scopeId: "demo-search",
+    difficulty: "foundational",
+    sourceIds: [ODS.id, CLRS.id],
+  }),
+  makeCard({
+    key: "demo-stack-reverse",
+    type: "reversed-basic",
+    front: "LIFO: last in, first out; push and pop happen at the same end.",
+    back: "What access rule defines a stack?",
+    extra: "Evidence note: the reverse card tests production of the concept from its invariant, not only recognition of the label.",
+    tags: ["guided-demo", "stacks", "reversed"],
+    scopeId: "demo-stacks",
+    difficulty: "beginner",
+    sourceIds: [ODS.id],
+  }),
+  makeCard({
+    key: "demo-union-find-unicode",
+    front: "What does α(n) represent in the amortized bound for union-find with path compression and union by size?",
+    back: "The inverse Ackermann function: it grows so slowly that the amortized operation cost is effectively constant for practical input sizes.",
+    extra: "Evidence note: this is a near-constant amortized bound, not a literal O(1) worst-case bound for every individual operation.",
+    tags: ["guided-demo", "union-find", "unicode"],
+    scopeId: "demo-union-find",
+    difficulty: "advanced",
+    sourceIds: [ODS.id, CLRS.id],
+  }),
+];
+
+const demoScope = [
+  { id: "demo-arrays", label: "Array access", required: true, priority: "required" },
+  { id: "demo-hash-tables", label: "Hash-table expectations", required: true, priority: "required" },
+  { id: "demo-search", label: "Search invariants", required: true, priority: "required" },
+  { id: "demo-graphs", label: "Graph traversal", required: true, priority: "required" },
+  { id: "demo-stacks", label: "Stack access rules", required: true, priority: "required" },
+  { id: "demo-union-find", label: "Union-find bounds", required: true, priority: "required" },
+];
+
+export function buildDemoDeck() {
+  return makeDeck({
+    id: "practice_recall_demo",
+    title: "Recall Guided Demo — Evidence-aware cards",
+    topic: "Data-structure fundamentals with evidence-aware review",
+    outcome: "A learner can recall core data-structure invariants and explain the assumptions behind common complexity claims.",
+    audience: "Engineer evaluating an evidence-aware study workflow",
+    sources: [ODS, CLRS],
+    cards: demoCards,
+    scope: demoScope,
+  });
+}
+
 export function buildPracticeDecks() {
   const koreanScope = [
     { id: "hangul-consonants", label: "Hangul consonants", required: true, priority: "required" },
@@ -332,12 +440,14 @@ export function buildPracticeDecks() {
     cards: dsCards,
     scope: dsScopeLabels.map((label) => ({ id: label, label: label.replace(/-/g, " "), required: true, priority: "required" })),
   });
-  return [korean, dataStructures];
+  return [korean, dataStructures, buildCs6603Deck()];
 }
 
 export function practiceDeckBySlug(slug) {
+  if (slug === "recall-demo" || slug === "demo") return buildDemoDeck();
   const decks = buildPracticeDecks();
-  const direct = decks.find((deck) => deck.id === `practice_${slug}` || deck.id.endsWith(`_${slug}`));
+  const normalizedSlug = String(slug).replaceAll("-", "_");
+  const direct = decks.find((deck) => deck.id === `practice_${slug}` || deck.id === `practice_${normalizedSlug}` || deck.id.endsWith(`_${normalizedSlug}`));
   if (direct) return direct;
   const korean = decks.find((deck) => deck.id === "practice_korean_foundations");
   const subsets = {

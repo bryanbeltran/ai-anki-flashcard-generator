@@ -41,6 +41,10 @@
       </aside>
 
       <main class="workspace" id="workspace">
+        <div class="workspace-error" id="workspace-error" role="alert" hidden>
+          <div><strong>Recall could not load the workspace.</strong><span id="workspace-error-message">Check that the local server is running, then try again.</span></div>
+          <button class="button secondary" id="retry-workspace" type="button">Retry</button>
+        </div>
         <section class="empty-state" id="empty-state">
           <div class="empty-hero">
             <div class="empty-copy">
@@ -49,6 +53,7 @@
               <p>Recall turns a learning brief into a scoped, source-aware study workflow. Clarify the outcome, review every card, then export a clean Anki file.</p>
               <div class="empty-actions">
                 <button class="button primary" id="empty-new-project" type="button">Create a project <span aria-hidden="true">→</span></button>
+                <button class="button secondary" id="empty-demo" data-practice-slug="recall-demo" type="button">Try the guided demo <span aria-hidden="true">✦</span></button>
                 <span class="muted small">No account required · Runs locally</span>
               </div>
             </div>
@@ -155,7 +160,7 @@
                 <label class="check"><input type="checkbox" name="allowedTypes" value="type-in" /> Type-in</label>
               </fieldset>
               <div class="form-actions wide">
-                <button class="button secondary" type="submit">Save brief</button>
+                <button class="button secondary" data-testid="save-brief" type="submit">Save brief</button>
                 <span class="form-message" id="brief-message" role="status"></span>
               </div>
             </form>
@@ -178,7 +183,7 @@
               <label>Quality
                 <select name="quality"><option value="user-provided">User-provided</option><option value="authoritative">Authoritative</option><option value="reference">Reference</option></select>
               </label>
-              <div class="form-actions"><button class="button secondary" type="submit">Add source</button><span class="form-message" id="source-message" role="status"></span></div>
+              <div class="form-actions"><button class="button secondary" data-testid="add-source" type="submit">Add source</button><span class="form-message" id="source-message" role="status"></span></div>
             </form>
             <div id="sources" class="source-list"></div>
           </section>
@@ -189,7 +194,7 @@
                 <p class="eyebrow">Step 2</p>
                 <h3>Plan and coverage contract</h3>
               </div>
-              <button class="button secondary" id="build-plan" type="button">Build plan</button>
+              <button class="button secondary" id="build-plan" data-testid="build-plan" type="button">Build plan</button>
             </div>
             <div id="plan-content" class="plan-content"></div>
           </section>
@@ -221,7 +226,7 @@
           <section class="panel export-panel" id="export-panel">
             <div class="panel-heading">
               <div>
-                <p class="eyebrow">Step 4</p>
+                <p class="eyebrow">Step 5</p>
                 <h3>Export to Anki</h3>
               </div>
               <span class="pill" id="export-pill">Review required</span>
@@ -237,7 +242,7 @@
               <label class="check export-warning"><input type="checkbox" id="include-unverified" /> Include unverified warnings</label>
               <button class="button secondary" id="preview-export" type="button">Preview mapping</button>
               <button class="button secondary" id="copy-apkg-link" type="button" hidden>Copy Anki link</button>
-              <button class="button primary" id="export-button" type="button">Download export <span aria-hidden="true">↓</span></button>
+              <button class="button primary" id="export-button" data-testid="export-button" type="button">Download export <span aria-hidden="true">↓</span></button>
             </div>
             <p class="form-message" id="export-message" role="status"></p>
             <p class="muted small" id="apkg-link-hint" hidden>Paste this direct URL into AnkiMobile’s Download Link dialog. The device must be able to reach this Recall server.</p>

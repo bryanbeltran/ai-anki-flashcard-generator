@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
 import { buildExport } from "../src/exporter.js";
-import { buildPracticeDecks, PRACTICE_SNAPSHOT } from "../src/practice-data.js";
+import { buildDemoDeck, buildPracticeDecks, PRACTICE_SNAPSHOT } from "../src/practice-data.js";
 
 test("APKG export is a readable Anki deck package", () => {
   const artifact = buildExport(buildPracticeDecks()[0], { format: "apkg" });
@@ -62,4 +62,35 @@ test("APKG export is byte-reproducible for a fixed SQLite build", () => {
   const first = buildExport(project, options).body;
   const second = buildExport(project, options).body;
   assert.deepEqual(first, second);
+});
+
+test("APKG export preserves Unicode and all supported card templates", () => {
+  const artifact = buildExport(buildDemoDeck(), { format: "apkg", timestamp: Date.parse(PRACTICE_SNAPSHOT) });
+  assert.equal(artifact.notes, 7);
+  assert.equal(artifact.cards, 8);
+  const check = spawnSync("python3", ["-c", `
+import io
+import json
+import sqlite3
+import sys
+import tempfile
+import zipfile
+
+package = zipfile.ZipFile(io.BytesIO(sys.stdin.buffer.read()))
+database = tempfile.NamedTemporaryFile(suffix=".anki2", delete=False)
+database.write(package.read("collection.anki2"))
+database.close()
+connection = sqlite3.connect(database.name)
+models = json.loads(connection.execute("select models from col").fetchone()[0])
+names = {model["name"] for model in models.values()}
+assert "Recall Basic" in names
+assert "Recall Basic (reversed)" in names
+assert "Recall Cloze" in names
+assert "Recall Basic (type-in)" in names
+assert connection.execute("select count(*) from notes").fetchone()[0] == 7
+assert connection.execute("select count(*) from cards").fetchone()[0] == 8
+assert any("α(n)" in row[0] for row in connection.execute("select flds from notes"))
+connection.close()
+`], { input: artifact.body, maxBuffer: 1_000_000 });
+  assert.equal(check.status, 0, check.stderr?.toString() || check.stdout?.toString());
 });
