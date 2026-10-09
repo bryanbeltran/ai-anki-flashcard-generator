@@ -14,7 +14,7 @@
     "e2e": "node test/browser.e2e.js",
     "anki:smoke": "python3 scripts/anki_import_smoke.py examples/decks/recall-guided-demo-evidence-aware-cards.apkg",
     "seed-artifacts": "node src/cli.js seed-artifacts",
-    "check": "npm run lint && npm run format:check && node --check src/server.js && node --check src/service.js && node --check src/provider.js && node --check src/practice-data.js && node --check src/exporter.js && node --check src/apkg.js && node --check src/public/app.js && npm run test:coverage"
+    "check": "npm run lint && npm run format:check && node --check src/server.js && node --check src/service.js && node --check src/provider.js && node --check src/practice-data.js && node --check src/cs6603-data.js && node --check src/exporter.js && node --check src/apkg.js && node --check src/public/app.js && npm run test:coverage"
   },
   "engines": {
     "node": ">=20"

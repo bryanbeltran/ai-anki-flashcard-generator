@@ -8,6 +8,19 @@ The guided demo is the fastest way to see the product. It opens seven useful car
 
 The optional generation path remains intentionally honest: the deterministic offline provider creates draft candidates that say when an answer still needs evidence. Curated practice data is the portfolio/demo path; it is not presented as model output.
 
+## CS 6603 full-course fixture
+
+The repository includes a 228-card, source-linked deck for Georgia Tech's CS 6603 — AI, Ethics, and Society. It follows the official public 22-lesson sequence and validates every lesson as a required Recall scope:
+
+| Module                           | Lessons | Cards | Focus                                                                                     |
+| -------------------------------- | ------: | ----: | ----------------------------------------------------------------------------------------- |
+| Data, Individuals, and Society   |     1–5 |    45 | Course framing, ethics and law, data collection, fairness, and bias                       |
+| The BS of Big Data and Stats 101 |    6–11 |    57 | Data preparation, descriptive/inferential statistics, sampling, causality, and confidence |
+| AI/ML Techniques                 |   12–18 |    77 | Word embeddings, facial recognition, predictive algorithms, metrics, and deployment       |
+| Bias Mitigation Applications     |   19–22 |    49 | Fairness definitions, assessment tools, mitigation, governance, and wrap-up               |
+
+Download the generated [APKG](../examples/decks/cs-6603-ai-ethics-and-society-full-course.apkg), [TSV](../examples/decks/cs-6603-ai-ethics-and-society-full-course.tsv), or [source/evidence JSON](../examples/decks/cs-6603-ai-ethics-and-society-full-course.json). The official Georgia Tech [course overview](https://omscs.gatech.edu/cs-6603-ai-ethics-and-society) and [lesson index](https://omscs.gatech.edu/cs-6603-ai-ethics-and-society-course-videos) are recorded in the deck's source metadata.
+
 ## Architecture
 
 ```text
