@@ -8,7 +8,7 @@
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
     "test": "node --test test/*.test.js",
-    "test:coverage": "TMPDIR=${TMPDIR:-/var/tmp} node --test --experimental-test-coverage --test-coverage-lines=75 --test-coverage-functions=75 --test-coverage-branches=60 test/*.test.js",
+    "test:coverage": "TMPDIR=${TMPDIR:-/var/tmp} c8 --lines 75 --functions 75 --branches 60 node --test test/*.test.js",
     "lint": "eslint .",
     "format:check": "prettier --check package.json README.md docs/*.md .github/workflows/ci.yml eslint.config.js",
     "e2e": "node test/browser.e2e.js",
@@ -21,6 +21,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "c8": "^10.1.3",
     "eslint": "^9.39.5",
     "globals": "^15.15.0",
     "prettier": "^3.9.9"
