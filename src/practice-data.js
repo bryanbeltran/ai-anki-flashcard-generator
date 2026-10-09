@@ -177,7 +177,6 @@ const koreanAlphabetCards = [
   front,
   back,
   pronunciation,
-  extra: "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.",
   tags: ["korean", "alphabet", scopeId.replace("hangul-", "hangul-")],
   scopeId,
   objective: "recall",

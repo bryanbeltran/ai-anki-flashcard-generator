@@ -24,9 +24,12 @@ test("curated practice decks satisfy evidence, coverage, count, and export gates
 test("all Korean practice cards include a written pronunciation guide", () => {
   const korean = buildPracticeDecks()[0];
   const koreanCards = korean.cards.filter((card) => card.tags.includes("korean"));
+  const removedLearnerNote = "For English-speaking learners: romanization is a memory aid; listen to native audio and prioritize the Hangul symbol.";
   assert.equal(koreanCards.length, 81);
   assert.equal(koreanCards.filter((card) => card.pronunciation).length, 81);
   assert.equal(koreanCards.filter((card) => card.extra.startsWith("Pronunciation:")).length, 81);
+  assert.equal(koreanCards.some((card) => card.extra.includes(removedLearnerNote)), false);
+  assert.equal(buildExport(korean, { format: "tsv", cardType: "all" }).text.includes(removedLearnerNote), false);
   assert.match(koreanCards.find((card) => card.front.includes("안녕하세요")).extra, /annyeonghaseyo/);
 });
 
